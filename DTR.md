@@ -83,5 +83,7 @@ Plan to learn stretch technology.
 
 Additional Notes:
 
+[Inspiration Board](https://docs.google.com/presentation/d/1zur7nDJWeZwwHZhZAP4ySQD0uiqWJBE8VXIEPiK6iNM/edit#slide=id.p)
+
 Scrimba/Traversy Media lessons.
 DnD - Drew will set up character sheet to better understand stats. Elsa will lead because she's awesome.
