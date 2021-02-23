@@ -1,0 +1,9 @@
+header {
+  display: flex;
+  justify-content: space-around;
+  max-width: 900px;
+  height: 150px;
+  margin: auto;
+  font-weight: 600;
+  font-size: x-large;
+}
