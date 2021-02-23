@@ -1,13 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Dokdo&family=Montserrat:wght@100;300;400;600&display=swap');
+
+/* 
+#e4d4c8 
+#ac9485     
+#8e7161     
+#800000     
+#29190e 
+font-family: 'Dokdo', cursive;
+*/
+
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Montserrat', sans-serif;
+  background-color: #29190e;
+  color: #e4d4c8;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+a {
+  text-decoration: none;
+  color: #e4d4c8;
 }
