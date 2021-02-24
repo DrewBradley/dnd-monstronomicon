@@ -9,17 +9,16 @@ class Filter extends Component {
 // then we update/render the new list of monsters in Display
 
     componentDidMount() {
-        const CRList = [1,2,3]
     }
     
     render() {
-        if (this.props.CRList) {
-            var options = this.props.CRList.map(item => {
+        const CRList = [0, .125, .25, .5, 1, 2,3]
+            var options = CRList.map(item => {
                 return (
-                    <option key={item} textContent="item" value={item}></option>
+                    <Control.select  key={item} text={item} value={item} />
                     )
                 })
-        } else {
+
             return (
                 <>
                     <div>Filter</div>
@@ -33,7 +32,7 @@ class Filter extends Component {
             )
         }
     }
-}
+
 
 const mapStateToProps = (state) => {
     return {
