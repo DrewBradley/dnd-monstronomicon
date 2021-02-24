@@ -5,6 +5,7 @@ import Monster from './Monster'
 import Header from './Header'
 import Encounter from './Encounter'
 import './App.css';
+import PropTypes from 'prop-types';
 
 function App() {
   return (
@@ -17,6 +18,10 @@ function App() {
       </Switch>
     </div>
   );
+}
+
+App.propTypes = {
+  monster: PropTypes.object.isRequired,
 }
 
 export default App;
