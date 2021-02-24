@@ -1,14 +1,9 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { getOneMonster } from '../actions/actions'
+import PropTypes from 'prop-types';
 
 class Monster extends Component {
-    // constructor() {
-    //     super()
-    //     this.state = {
-    //         deepMonster: {}
-    //     }
-    // }
 
     componentDidMount() {
         this.props.getOneMonster(this.props.location.state.url)
@@ -29,6 +24,12 @@ class Monster extends Component {
             return null
         }
     }
+}
+
+Monster.propTypes = {
+  getOneMonster: PropTypes.func.isRequired,
+  location: PropTypes.object.isRequired,
+  monster: PropTypes.object.isRequired
 }
 
 const mapStateToProps = (state) => ({
