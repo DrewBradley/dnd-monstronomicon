@@ -12,7 +12,8 @@ class App extends Component {
   constructor() {
     super()
     this.state = {
-      monsters: []
+      monsters: [],
+      // deepMonster: {}
     }
   }
 
@@ -21,21 +22,33 @@ class App extends Component {
     
   }
   
-  
   getMonsters() {
     fetch('https://www.dnd5eapi.co/api/monsters')
     .then(response => response.json())
     .then(data => this.setState({ monsters: data.results }))
-    
   }
   
+  getOneMonster(url) {
+    fetch(`https://www.dnd5eapi.co${url}`)
+    .then(response => response.json())
+    // .then(data => this.setState({ deepMonster: data }))
+  }
+
   render() {
-    console.log(this.state)
+    const monsterLinks = this.state.monsters.map(monster => {
+      return  (
+        <>
+          <Link to={`/monster/${monster.index}`}>{monster.name}</Link>
+          <br></br>
+        </>
+      )
+    })
+
     return (
       <div className="App">
         <Header />
         <Switch>
-          <Route exact path="/" component={Display} />
+          <Route exact path="/" render = {() => <Display monsterLinks={monsterLinks}/>}/>
           <Route path="/encounter" component={Encounter} />
           <Route path="/monster/" component={Monster} />
         </Switch>
