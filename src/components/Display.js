@@ -1,10 +1,10 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-const Display = () => {
+const Display = ({ monsterLinks }) => {
     return (
-        <Link to="/monster">
-            <div>display list of monsters</div>
+        <Link to="/monster/:name">
+            {monsterLinks}
         </Link>
     )
 }
