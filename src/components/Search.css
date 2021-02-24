@@ -1,5 +1,7 @@
 .search-field {
   height: 1.5rem;
+  display: flex;
+  margin: 1%;
 }
 
 .search-input,

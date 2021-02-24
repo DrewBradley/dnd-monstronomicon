@@ -1,4 +1,4 @@
-import { FETCH_MONSTERS, FETCH_ONE_MONSTER } from './types'
+import { FETCH_MONSTERS, FETCH_ONE_MONSTER, SEARCH_MONSTER_NAME } from './types'
 
 export const getMonsters = () => dispatch =>{
   fetch('https://www.dnd5eapi.co/api/monsters')
@@ -18,4 +18,14 @@ export const getOneMonster = (url) => dispatch => {
         payload: monster
     }))
     .catch(error => console.log(error))
+}
+
+export const searchMonster = (monsterList, monsterName) => dispatch => {
+  const foundMonster = monsterList.filter(monster => {
+    return monster.name.includes(monsterName) ? monster : null
+  })
+  return dispatch({
+        type: SEARCH_MONSTER_NAME,
+        payload: foundMonster
+    })
 }

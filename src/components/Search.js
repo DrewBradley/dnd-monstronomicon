@@ -1,16 +1,25 @@
 import React, { Component } from 'react'
+import { searchMonster } from '../actions/actions'
+import { connect } from 'react-redux'
 import './Search.css'
 
 class Search extends Component {
   constructor() {
     super()
     this.state = {
-      searchMonster: ""
+      monsterName: ""
     }
+    this.handleChange = this.handleChange.bind(this)
+  }
+
+  handleChange(event) {
+    const {value} = event.target
+    this.setState({
+      monsterName: value
+    })
   }
   
   render(){
-    console.log(this.state)
     return (
         <div className="search-field">
           <input 
@@ -18,12 +27,20 @@ class Search extends Component {
             placeholder="Search by name"
             name="search"
             className="search-input"
-            value={this.state.searchMonster}
+            value={this.state.monsterName}
+            onChange={this.handleChange}
             ></input>
-          <button className="search-btn">🔍</button>
+          <button 
+            className="search-btn"
+            onClick={() => this.props.searchMonster(this.props.monsters, this.state.monsterName)}
+            >🔍</button>
         </div>
     )
   }
 }
 
-export default Search
+const mapStateToProps = (state) => ({
+  monsters: state.monsters.monsters.results,
+})
+
+export default connect(mapStateToProps, {searchMonster})(Search);
