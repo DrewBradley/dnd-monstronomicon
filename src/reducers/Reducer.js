@@ -1,8 +1,9 @@
-import { FETCH_MONSTERS, FETCH_ONE_MONSTER } from '../actions/types'
+import { FETCH_MONSTERS, FETCH_ONE_MONSTER, FILL_CR_LIST } from '../actions/types'
 
 const initialState = { 
   monsters: [],
-  monster: {}
+  monster: {},
+  CRNumbers: []
 }
 
 // eslint-disable-next-line import/no-anonymous-default-export
@@ -12,6 +13,8 @@ export default function(state = initialState, action) {
       return {...state, monsters: action.payload}
     case FETCH_ONE_MONSTER:
       return {...state, monster: action.payload}
+    case FILL_CR_LIST:
+      return {...state, CRList: action.payload}
     default:
       return state
   }
