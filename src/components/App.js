@@ -14,10 +14,6 @@ class App extends Component {
   componentDidMount() {
     this.props.getMonsters()
   }
-
-  componentDidUpdate() {
-    console.log(this.props)
-  }
   
   render() {
     if (this.props.monsters) {
