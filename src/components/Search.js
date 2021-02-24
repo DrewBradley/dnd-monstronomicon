@@ -1,9 +1,29 @@
-import React from 'react'
+import React, { Component } from 'react'
+import './Search.css'
 
-const Search = () => {
+class Search extends Component {
+  constructor() {
+    super()
+    this.state = {
+      searchMonster: ""
+    }
+  }
+  
+  render(){
+    console.log(this.state)
     return (
-        <div>Search</div>
+        <div className="search-field">
+          <input 
+            type="text"
+            placeholder="Search by name"
+            name="search"
+            className="search-input"
+            value={this.state.searchMonster}
+            ></input>
+          <button className="search-btn">🔍</button>
+        </div>
     )
+  }
 }
 
 export default Search
