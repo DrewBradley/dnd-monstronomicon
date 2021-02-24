@@ -2,4 +2,4 @@ export const FETCH_MONSTERS = "FETCH_MONSTERS"
 
 export const FETCH_ONE_MONSTER = "FETCH_ONE_MONSTER"
 
-export const FILL_CR_LIST = "FILL_CR_LIST"
+export const GET_MONSTERS_BY_CR = "GET_MONSTERS_BY_CR"

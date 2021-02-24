@@ -13,26 +13,28 @@ class Filter extends Component {
         const CRList = [1,2,3]
         this.props.populateCRList(CRList)
     }
-
+    
     render() {
-        console.log(this.props.CRList)
-        var options = this.props.CRList.map(item => {
+        if (this.props.CRList) {
+            console.log(this.props.CRList)
+            var options = this.props.CRList.map(item => {
+                return (
+                    <option key={item} textContent="item" value={item}></option>
+                    )
+                })
+        } else {
             return (
-                <option key={item} textContent="item" value={item}></option>
+                <>
+                    <div>Filter</div>
+                    <form onSubmit={this.props.handleClick}>
+                        <select name="CR" id="CR">
+                            {options}
+                        </select> 
+                        <button>filter by CR</button>
+                    </form>
+                </>
             )
-        })
-
-        return (
-            <>
-                <div>Filter</div>
-                <form onSubmit={this.props.handleClick}>
-                    <select name="CR" id="CR">
-                        {options}
-                    </select> 
-                    <button>filter by CR</button>
-                </form>
-            </>
-        )
+        }
     }
 }
 
