@@ -9,6 +9,7 @@ const initialState = {
 export default function(state = initialState, action) {
   switch(action.type) {
     case SEARCH_MONSTER_NAME:
+      console.log("IN THE REDUCER")
       return {...state, monsters: action.payload}
     default:
       return state

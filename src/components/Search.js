@@ -20,27 +20,28 @@ class Search extends Component {
   }
   
   render(){
+    console.log(this.props)
     return (
-        <div className="search-field">
-          <input 
-            type="text"
-            placeholder="Search by name"
-            name="search"
-            className="search-input"
-            value={this.state.monsterName}
-            onChange={this.handleChange}
-            ></input>
-          <button 
-            className="search-btn"
-            onClick={() => this.props.searchMonster(this.props.monsters, this.state.monsterName)}
-            >🔍</button>
-        </div>
+      <div className="search-field">
+        <input 
+          type="text"
+          placeholder="Search by name"
+          name="search"
+          className="search-input"
+          value={this.state.monsterName}
+          onChange={this.handleChange}
+          ></input>
+        <button 
+          className="search-btn"
+          onClick={() => this.props.searchMonster(this.props.monsters, this.state.monsterName)}
+          >🔍</button>
+      </div>
     )
   }
 }
 
 const mapStateToProps = (state) => ({
-  monsters: state.monsters.monsters.results,
+  monsters: state.monsters.monsters,
 })
 
-export default connect(mapStateToProps, {searchMonster})(Search);
+export default connect(mapStateToProps, { searchMonster })(Search);

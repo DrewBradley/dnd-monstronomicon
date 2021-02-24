@@ -14,6 +14,10 @@ class App extends Component {
   componentDidMount() {
     this.props.getMonsters()
   }
+
+  componentDidUpdate() {
+    console.log(this.props)
+  }
   
   render() {
     if (this.props.monsters) {
@@ -53,7 +57,7 @@ App.propTypes = {
 }
 
 const mapStateToProps = (state) => ({
-  monsters: state.monsters.monsters.results,
+  monsters: state.monsters.monsters,
 })
 
 export default connect(mapStateToProps, {getMonsters})(App);

@@ -1,4 +1,4 @@
-import { FETCH_MONSTERS, FETCH_ONE_MONSTER } from '../actions/types'
+import { FETCH_MONSTERS, FETCH_ONE_MONSTER, SEARCH_MONSTER_NAME } from '../actions/types'
 
 const initialState = { 
   monsters: [],
@@ -12,6 +12,8 @@ export default function(state = initialState, action) {
       return {...state, monsters: action.payload}
     case FETCH_ONE_MONSTER:
       return {...state, monster: action.payload}
+    case SEARCH_MONSTER_NAME:
+      return {...state, monsters: action.payload}
     default:
       return state
   }

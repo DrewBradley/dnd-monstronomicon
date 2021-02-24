@@ -1,4 +1,5 @@
 import { combineReducers } from 'redux';
 import monsterReducer from './Reducer'
+import searchReducer from './SearchReducer'
 
-export default combineReducers({monsters: monsterReducer})
+export default combineReducers({monsters: monsterReducer}, {monsters: searchReducer})

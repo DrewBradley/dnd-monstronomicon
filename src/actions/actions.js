@@ -5,7 +5,7 @@ export const getMonsters = () => dispatch =>{
     .then(response => response.json())
     .then(monsters => dispatch({
       type: FETCH_MONSTERS,
-      payload: monsters
+      payload: monsters.results
     }))
     .catch(error => console.log(error))
 }
@@ -27,7 +27,7 @@ export const searchMonster = (monsterList, monsterName) => dispatch => {
     }
   })
   console.log(monsterName, foundMonster)
-  return dispatch({
+  dispatch({
         type: SEARCH_MONSTER_NAME,
         payload: foundMonster
     })
