@@ -12,14 +12,12 @@ class App extends Component {
   constructor() {
     super()
     this.state = {
-      monsters: [],
-      // deepMonster: {}
+      monsters: []
     }
   }
 
   componentDidMount() {
     this.getMonsters()
-    
   }
   
   getMonsters() {
@@ -27,18 +25,19 @@ class App extends Component {
     .then(response => response.json())
     .then(data => this.setState({ monsters: data.results }))
   }
-  
-  getOneMonster(url) {
-    fetch(`https://www.dnd5eapi.co${url}`)
-    .then(response => response.json())
-    // .then(data => this.setState({ deepMonster: data }))
-  }
 
   render() {
     const monsterLinks = this.state.monsters.map(monster => {
       return  (
         <>
-          <Link to={`/monster/${monster.index}`}>{monster.name}</Link>
+          <Link to={{
+            pathname: `/monster/${monster.index}`,
+            state: { 
+              url: monster.url
+              }
+          }}>
+            {monster.name}
+          </Link>
           <br></br>
         </>
       )
