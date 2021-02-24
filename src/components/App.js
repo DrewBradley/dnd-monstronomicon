@@ -6,28 +6,18 @@ import Header from './Header'
 import Encounter from './Encounter'
 import './App.css';
 import PropTypes from 'prop-types';
+import { getMonsters } from '../actions/actions'
+import { connect } from 'react-redux'
 
 
 class App extends Component {
-  constructor() {
-    super()
-    this.state = {
-      monsters: []
-    }
-  }
-
   componentDidMount() {
-    this.getMonsters()
+    this.props.getMonsters()
   }
   
-  getMonsters() {
-    fetch('https://www.dnd5eapi.co/api/monsters')
-    .then(response => response.json())
-    .then(data => this.setState({ monsters: data.results }))
-  }
-
   render() {
-    const monsterLinks = this.state.monsters.map(monster => {
+    console.log(this.props)
+    const monsterLinks = this.props.monsters.map(monster => {
       return  (
         <>
           <Link to={{
@@ -60,4 +50,8 @@ App.propTypes = {
   // monster: PropTypes.object.isRequired,
 }
 
-export default App;
+const mapStateToProps = (state) => ({
+  monsters: state.monsters.monsters.results,
+})
+
+export default connect(mapStateToProps, {getMonsters})(App);

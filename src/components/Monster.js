@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { getOneMonster } from '../actions/actions'
 // make singleMonster api call here when the component mounts
 
 class Monster extends Component {
@@ -10,9 +11,7 @@ class Monster extends Component {
     }
 
     componentDidMount() {
-        fetch(`https://www.dnd5eapi.co${this.props.location.state.url}`)
-        .then(response => response.json())
-        .then(data => this.setState({ deepMonster: data }))
+      getOneMonster(this.props.location.state.url)
     }
         
     render() {
