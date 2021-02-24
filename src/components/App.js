@@ -6,16 +6,13 @@ import Header from './Header'
 import Encounter from './Encounter'
 import './App.css';
 import PropTypes from 'prop-types';
-import { getMonsters, populateCRList } from '../actions/actions'
+import { getMonsters } from '../actions/actions'
 import { connect } from 'react-redux'
-
 
 class App extends Component {
   
   componentDidMount() {
-    const CRList = [1,2,3]
     this.props.getMonsters()
-    this.props.populateCRList(CRList)
   }
   
   render() {
@@ -59,4 +56,4 @@ const mapStateToProps = (state) => ({
   monsters: state.monsters.monsters.results,
 })
 
-export default connect(mapStateToProps, {getMonsters, populateCRList})(App);
+export default connect(mapStateToProps, {getMonsters})(App);
