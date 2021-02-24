@@ -6,42 +6,33 @@ import Header from './Header'
 import Encounter from './Encounter'
 import './App.css';
 import PropTypes from 'prop-types';
+import { getMonsters } from '../actions/actions'
+import { connect } from 'react-redux'
 
 
 class App extends Component {
-  constructor() {
-    super()
-    this.state = {
-      monsters: []
-    }
-  }
-
   componentDidMount() {
-    this.getMonsters()
+    this.props.getMonsters()
   }
   
-  getMonsters() {
-    fetch('https://www.dnd5eapi.co/api/monsters')
-    .then(response => response.json())
-    .then(data => this.setState({ monsters: data.results }))
-  }
-
   render() {
-    const monsterLinks = this.state.monsters.map(monster => {
-      return  (
-        <>
-          <Link to={{
-            pathname: `/monster/${monster.index}`,
-            state: { 
-              url: monster.url
-              }
-          }}>
-            {monster.name}
-          </Link>
+    if (this.props.monsters) {
+      var monsterLinks = this.props.monsters.map(monster => {
+        return  (
+          <div key={monster.index}>
+            <Link to={{
+              pathname: `/monster/${monster.index}`,
+              state: {url: monster.url}
+            }}>
+              {monster.name}
+            </Link>
           <br></br>
-        </>
+        </div>
       )
     })
+    } else {
+      return null
+    }
 
     return (
       <div className="App">
@@ -57,7 +48,12 @@ class App extends Component {
 }
 
 App.propTypes = {
-  // monster: PropTypes.object.isRequired,
+  getMonsters: PropTypes.func,
+  monsters: PropTypes.array,
 }
 
-export default App;
+const mapStateToProps = (state) => ({
+  monsters: state.monsters.monsters.results,
+})
+
+export default connect(mapStateToProps, {getMonsters})(App);
