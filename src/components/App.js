@@ -16,22 +16,23 @@ class App extends Component {
   }
   
   render() {
-    console.log(this.props)
-    const monsterLinks = this.props.monsters.map(monster => {
-      return  (
-        <>
-          <Link to={{
-            pathname: `/monster/${monster.index}`,
-            state: { 
-              url: monster.url
-              }
-          }}>
-            {monster.name}
-          </Link>
+    if (this.props.monsters) {
+      var monsterLinks = this.props.monsters.map(monster => {
+        return  (
+          <div key={monster.index}>
+            <Link to={{
+              pathname: `/monster/${monster.index}`,
+              state: {url: monster.url}
+            }}>
+              {monster.name}
+            </Link>
           <br></br>
-        </>
+        </div>
       )
     })
+    } else {
+      return null
+    }
 
     return (
       <div className="App">
@@ -47,7 +48,7 @@ class App extends Component {
 }
 
 App.propTypes = {
-  // monster: PropTypes.object.isRequired,
+  // monster: PropTypes.object,
 }
 
 const mapStateToProps = (state) => ({

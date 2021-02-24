@@ -15,7 +15,6 @@ class Monster extends Component {
     }
         
     render() {
-        console.log(this.props.location.state)
         return (
             <div>Monster<br></br>
             {this.state.deepMonster.name}<br></br>
