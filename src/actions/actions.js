@@ -20,11 +20,6 @@ export const getOneMonster = (url) => dispatch => {
   .catch(error => console.log(error))
 }
 
-// dropdown list - selection sets CR variable
-// CR variable is passed through to the fetch call
-// the fetch passes that group of monsters into state
-// then we update/render the new list of monsters in Display
-
 export const getMonstersByCR = (CR) => dispatch => {
   fetch(`https://www.dnd5eapi.co/monsters?challenge_rating=${CR}`)
       .then(response => response.json())

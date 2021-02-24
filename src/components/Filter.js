@@ -1,22 +1,19 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { populateCRList } from '../actions/actions'
-
-
 
 class Filter extends Component {
-// create select tag 
-// grab this.props.CRList
-// populate the select tag
-// profit
+
+// dropdown list - selection sets CR variable
+// CR variable is passed through to the fetch call
+// the fetch passes that group of monsters into state
+// then we update/render the new list of monsters in Display
+
     componentDidMount() {
         const CRList = [1,2,3]
-        this.props.populateCRList(CRList)
     }
     
     render() {
         if (this.props.CRList) {
-            console.log(this.props.CRList)
             var options = this.props.CRList.map(item => {
                 return (
                     <option key={item} textContent="item" value={item}></option>
@@ -44,4 +41,4 @@ const mapStateToProps = (state) => {
     }
 }
 
-export default connect(mapStateToProps, {populateCRList})(Filter)
+export default connect(mapStateToProps, {})(Filter)
