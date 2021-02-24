@@ -1,4 +1,4 @@
-import { FETCH_MONSTERS, FETCH_ONE_MONSTER } from '../actions/types'
+import { SEARCH_MONSTER_NAME } from '../actions/types'
 
 const initialState = { 
   monsters: [],

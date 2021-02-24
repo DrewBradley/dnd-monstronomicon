@@ -22,8 +22,11 @@ export const getOneMonster = (url) => dispatch => {
 
 export const searchMonster = (monsterList, monsterName) => dispatch => {
   const foundMonster = monsterList.filter(monster => {
-    return monster.name.includes(monsterName) ? monster : null
+    if (monster.name.toLowerCase().includes(monsterName)){
+      return monster.name
+    }
   })
+  console.log(monsterName, foundMonster)
   return dispatch({
         type: SEARCH_MONSTER_NAME,
         payload: foundMonster
