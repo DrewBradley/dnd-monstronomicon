@@ -6,19 +6,8 @@ import { getMonstersByCR } from '../actions/actions'
 class Filter extends Component {
     constructor() {
         super()
-        this.state = {
-
-        }
+        this.state = {}
         this.handleClick = this.handleClick.bind(this)
-    }
-
-// dropdown list - selection sets CR variable
-// CR variable is passed through to the fetch call
-// the fetch passes that group of monsters into state
-// then we update/render the new list of monsters in Display
-
-    componentDidMount() {
-
     }
     
     handleClick(event) {
@@ -27,7 +16,9 @@ class Filter extends Component {
     }
 
     render() {
-        const CRList = ['select', 0, .125, .25, .5, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+        const CRList = ['select', 0, .125, .25, .5, 1, 2, 3, 4, 5, 6, 
+            7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 
+            22, 23, 24, 25, 26, 27, 28, 29, 30]
             var opts = CRList.map((item, index) => {
                 return (
                     <option value={item} key={item}>{item}</option>
@@ -35,14 +26,12 @@ class Filter extends Component {
                 })
 
             return (
-                <>
                     <form onChange={this.handleClick}>
                     <label>filter monsters by challenge rating</label>
                         <select>
                             {opts}
                         </select>
                     </form>
-                </>
             )
         }
     }
