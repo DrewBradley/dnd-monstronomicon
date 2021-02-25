@@ -26,7 +26,6 @@ export const searchMonster = (monsterList, monsterName) => dispatch => {
       return monster.name
     }
   })
-  console.log(monsterName, foundMonster)
   dispatch({
         type: SEARCH_MONSTER_NAME,
         payload: foundMonster

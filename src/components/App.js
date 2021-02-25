@@ -16,8 +16,22 @@ class App extends Component {
   }
   
   render() {
-    if (this.props.monsters) {
+    if (this.props.monsters && !this.props.search.length) {
       var monsterLinks = this.props.monsters.map(monster => {
+        return  (
+          <div key={monster.index}>
+            <Link to={{
+              pathname: `/monster/${monster.index}`,
+              state: {url: monster.url}
+            }}>
+              {monster.name}
+            </Link>
+          <br></br>
+        </div>
+      )
+    })
+    } else if (this.props.search) {
+      var monsterLinks = this.props.search.map(monster => {
         return  (
           <div key={monster.index}>
             <Link to={{
@@ -54,6 +68,7 @@ App.propTypes = {
 
 const mapStateToProps = (state) => ({
   monsters: state.monsters.monsters,
+  search: state.search.search,
 })
 
 export default connect(mapStateToProps, {getMonsters})(App);

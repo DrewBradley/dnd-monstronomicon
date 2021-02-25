@@ -18,9 +18,20 @@ class Search extends Component {
       monsterName: value
     })
   }
+
+  handleClick(monsterList) {
+    this.props.searchMonster(monsterList, this.state.monsterName)
+    this.clearInput()
+  }
+
+  clearInput() {
+    this.setState({
+      monsterName: ""
+    })
+  }
   
-  render(){
-    console.log(this.props)
+  render(){  
+    const monsterList = this.props.monsters
     return (
       <div className="search-field">
         <input 
@@ -33,7 +44,7 @@ class Search extends Component {
           ></input>
         <button 
           className="search-btn"
-          onClick={() => this.props.searchMonster(this.props.monsters, this.state.monsterName)}
+          onClick={() => this.handleClick(monsterList)}
           >🔍</button>
       </div>
     )
