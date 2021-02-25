@@ -46,7 +46,7 @@ class App extends Component {
         </div>
       )
     })
-
+    // if there is a filter selection
     } else if (this.props.filter) {
       monsterLinks = this.props.filter.map(monster => {
         return  (
