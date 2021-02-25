@@ -23,7 +23,6 @@ class Filter extends Component {
     handleClick(event) {
         event.preventDefault()
         this.setState({ challengeRating: event.target.value })
-        console.log(event.target.value)
     }
 
     render() {
@@ -36,11 +35,11 @@ class Filter extends Component {
 
             return (
                 <>
-                    <form onSubmit={this.handleClick}>
+                    <form onChange={this.handleClick}>
+                    <label>filter monsters by challenge rating</label>
                         <select>
                             {opts}
                         </select>
-                        <button>filter by challenge rating</button>
                     </form>
                 </>
             )
