@@ -15,7 +15,7 @@ context('Actions', () => {
     cy.get('.home-button').should('exist')
   })
 
-  it('should fetch a list of monsters from the API', () => {
+  it('should display a list of monsters fetched from the API', () => {
     cy.intercept({
       method: 'GET',
       url: 'https://www.dnd5eapi.co/api/monsters'
@@ -33,11 +33,15 @@ context('Actions', () => {
     cy.get('.search-input').should('have.value', 'green')
     cy.get('.search-btn').click()
     cy.get('div[class=monster-list]').find('a').should('have.length', 5)
+    cy.get('.show-all-btn').click()
+    cy.get('div[class=monster-list]').find('a').should('have.length', 332)
   })
 
   it('should filter by monster challenge rating', () => {
     cy.get('.filter-select').select('15')
     cy.get('.filter-button').click()
     cy.get('div[class=monster-list]').find('a').should('have.length', 4)
+    cy.get('.show-all-btn').click()
+    cy.get('div[class=monster-list]').find('a').should('have.length', 332)
   })
 })
