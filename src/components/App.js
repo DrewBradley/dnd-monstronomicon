@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Route, Switch, NavLink, Link } from 'react-router-dom'
+import { Route, Switch, Link } from 'react-router-dom'
 import Display from './Display'
 import Monster from './Monster'
 import Header from './Header'
@@ -16,6 +16,7 @@ class App extends Component {
   }
   
   render() {
+    // if monsters is in state and there's no search term
     if (this.props.monsters && !this.props.search.length) {
       var monsterLinks = this.props.monsters.map(monster => {
         return  (
@@ -30,8 +31,9 @@ class App extends Component {
         </div>
       )
     })
+    // if there is a search term
     } else if (this.props.search) {
-      var monsterLinks = this.props.search.map(monster => {
+      monsterLinks = this.props.search.map(monster => {
         return  (
           <div key={monster.index}>
             <Link to={{
@@ -44,6 +46,23 @@ class App extends Component {
         </div>
       )
     })
+
+    } else if (this.props.monsters) {
+      console.log('in app 52')
+      monsterLinks = this.props.search.map(monster => {
+        return  (
+          <div key={monster.index}>
+            <Link to={{
+              pathname: `/monster/${monster.index}`,
+              state: {url: monster.url}
+            }}>
+              {monster.name}
+            </Link>
+          <br></br>
+        </div>
+      )
+    })
+
     } else {
       return null
     }
