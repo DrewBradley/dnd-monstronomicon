@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Route, Switch, NavLink, Link } from 'react-router-dom'
+import { Route, Switch, Link } from 'react-router-dom'
 import Display from './Display'
 import Monster from './Monster'
 import Header from './Header'
@@ -9,14 +9,15 @@ import PropTypes from 'prop-types';
 import { getMonsters } from '../actions/actions'
 import { connect } from 'react-redux'
 
-
 class App extends Component {
+  
   componentDidMount() {
     this.props.getMonsters()
   }
   
   render() {
-    if (this.props.monsters && !this.props.search.length) {
+    // if monsters is in state and there's no search term
+    if (this.props.monsters && (!this.props.search.length && !this.props.filter.length)) {
       var monsterLinks = this.props.monsters.map(monster => {
         return  (
           <div key={monster.index}>
@@ -30,8 +31,9 @@ class App extends Component {
         </div>
       )
     })
-    } else if (this.props.search) {
-      var monsterLinks = this.props.search.map(monster => {
+    // if there is a search term
+    } else if (this.props.search && !this.props.filter) {
+      monsterLinks = this.props.search.map(monster => {
         return  (
           <div key={monster.index}>
             <Link to={{
@@ -44,6 +46,22 @@ class App extends Component {
         </div>
       )
     })
+    // if there is a filter selection
+    } else if (this.props.filter) {
+      monsterLinks = this.props.filter.map(monster => {
+        return  (
+          <div key={monster.index}>
+            <Link to={{
+              pathname: `/monster/${monster.index}`,
+              state: {url: monster.url}
+            }}>
+              {monster.name}
+            </Link>
+          <br></br>
+        </div>
+      )
+    })
+
     } else {
       return null
     }
@@ -69,6 +87,7 @@ App.propTypes = {
 const mapStateToProps = (state) => ({
   monsters: state.monsters.monsters,
   search: state.search.search,
+  filter: state.filter.filter
 })
 
-export default connect(mapStateToProps, {getMonsters})(App);
+export default connect(mapStateToProps, { getMonsters })(App);
