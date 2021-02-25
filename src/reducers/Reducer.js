@@ -1,9 +1,10 @@
-import { FETCH_MONSTERS, FETCH_ONE_MONSTER, GET_MONSTERS_BY_CR} from '../actions/types'
+import { FETCH_MONSTERS, FETCH_ONE_MONSTER, SEARCH_MONSTER_NAME, GET_MONSTERS_BY_CR} from '../actions/types'
 
 const initialState = { 
   monsters: [],
   monster: {},
-  CRMonsters: []
+  CRMonsters: [],
+  search: []
 }
 
 // eslint-disable-next-line import/no-anonymous-default-export

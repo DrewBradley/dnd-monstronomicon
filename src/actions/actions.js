@@ -1,11 +1,11 @@
-import { FETCH_MONSTERS, FETCH_ONE_MONSTER, GET_MONSTERS_BY_CR } from './types'
+import { FETCH_MONSTERS, FETCH_ONE_MONSTER, SEARCH_MONSTER_NAME, GET_MONSTERS_BY_CR } from './types'
 
 export const getMonsters = () => dispatch =>{
   fetch('https://www.dnd5eapi.co/api/monsters')
     .then(response => response.json())
     .then(monsters => dispatch({
       type: FETCH_MONSTERS,
-      payload: monsters
+      payload: monsters.results
     }))
     .catch(error => console.log(error))
 }
@@ -28,4 +28,16 @@ export const getMonstersByCR = (CR) => dispatch => {
         payload: CRMonsters
     }))
     .catch(error => console.log(error))
+}
+
+export const searchMonster = (monsterList, monsterName) => dispatch => {
+  const foundMonster = monsterList.filter(monster => {
+    if (monster.name.toLowerCase().includes(monsterName)){
+      return monster.name
+    }
+  })
+  dispatch({
+        type: SEARCH_MONSTER_NAME,
+        payload: foundMonster
+    })
 }
