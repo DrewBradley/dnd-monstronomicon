@@ -1,37 +1,31 @@
+/* eslint-disable no-undef */
 context('Actions', () => {
   beforeEach(() => {
     cy.visit('http://localhost:3000/')
   })
 
-  it('.type() - type into a DOM element', () => {
-    cy.get('.search-field')
-      .type('aboleth').should('have.value', 'aboleth')
-    cy.get('.search-field')
-      .type('aboleth').should('have.value', 'aboleth')
-    cy.get('.search-field')
-      .type('aboleth').should('have.value', 'aboleth')
-    cy.get('.search-field')
-      .type('aboleth').should('have.value', 'aboleth')
-
-    cy.get('.action-disabled')
-      // Ignore error checking prior to type
-      // like whether the input is visible or disabled
-      .type('disabled error checking', { force: true })
-      .should('have.value', 'disabled error checking')
+  it('should show header components', () => {
+    cy.get('.search-field').should('exist')
+    cy.get('.show-all-btn').should('exist')
+    cy.get('.filter-form').should('exist').should('have.value', '')
+    cy.get('.filter-label').should('exist')
+    cy.get('.filter-select').should('have.value', 'select')
+    cy.get('.filter-button').should('exist')
+    cy.get('.encounter-button').should('exist')
+    cy.get('.home-button').should('exist')
   })
 
-  it('.focus() - focus on a DOM element', () => {
-    // https://on.cypress.io/focus
-    cy.get('.action-focus').focus()
-      .should('have.class', 'focus')
-      .prev().should('have.attr', 'style', 'color: orange;')
-  })
-
-  it('.blur() - blur off a DOM element', () => {
-    // https://on.cypress.io/blur
-    cy.get('.action-blur').type('About to blur').blur()
-      .should('have.class', 'error')
-      .prev().should('have.attr', 'style', 'color: red;')
+  it.only('should fetch a list of monsters from the API', () => {
+    cy.intercept({
+      method: 'GET',
+      url: 'https://www.dnd5eapi.co/api/monsters'
+    },
+    {
+      statusCode: 200,
+      body: '../fixtures/monsters.json'
+    })
+    .get('div[class=monster-list]').find('a').should('have.length', 332)
+    .get('a').contains('Aboleth').should('have.attr', 'href', '/monster/aboleth')
   })
 
   it('.clear() - clears an input or textarea element', () => {
@@ -54,19 +48,6 @@ context('Actions', () => {
   it('.click() - click on a DOM element', () => {
     // https://on.cypress.io/click
     cy.get('.action-btn').click()
-
-    // You can click on 9 specific positions of an element:
-    //  -----------------------------------
-    // | topLeft        top       topRight |
-    // |                                   |
-    // |                                   |
-    // |                                   |
-    // | left          center        right |
-    // |                                   |
-    // |                                   |
-    // |                                   |
-    // | bottomLeft   bottom   bottomRight |
-    //  -----------------------------------
 
     // clicking in the center of the element is the default
     cy.get('#action-canvas').click()
