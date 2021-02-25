@@ -1,12 +1,13 @@
 /* eslint-disable react/jsx-pascal-case */
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { getMonstersByCR } from '../actions/actions'
 
 class Filter extends Component {
     constructor() {
         super()
         this.state = {
-            challengeRating: 0
+
         }
         this.handleClick = this.handleClick.bind(this)
     }
@@ -22,11 +23,11 @@ class Filter extends Component {
     
     handleClick(event) {
         event.preventDefault()
-        this.setState({ challengeRating: event.target.value })
+        this.props.getMonstersByCR(event.target.value)
     }
 
     render() {
-        const CRList = ['select', 0, .125, .25, .5, 1, 2, 3, 4]
+        const CRList = ['select', 0, .125, .25, .5, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
             var opts = CRList.map((item, index) => {
                 return (
                     <option value={item} key={item}>{item}</option>
@@ -53,4 +54,4 @@ const mapStateToProps = (state) => {
     }
 }
 
-export default connect(mapStateToProps, {})(Filter)
+export default connect(mapStateToProps, {getMonstersByCR})(Filter)
