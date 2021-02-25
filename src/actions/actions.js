@@ -21,11 +21,12 @@ export const getOneMonster = (url) => dispatch => {
 }
 
 export const getMonstersByCR = (CR) => dispatch => {
-  fetch(`https://www.dnd5eapi.co/api/monsters?challenge_rating${CR}`)
+  console.log('action')
+  fetch(`https://www.dnd5eapi.co/api/monsters?challenge_rating=${CR}`)
       .then(response => response.json())
-      .then(CRMonsters => dispatch({
+       .then(CRMonsters => dispatch({
         type: GET_MONSTERS_BY_CR,
-        payload: CRMonsters
+        payload: CRMonsters.results
     }))
     .catch(error => console.log(error))
 }

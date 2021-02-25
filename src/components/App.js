@@ -17,7 +17,7 @@ class App extends Component {
   
   render() {
     // if monsters is in state and there's no search term
-    if (this.props.monsters && !this.props.search.length) {
+    if (this.props.monsters && (!this.props.search.length && !this.props.filter.length)) {
       var monsterLinks = this.props.monsters.map(monster => {
         return  (
           <div key={monster.index}>
@@ -47,9 +47,9 @@ class App extends Component {
       )
     })
 
-    } else if (this.props.monsters) {
+    } else if (this.props.filter) {
       console.log('in app 52')
-      monsterLinks = this.props.search.map(monster => {
+      monsterLinks = this.props.filter.map(monster => {
         return  (
           <div key={monster.index}>
             <Link to={{
@@ -88,6 +88,7 @@ App.propTypes = {
 const mapStateToProps = (state) => ({
   monsters: state.monsters.monsters,
   search: state.search.search,
+  filter: state.filter.filter
 })
 
 export default connect(mapStateToProps, {getMonsters})(App);
