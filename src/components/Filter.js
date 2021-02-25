@@ -40,19 +40,19 @@ class Filter extends Component {
             })
 
         return (
-            <form onChange={this.handleChange}>
-            <label>filter monsters by challenge rating</label>
-                <select>
+            <form className="filter-form" onChange={this.handleChange}>
+            <label className="filter-label">filter monsters by challenge rating</label>
+                <select className="filter-select">
                     {opts}
                 </select>
-                <button onClick={this.handleClick}>click</button>
+                <button className="filter-button" onClick={this.handleClick}>click</button>
             </form>
         )
     }
 }
 
 const mapStateToProps = (state) => ({
-  monsters: state.monsters.monsters,
+
 })
 
 export default connect(mapStateToProps, { getMonstersByCR })(Filter)

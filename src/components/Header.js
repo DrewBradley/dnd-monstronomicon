@@ -7,12 +7,12 @@ import './Header.css'
 
 const Header = () => {
     return (
-        <header>Header
+        <header>
             <Search />
             <ShowAllMonsters />
             <Filter />
-            <Link to="/encounter">Encounter</Link>
-            <Link to="/">Home</Link>
+            <Link to="/encounter" className="encounter-button">Encounter</Link>
+            <Link to="/" className="home-button">Home</Link>
         </header>
     )
 }
