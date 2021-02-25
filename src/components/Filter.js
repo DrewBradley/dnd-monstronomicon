@@ -14,25 +14,22 @@ class Filter extends Component {
     }
     
     handleChange(event) {
-        console.log('got the change', event.target.value)
         this.setState({ CR: event.target.value })
     }
 
     handleClick(event) {
-        console.log('got the click', this.state)
         event.preventDefault()
         this.props.getMonstersByCR(this.state.CR)
-        // this.clearInput()
+        this.clearInput()
     }
     
     clearInput() {
         this.setState({
-            CR: 'select'
+            CR: ''
         })
     }
     
     render() {
-        console.log(this.props)
         const CRList = ['select', 0, .125, .25, .5, 1, 2, 3, 4, 5, 6, 
             7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 
             22, 23, 24, 25, 26, 27, 28, 29, 30]
@@ -55,10 +52,8 @@ class Filter extends Component {
     }
 }
 
-const mapStateToProps = (state) => {
-    return {
-        monsters: state.monsters.monsters
-    }
-}
+const mapStateToProps = (state) => ({
+  monsters: state.monsters.monsters,
+})
 
 export default connect(mapStateToProps, { getMonstersByCR })(Filter)
