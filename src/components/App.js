@@ -17,7 +17,7 @@ class App extends Component {
   
   render() {
     // if monsters is in state and there's no search term
-    if (this.props.monsters && (!this.props.search.length && !this.props.filter.length)) {
+    if (this.props.monsters && (!this.props.results.length)) {
       var monsterLinks = this.props.monsters.map(monster => {
         return  (
           <div key={monster.index}>
@@ -32,8 +32,8 @@ class App extends Component {
       )
     })
     // if there is a search term
-    } else if (this.props.search && !this.props.filter) {
-      monsterLinks = this.props.search.map(monster => {
+    } else if (this.props.results.length) {
+      monsterLinks = this.props.results.map(monster => {
         return  (
           <div key={monster.index}>
             <Link to={{
@@ -46,22 +46,7 @@ class App extends Component {
         </div>
       )
     })
-    // if there is a filter selection
-    } else if (this.props.filter) {
-      monsterLinks = this.props.filter.map(monster => {
-        return  (
-          <div key={monster.index}>
-            <Link to={{
-              pathname: `/monster/${monster.index}`,
-              state: {url: monster.url}
-            }}>
-              {monster.name}
-            </Link>
-          <br></br>
-        </div>
-      )
-    })
-
+   
     } else {
       return null
     }
@@ -86,8 +71,7 @@ App.propTypes = {
 
 const mapStateToProps = (state) => ({
   monsters: state.monsters.monsters,
-  search: state.search.search,
-  filter: state.filter.filter
+  results: state.returned.returned
 })
 
 export default connect(mapStateToProps, { getMonsters })(App);

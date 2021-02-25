@@ -3,14 +3,16 @@ import { GET_MONSTERS_BY_CR } from '../actions/types'
 const initialState = { 
   monsters: [],
   monster: {},
-  filter: []
+  filter: [],
+  search: [],
+  returned: []
 }
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default function(state = initialState, action) {
   switch(action.type) {
     case GET_MONSTERS_BY_CR:
-      return {...state, filter: action.payload}
+      return {...state, returned: action.payload}
     default:
       return state
   }

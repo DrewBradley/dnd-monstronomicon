@@ -31,6 +31,7 @@ class Search extends Component {
   }
   
   render(){  
+    // searches the displayed list of monsters by name
     const monsterList = this.props.monsters
     return (
       <div className="search-field">
@@ -52,7 +53,7 @@ class Search extends Component {
 }
 
 const mapStateToProps = (state) => ({
-  monsters: state.monsters.monsters,
+  monsters: state.monsters.monsters
 })
 
 export default connect(mapStateToProps, { searchMonster })(Search);

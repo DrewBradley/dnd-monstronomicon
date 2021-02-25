@@ -52,7 +52,7 @@ class Filter extends Component {
 }
 
 const mapStateToProps = (state) => ({
-  monsters: state.monsters.monsters,
+
 })
 
 export default connect(mapStateToProps, { getMonstersByCR })(Filter)
