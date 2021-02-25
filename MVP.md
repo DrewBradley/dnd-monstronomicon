@@ -1,7 +1,7 @@
 ### MVP
 
 ## Overview
-User will be able to filter Dungeons and Dragons Monsters by 'type,' 'challenge rating,' and 'size' OR search by monster name.
+User will be able to filter Dungeons and Dragons Monsters by 'challenge rating,' OR search by monster name.
 Problem: Dungeon Masters want to be able to find monsters when building encounters.
 Audience: Dungeons and Dragons Fifth Edition Dungeon Masters.
 
