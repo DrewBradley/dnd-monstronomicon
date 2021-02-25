@@ -1,0 +1,52 @@
+{
+    "count": 332,
+    "results": [{
+        "index": "aboleth",
+        "name": "Aboleth",
+        "url": "/api/monsters/aboleth"
+    }, {
+        "index": "acolyte",
+        "name": "Acolyte",
+        "url": "/api/monsters/acolyte"
+    }, {
+        "index": "adult-black-dragon",
+        "name": "Adult Black Dragon",
+        "url": "/api/monsters/adult-black-dragon"
+    }, {
+        "index": "adult-blue-dragon",
+        "name": "Adult Blue Dragon",
+        "url": "/api/monsters/adult-blue-dragon"
+    }, {
+        "index": "adult-brass-dragon",
+        "name": "Adult Brass Dragon",
+        "url": "/api/monsters/adult-brass-dragon"
+    }, {
+        "index": "adult-bronze-dragon",
+        "name": "Adult Bronze Dragon",
+        "url": "/api/monsters/adult-bronze-dragon"
+    }, {
+        "index": "adult-copper-dragon",
+        "name": "Adult Copper Dragon",
+        "url": "/api/monsters/adult-copper-dragon"
+    }, {
+        "index": "adult-gold-dragon",
+        "name": "Adult Gold Dragon",
+        "url": "/api/monsters/adult-gold-dragon"
+    }, {
+        "index": "adult-green-dragon",
+        "name": "Adult Green Dragon",
+        "url": "/api/monsters/adult-green-dragon"
+    }, {
+        "index": "adult-red-dragon",
+        "name": "Adult Red Dragon",
+        "url": "/api/monsters/adult-red-dragon"
+    }, {
+        "index": "adult-silver-dragon",
+        "name": "Adult Silver Dragon",
+        "url": "/api/monsters/adult-silver-dragon"
+    }, {
+        "index": "adult-white-dragon",
+        "name": "Adult White Dragon",
+        "url": "/api/monsters/adult-white-dragon"
+    }]
+}
