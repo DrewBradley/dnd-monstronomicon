@@ -32,6 +32,12 @@ context('Actions', () => {
     cy.get('.search-field').type('green')
     cy.get('.search-input').should('have.value', 'green')
     cy.get('.search-btn').click()
-    cy.get('div[class=monster-list]')
+    cy.get('div[class=monster-list]').find('a').should('have.length', 5)
+  })
+
+  it('should filter by monster challenge rating', () => {
+    cy.get('.filter-select').select('15')
+    cy.get('.filter-button').click()
+    cy.get('div[class=monster-list]').find('a').should('have.length', 4)
   })
 })
