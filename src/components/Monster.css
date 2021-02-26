@@ -1,10 +1,9 @@
 .monster-stats {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
     text-align: left;
     width: 80%;
     margin: auto;
-    border-radius: 2px;
 }
 
 .stat-detail {
@@ -14,16 +13,48 @@
     color: #e4d4c8;
     padding: .5em;
     line-height: 1.4;
+    border-radius: 2px;
+    box-shadow: 1px 1px #e4d4c8;
 }
 
 .one-stat {
     font-size: medium;
+    text-shadow: 1px 1px #29190e;
     background-color: #800000;
     color: #e4d4c8;
     margin: .3em;
+    border-radius: 2px;
     padding: .3em;
+    border-bottom: #ac9485 solid 1px;
+    border-right: #ac9485 solid 1px;
 }
 
 .one-stat span {
     font-size: small;
 }
+
+.name {
+    grid-column: 1 / 3;
+    grid-row: 1 / 3;
+}
+
+.type {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+}
+
+.subtype {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+}
+
+.alignment {
+    grid-column: 2 / 3;
+    grid-row: 3 / 4;
+}
+
+.actions {
+    grid-column: 3 / 4;
+    grid-row: 4 / 5;
+}
+
