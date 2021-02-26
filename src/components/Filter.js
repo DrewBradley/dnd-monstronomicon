@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { getMonstersByCR } from '../actions/actions'
 import { connect } from 'react-redux'
 import './Filter.css'
+import dice from '../light-die.svg'
 
 class Filter extends Component {
     constructor() {
@@ -41,11 +42,11 @@ class Filter extends Component {
 
         return (
             <form className="filter-form" onChange={this.handleChange}>
-            <label className="filter-label">filter monsters by challenge rating</label>
+            <label className="filter-label">Challenge Rating</label>
                 <select className="filter-select">
                     {opts}
                 </select>
-                <button className="filter-button" onClick={this.handleClick}>click</button>
+                <button className="filter-button" onClick={this.handleClick}><img className="dice" src={ dice } /></button>
             </form>
         )
     }
