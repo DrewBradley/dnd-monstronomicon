@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { searchMonster } from '../actions/actions'
 import { connect } from 'react-redux'
+import dice from '../light-die.svg'
 
 class Search extends Component {
   constructor() {
@@ -45,7 +46,7 @@ class Search extends Component {
         <button 
           className="search-btn"
           onClick={() => this.handleClick(monsterList)}
-          >🔍</button>
+          ><img className="dice" src={ dice } /></button>
       </div>
     )
   }

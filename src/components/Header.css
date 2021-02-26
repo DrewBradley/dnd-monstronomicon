@@ -23,18 +23,20 @@ header {
 
 .nav {
   display: flex;
+  padding: 10px;
   justify-content: space-around;
+  height: 50px;
 }
 
 .search-field {
   width: 25%;
-  height: 1.5rem;
+  height: 89%;
   display: flex;
-  margin: 1%;
+  margin: 0 2px 0 2px;
 }
 
 .dice {
-  height: 48px;
+  height: 100%;
 }
 
 .search-input,
@@ -47,8 +49,13 @@ header {
   color: #ac9485;
 }
 
+.search-btn:hover {
+  cursor: pointer;
+}
+
 .search-input {
   width: 100%;
+  padding-left: 10%;
 }
 
 .search-btn {
@@ -59,22 +66,25 @@ header {
 
 .show-all-btn {
   font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
   width: 25%;
   border-radius: 10px;
   border: 2px solid #ac9485;
-  height: 100%;
   box-sizing: content-box;
-  margin: 1%;
+  margin: 0 2px 0 2px;
   background-color: #800000;
   color: #ac9485;
   font-size: x-large;
 }
 
+.show-all-btn:hover {
+  cursor: pointer;
+}
+
 .filter-form {
   width: 25%;
-  height: 2rem;
   display: flex;
-  margin: 1%;
+  margin: 0 2px 0 2px;
   align-items: center;
 }
 
@@ -89,29 +99,36 @@ header {
   border: 2px solid #ac9485;
 }
 
-.filter-select,
-.filter-button {
+.filter-select{
   margin: 0;
   height: 100%;
-  border-left: 0;
   border: 2px solid #ac9485;
-  color: #ac9485;
+  border-left: 0;
+  border-right: 0;
 }
 
 .filter-button {
+  height: 100%;
   border-radius: 0 10px 10px 0;
   border-left: 0;
   background-color: #800000;
+  border: 2px solid #ac9485;
+}
+
+.filter-button:hover {
+  cursor: pointer;
 }
 
 .encounter-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-family: 'Montserrat', sans-serif;
   width: 25%;
   border-radius: 10px;
   border: 2px solid #ac9485;
-  height: 100%;
   box-sizing: content-box;
-  margin: 1%;
+  margin: 0 2px 0 2px;
   background-color: #800000;
   color: #ac9485;
   font-size: x-large;

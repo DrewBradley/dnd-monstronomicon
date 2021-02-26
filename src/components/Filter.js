@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { getMonstersByCR } from '../actions/actions'
 import { connect } from 'react-redux'
 import './Filter.css'
-import dice from '../brown-die.svg'
+import dice from '../light-die.svg'
 
 class Filter extends Component {
     constructor() {
