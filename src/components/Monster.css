@@ -1,0 +1,29 @@
+.monster-stats {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    width: 80%;
+    margin: auto;
+    border-radius: 2px;
+}
+
+.stat-detail {
+    font-size: small;
+    margin: .5em .5em .5em 1.5em;
+    background-color: #29190e;
+    color: #e4d4c8;
+    padding: .5em;
+    line-height: 1.4;
+}
+
+.one-stat {
+    font-size: medium;
+    background-color: #800000;
+    color: #e4d4c8;
+    margin: .3em;
+    padding: .3em;
+}
+
+.one-stat span {
+    font-size: small;
+}
