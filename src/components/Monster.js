@@ -11,8 +11,8 @@ class Monster extends Component {
     }
     
     render() {
-        console.log(this.props.monster)
         if (this.props.monster.url === this.props.location.state.url) {
+            console.log(this.props.monster)
             const monster = this.props.monster
             const subtype = monster.subtype ? 
                 <p className="one-stat subtype">SUBTYPE: <span>{monster.subtype}</span></p> : 
@@ -24,7 +24,11 @@ class Monster extends Component {
                     </div>
                 )
             })
-
+            const CI = monster.condition_immunities.map(CI => {
+                return monster.condition_immunities ? 
+                    <div><p className="stat-detail">{CI.name}</p></div> :
+                    <div><p className="stat-detail">CONDITION IMMUNITIES: </p></div>
+            })
             return (
                 <div className="monster-stats">
                     <p className="one-stat name">NAME: <span>{monster.name}</span></p>
@@ -36,15 +40,17 @@ class Monster extends Component {
                     <p className="one-stat alignment">ALIGNMENT: <span>{monster.alignment}</span></p>
                     <p className="one-stat armor-class">ARMOR CLASS: <span>{monster.armor_class}</span></p>
                     <p className="one-stat challenge-rating">CHALLENGE RATING: <span>{monster.challenge_rating}</span></p>
-                    <p className="one-stat charisma">CHARISMA: <span>{monster.charisma}</span></p>
-                    <p className="one-stat constitution">CONSTITUTION: <span>{monster.constitution}</span></p>
-                    <p className="one-stat dexterity">DEXTERITY: <span>{monster.dexterity}</span></p>
+                    <p className="one-stat charisma">CHA: <span>{monster.charisma}</span></p>
+                    <p className="one-stat condition-immunities">CONDITION IMMUNITIES: <span>{CI}</span></p>
+                    <p className="one-stat constitution">CON: <span>{monster.constitution}</span></p>
+                    <p className="one-stat damage-immunities">DAMAGE IMMUNITIES: <span>{CI}</span></p>
+                    <p className="one-stat dexterity">DEX: <span>{monster.dexterity}</span></p>
                     <p className="one-stat hit-dice">HIT DICE: <span>{monster.hit_dice}</span></p>
                     <p className="one-stat hit-points">HIT POINTS: <span>{monster.hit_points}</span></p>
-                    <p className="one-stat intelligence">INTELLIGENCE: <span>{monster.intelligence}</span></p>
+                    <p className="one-stat intelligence">INT: <span>{monster.intelligence}</span></p>
                     <p className="one-stat languages">LANGUAGES: <span>{monster.languages}</span></p>
-                    <p className="one-stat strength">STRENGTH: <span>{monster.strength}</span></p>
-                    <p className="one-stat wisdom">WISDOM: <span>{monster.wisdom}</span></p>
+                    <p className="one-stat strength">STR: <span>{monster.strength}</span></p>
+                    <p className="one-stat wisdom">WIS: <span>{monster.wisdom}</span></p>
                     <br></br>
                     <button>click to add to encounter</button>
                 </div>
