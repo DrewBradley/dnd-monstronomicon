@@ -12,21 +12,24 @@ class Monster extends Component {
     
     render() {
         console.log(this.props.monster)
-        const monster = this.props.monster
-        const actions = monster.actions.map(action => {
-            return (
-                <div>
-                    <p className="stat-detail">{action.name}: {action.desc}</p>
-                </div>
-            )
-        })
-        
         if (this.props.monster.url === this.props.location.state.url) {
+            const monster = this.props.monster
+            const subtype = monster.subtype ? 
+                <p className="one-stat subtype">SUBTYPE: <span>{monster.subtype}</span></p> : 
+                <p className="one-stat subtype">SUBTYPE: </p>
+            const actions = monster.actions.map(action => {
+                return (
+                    <div>
+                        <p className="stat-detail">{action.name}: {action.desc}</p>
+                    </div>
+                )
+            })
+
             return (
                 <div className="monster-stats">
                     <p className="one-stat name">NAME: <span>{monster.name}</span></p>
                     <p className="one-stat type">TYPE: <span>{monster.type}</span></p>
-                    <p className="one-stat subtype">SUBTYPE: <span>{monster.subtype}</span></p>
+                    {subtype}
                     <p className="one-stat size">SIZE: <span>{monster.size}</span></p>
                     <p className="one-stat xp">XP: <span>{monster.xp}</span></p>
                     <p className="one-stat actions">ACTIONS: <span>{actions}</span></p>
