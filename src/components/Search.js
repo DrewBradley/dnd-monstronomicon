@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { searchMonster } from '../actions/actions'
 import { connect } from 'react-redux'
-import './Search.css'
 
 class Search extends Component {
   constructor() {
