@@ -20,7 +20,7 @@ class App extends Component {
     if (this.props.monsters && (!this.props.results.length)) {
       var monsterLinks = this.props.monsters.map(monster => {
         return  (
-          <div key={monster.index}>
+          <div key={monster.index} className="monster-tag">
             <Link to={{
               pathname: `/monster/${monster.index}`,
               state: {url: monster.url}
@@ -35,7 +35,7 @@ class App extends Component {
     } else if (this.props.results.length) {
       monsterLinks = this.props.results.map(monster => {
         return  (
-          <div key={monster.index}>
+          <div key={monster.index} className="monster-tag">
             <Link to={{
               pathname: `/monster/${monster.index}`,
               state: {url: monster.url}
