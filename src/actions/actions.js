@@ -1,4 +1,4 @@
-import { FETCH_MONSTERS, FETCH_ONE_MONSTER, SEARCH_MONSTER_NAME, GET_MONSTERS_BY_CR } from './types'
+import { FETCH_MONSTERS, FETCH_ONE_MONSTER, SEARCH_MONSTER_NAME, GET_MONSTERS_BY_CR, ADD_TO_ENCOUNTER } from './types'
 
 export const getMonsters = () => dispatch =>{
   fetch('https://www.dnd5eapi.co/api/monsters')
@@ -39,5 +39,14 @@ export const searchMonster = (monsterList, monsterName) => dispatch => {
   dispatch({
         type: SEARCH_MONSTER_NAME,
         payload: foundMonster
+    })
+}
+
+export const addToEncounter = () => dispatch => {
+  console.log('made it to actions')
+  const encounter = ['Aboleth']
+  dispatch({
+        type: ADD_TO_ENCOUNTER,
+        payload: encounter
     })
 }

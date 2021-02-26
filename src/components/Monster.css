@@ -7,6 +7,7 @@
     margin: auto;
     max-width: 900px;
     max-height: 1000px;
+    color: #e4d4c8;
 }
 
 .stat-detail {
@@ -70,10 +71,12 @@
     grid-column: 1 / 3;
     grid-row: 3;
 }
-/* 
+
 .add-button {
     grid-column: 3;
+    background-color: #800000;
     margin: 0;
+    font-weight: 700;
     box-sizing: content-box;
     height: 35px;
     width: 200px;
@@ -82,6 +85,6 @@
     color: #ac9485;
 }
 
-.add-btn:hover {
+.add-button:hover {
     cursor: pointer;
-} */
+}

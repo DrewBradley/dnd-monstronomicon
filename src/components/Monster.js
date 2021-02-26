@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { getOneMonster } from '../actions/actions'
+import { getOneMonster, addToEncounter } from '../actions/actions'
 import PropTypes from 'prop-types';
 import './Monster.css'
 
@@ -9,7 +9,7 @@ class Monster extends Component {
     componentDidMount() {
         this.props.getOneMonster(this.props.location.state.url)
     }
-    
+
     render() {
         if (this.props.monster.url === this.props.location.state.url) {
             const monster = this.props.monster
@@ -130,7 +130,17 @@ class Monster extends Component {
                     
                     {/* <p className="one-stat senses">SENSES: <span>{senses}</span></p> */}
                     <br></br>
-                    {/* <button className="add-button">click to add to encounter</button> */}
+                    <button>click to add to encounter</button>
+
+                    <div className="legendary">
+                        {legendary}
+                    </div>
+
+                    {special}
+                    
+                    {/* <p className="one-stat senses">SENSES: <span>{senses}</span></p> */}
+                    <br></br>
+                    <button className="add-button" onClick={this.props.addToEncounter}>ADD TO ENCOUNTER</button>
                 </div>
             )
         } else {
@@ -149,4 +159,4 @@ const mapStateToProps = (state) => ({
     monster: state.monsters.monster
 })
 
-export default connect(mapStateToProps, {getOneMonster})(Monster)
+export default connect(mapStateToProps, { getOneMonster, addToEncounter })(Monster)
