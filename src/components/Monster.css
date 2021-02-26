@@ -1,9 +1,12 @@
 .monster-stats {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
     text-align: left;
     width: 80%;
     margin: auto;
+    max-width: 900px;
+    max-height: 1000px;
 }
 
 .stat-detail {
@@ -13,7 +16,7 @@
     color: #e4d4c8;
     padding: .5em;
     line-height: 1.4;
-    border-radius: 2px;
+    border-radius: 5px;
     box-shadow: 1px 1px #e4d4c8;
 }
 
@@ -23,7 +26,7 @@
     background-color: #800000;
     color: #e4d4c8;
     margin: .3em;
-    border-radius: 2px;
+    border-radius: 5px;
     padding: .3em;
     border-bottom: #ac9485 solid 1px;
     border-right: #ac9485 solid 1px;
@@ -33,7 +36,42 @@
     font-size: small;
 }
 
-.name {
+.name-box {
+    grid-column: 1 / 3;
+    grid-row: 1;
+}
+
+.size-box {
+    grid-column: 3 / 5;
+    grid-row: 1;
+}
+
+.modifier-box {
+    grid-column: 5;
+    grid-row: 1;
+}
+
+.immunities-box {
+    grid-column: 1 / 3;
+    grid-row: 2;
+}
+
+.actions {
+    grid-column: 3 / 6;
+    grid-row: 2;
+}
+
+.legendary {
+    grid-column: 3 / 6;
+    grid-row: 3;
+}
+
+.special-abilities {
+    grid-column: 1 / 3;
+    grid-row: 3;
+}
+
+/* .name {
     grid-column: 1 / 3;
     grid-row: 1 / 3;
 }
@@ -50,59 +88,54 @@
 }
 
 .xp {
-    grid-column: 3 / 4;
-    grid-row: 1 / 4;
-}
-
-.hit-dice {
-    grid-column: 3 / 4;
-    grid-row: 2 / 3;
+    grid-column: 2 / 3;
+    grid-row: 1;
     border-bottom: none;
+} */
+
+/* .hit-dice {
+    grid-column: 4 / 5;
+    grid-row: 2;
 }
 
 .hit-points {
     grid-column: 3 / 4;
-    grid-row: 3 / 4;
-}
+    grid-row: 2;
+} */
 
-.armor-class {
+/* .armor-class {
     grid-column: 4 / 5;
     grid-row: 1 / 2;
-}
+} */
 
-.size {
+/* .size {
     grid-column: 1 / 2;
     grid-row: 3 / 4;
 }
 
 .alignment {
-    grid-column: 2 / 3;
-    grid-row: 3 / 4;
-}
+    grid-column: 5;
+    grid-row: 2;
+} */
 
-.actions {
-    grid-column: 2 / 6;
-    grid-row: 13 / 20;
-}
-
-.condition-immunities {
-    grid-column: 2 / 4;
+/* .condition-immunities {
+    grid-column: 2;
     grid-row: 4;
 }
 
 .charisma {
-    grid-column: 1 / 2;
-    grid-row: 4 / 5;
+    grid-column: 3;
+    grid-row: 3;
 }
 
 .constitution {
-    grid-column: 1 / 2;
-    grid-row: 5 / 6;
+    grid-column: 4;
+    grid-row: 3;
 }
 
 .damage-immunities {
     grid-column: 4 / 6;
-    grid-row: 4;
+    grid-row: 5;
 }
 
 .damage-resistances {
@@ -116,21 +149,26 @@
 }
 
 .dexterity {
-    grid-column: 1 / 2;
-    grid-row: 6 / 7;
+    grid-column: 5;
+    grid-row: 3;
 }
 
 .intelligence {
-    grid-column: 1 / 2;
-    grid-row: 7 / 8;
+    grid-column: 3;
+    grid-row: 4;
 }
 
 .strength {
-    grid-column: 1 / 2;
-    grid-row: 8 / 9;
+    grid-column: 4;
+    grid-row: 4;
 }
 
 .wisdom {
-    grid-column: 1 / 2;
-    grid-row: 9 / 10;
+    grid-column: 5;
+    grid-row: 4;
 }
+
+.proficiencies {
+    grid-column: 1;
+
+} */
