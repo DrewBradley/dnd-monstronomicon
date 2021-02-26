@@ -1,13 +1,28 @@
-header {
-  display: flex;
-  justify-content: space-around;
+header { 
   align-items: center;
   max-width: 900px;
-  height: 150px;
+  height: 20%;
   margin: auto;
   font-weight: 600;
   font-size: x-large;
+}
+
+.title {
+  display: flex;
   background-color: #800000;
+  justify-content: space-around;
+  font-family: 'Dokdo', sans-serif;
+  font-size: 2.5rem;
+  border-radius: 0 0 10px 10px;
+}
+
+.dragon {
+  height: 200px;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-around;
 }
 
 .search-field {
