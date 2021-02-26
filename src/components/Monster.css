@@ -82,12 +82,12 @@
 
 .actions {
     grid-column: 2 / 6;
-    grid-row: 12 / 20;
+    grid-row: 13 / 20;
 }
 
 .condition-immunities {
     grid-column: 2 / 4;
-    grid-row: 4 / 11;
+    grid-row: 4;
 }
 
 .charisma {
@@ -102,12 +102,17 @@
 
 .damage-immunities {
     grid-column: 4 / 6;
-    grid-row: 4 / 11;
+    grid-row: 4;
 }
 
 .damage-resistances {
     grid-column: 4 / 6;
-    grid-row: 6 / 11;
+    grid-row: 5;
+}
+
+.damage-vulnerabilities {
+    grid-column: 4 / 6;
+    grid-row: 6;
 }
 
 .dexterity {
