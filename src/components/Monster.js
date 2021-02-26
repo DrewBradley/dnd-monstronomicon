@@ -29,6 +29,16 @@ class Monster extends Component {
                     <div><p className="stat-detail">{CI.name}</p></div> :
                     <div><p className="stat-detail">CONDITION IMMUNITIES: </p></div>
             })
+            const DI = monster.damage_immunities.map(DI => {
+                return monster.damage_immunities ? 
+                    <div><p className="stat-detail">{DI}</p></div> :
+                    <div><p className="stat-detail">DAMAGE IMMUNITIES: </p></div>
+            })
+            const DR = monster.damage_resistances.map(DR => {
+                return monster.damage_resistances ? 
+                    <div><p className="stat-detail">{DR}</p></div> :
+                    <div><p className="stat-detail">DAMAGE RESISTANCES: </p></div>
+            })
             return (
                 <div className="monster-stats">
                     <p className="one-stat name">NAME: <span>{monster.name}</span></p>
@@ -43,7 +53,8 @@ class Monster extends Component {
                     <p className="one-stat charisma">CHA: <span>{monster.charisma}</span></p>
                     <p className="one-stat condition-immunities">CONDITION IMMUNITIES: <span>{CI}</span></p>
                     <p className="one-stat constitution">CON: <span>{monster.constitution}</span></p>
-                    <p className="one-stat damage-immunities">DAMAGE IMMUNITIES: <span>{CI}</span></p>
+                    <p className="one-stat damage-immunities">DAMAGE IMMUNITIES: <span>{DI}</span></p>
+                    <p className="one-stat damage-resistances">DAMAGE RESISTANCES: <span>{DR}</span></p>
                     <p className="one-stat dexterity">DEX: <span>{monster.dexterity}</span></p>
                     <p className="one-stat hit-dice">HIT DICE: <span>{monster.hit_dice}</span></p>
                     <p className="one-stat hit-points">HIT POINTS: <span>{monster.hit_points}</span></p>
