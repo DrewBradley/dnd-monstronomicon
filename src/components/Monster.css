@@ -70,3 +70,18 @@
     grid-column: 1 / 3;
     grid-row: 3;
 }
+/* 
+.add-button {
+    grid-column: 3;
+    margin: 0;
+    box-sizing: content-box;
+    height: 35px;
+    width: 200px;
+    border-radius: 10px;
+    border: 2px solid #ac9485;
+    color: #ac9485;
+}
+
+.add-btn:hover {
+    cursor: pointer;
+} */

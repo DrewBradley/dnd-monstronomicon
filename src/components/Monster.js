@@ -23,13 +23,15 @@ class Monster extends Component {
                     </div>
                 )
             })
-            const specialAbilities = monster.special_abilities.map(ability => {
-                return (
-                    <div>
-                        <p className="stat-detail">{ability.name}: {ability.desc}</p>
-                    </div>
-                )
-            })
+            if (monster.specialAbilities) {
+                var specialAbilities = monster.special_abilities.map(ability => {
+                    return (
+                        <div>
+                            <p className="stat-detail">{ability.name}: {ability.desc}</p>
+                        </div>
+                    )
+                })
+            }
             const proficiencies = monster.proficiencies.map(proficiency => {
                 return (
                     <div>
@@ -46,7 +48,7 @@ class Monster extends Component {
                     //         </div>
                     //     )
                     // })
-                    
+
             const CI = monster.condition_immunities.map(CI => {
                 return monster.condition_immunities ? 
                 <div><p className="stat-detail">{CI.name}</p></div> :
@@ -80,6 +82,9 @@ class Monster extends Component {
             }
             const legendary = monster.legendary_actions ? 
                 <p className="one-stat legendary-actions">LEGENDARY ACTIONS: <span>{legendaryActions}</span></p> : <p className="one-stat legendary-actions">LEGENDARY ACTIONS: <span></span></p>
+
+            const special = monster.special_abilities ? <p className="one-stat special-abilities">SPECIAL ABILITIES: <span>{specialAbilities}</span></p> : <p className="one-stat special-abilities">SPECIAL ABILITIES: </p>
+
 
             return (
                 <div className="monster-stats">
@@ -121,11 +126,11 @@ class Monster extends Component {
                     <div className="legendary">
                         {legendary}
                     </div>
-                    <p className="one-stat special-abilities">SPECIAL ABILITIES: <span>{specialAbilities}</span></p>
+                        {special}
                     
                     {/* <p className="one-stat senses">SENSES: <span>{senses}</span></p> */}
                     <br></br>
-                    <button>click to add to encounter</button>
+                    {/* <button className="add-button">click to add to encounter</button> */}
                 </div>
             )
         } else {
