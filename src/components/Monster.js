@@ -12,7 +12,6 @@ class Monster extends Component {
     
     render() {
         if (this.props.monster.url === this.props.location.state.url) {
-            console.log(this.props.monster)
             const monster = this.props.monster
             const subtype = monster.subtype ? 
                 <p className="one-stat subtype">SUBTYPE: <span>{monster.subtype}</span></p> : 
@@ -38,8 +37,8 @@ class Monster extends Component {
                     </div>
                 )
             })
-            // senses is an object ... of course
-            // speed is also an object.
+
+            // senses is an object ... of course. speed is also an object.
             // const senses = monster.senses.map(sense => {
                 //     return (
                     //         <div>
@@ -47,27 +46,28 @@ class Monster extends Component {
                     //         </div>
                     //     )
                     // })
-                    const CI = monster.condition_immunities.map(CI => {
-                        return monster.condition_immunities ? 
-                        <div><p className="stat-detail">{CI.name}</p></div> :
-                        <div><p className="stat-detail">CONDITION IMMUNITIES: </p></div>
-                    })
-                    const DI = monster.damage_immunities.map(DI => {
-                        return monster.damage_immunities ? 
-                        <div><p className="stat-detail">{DI}</p></div> :
-                        <div><p className="stat-detail">DAMAGE IMMUNITIES: </p></div>
-                    })
-                    const DR = monster.damage_resistances.map(DR => {
-                        return monster.damage_resistances ? 
-                        <div><p className="stat-detail">{DR}</p></div> :
-                        <div><p className="stat-detail">DAMAGE RESISTANCES: </p></div>
-                    })    
+                    
+            const CI = monster.condition_immunities.map(CI => {
+                return monster.condition_immunities ? 
+                <div><p className="stat-detail">{CI.name}</p></div> :
+                <div><p className="stat-detail">CONDITION IMMUNITIES: </p></div>
+            })
+            const DI = monster.damage_immunities.map(DI => {
+                return monster.damage_immunities ? 
+                <div><p className="stat-detail">{DI}</p></div> :
+                <div><p className="stat-detail">DAMAGE IMMUNITIES: </p></div>
+            })
+            const DR = monster.damage_resistances.map(DR => {
+                return monster.damage_resistances ? 
+                <div><p className="stat-detail">{DR}</p></div> :
+                <div><p className="stat-detail">DAMAGE RESISTANCES: </p></div>
+            })    
 
-                    const DV = monster.damage_vulnerabilities.map(DV => {
-                        return monster.damage_vulnerabilities ? 
-                        <div><p className="stat-detail">{DV}</p></div> :
-                        <div><p className="stat-detail">DAMAGE VULNERABILITIES: </p></div>
-                    })
+            const DV = monster.damage_vulnerabilities.map(DV => {
+                return monster.damage_vulnerabilities ? 
+                <div><p className="stat-detail">{DV}</p></div> :
+                <div><p className="stat-detail">DAMAGE VULNERABILITIES: </p></div>
+            })
 
             if (monster.legendary_actions) {
                 var legendaryActions = monster.legendary_actions.map(action => {
