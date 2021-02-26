@@ -15,6 +15,7 @@ body {
   font-family: 'Montserrat', sans-serif;
   background-color: #29190e;
   color: #e4d4c8;
+  box-sizing: border-box;
 }
 
 a {
