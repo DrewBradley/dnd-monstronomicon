@@ -21,7 +21,6 @@ class Search extends Component {
   }
 
   handleClick(monsterList, event) {
-    // event.preventDefault()
     this.props.searchMonster(monsterList, this.state.monsterName)
     this.clearInput()
   }
