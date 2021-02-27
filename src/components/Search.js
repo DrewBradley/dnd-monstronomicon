@@ -34,19 +34,21 @@ class Search extends Component {
     // searches the displayed list of monsters by name
     const monsterList = this.props.monsters
     return (
-      <div className="search-field">
-        <input 
-          type="text"
-          placeholder="Search by name"
-          name="search"
-          className="search-input"
-          value={this.state.monsterName}
-          onChange={this.handleChange}
-          ></input>
-        <button 
-          className="search-btn"
-          onClick={() => this.handleClick(monsterList)}
-          ><img className="dice" src={ dice } /></button>
+      <div className="nav-button">
+        <div className="search-field">
+          <input 
+            type="text"
+            placeholder="Search by name"
+            name="search"
+            className="search-input"
+            value={this.state.monsterName}
+            onChange={this.handleChange}
+            ></input>
+          <button 
+            className="search-btn"
+            onClick={() => this.handleClick(monsterList)}
+            ><img className="dice" src={ dice } alt="a d20"/></button>
+        </div>
       </div>
     )
   }

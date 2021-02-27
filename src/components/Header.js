@@ -9,19 +9,21 @@ import Rdragon from '../dragonR.svg'
 
 const Header = () => {
     return (
-        <header>
+        <header className="header">
             <div className="title">
-              <img className="dragon" src={ Ldragon }/>
+              <img className="dragon" src={ Ldragon } alt="a dragon"/>
               <Link to="/" className="home-button">
-                <h1>MONSTRONOMICON</h1>
+                <h1 className="app-name">MONSTRONOMICON</h1>
               </Link>
-              <img className="dragon" src={ Rdragon }/>
+              <img className="dragon" src={ Rdragon } alt="a dragon"/>
             </div>
             <div className="nav">
               <Search />
               <ShowAllMonsters />
               <Filter />
-              <Link to="/encounter" className="encounter-button">Encounter</Link>
+              <div className="nav-button">
+                <Link to="/encounter" className="encounter-button">Encounter</Link>
+              </div>
             </div>
         </header>
     )
