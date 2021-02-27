@@ -1,26 +1,25 @@
 .header { 
+  align-items: center;
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
   font-family: 'Montserrat', sans-serif;
-  width: 1200px;
-  height: 290px;
-  margin: auto;
-  font-weight: 600;
   font-size: x-large;
-  /* border: 1px solid yellow; */
-  box-sizing: border-box;
+  font-weight: 600;
+  height: 290px;
+  justify-content: center;
+  margin: auto;
+  width: 1200px;
 }
 
 .title {
-  display: flex;
-  justify-content: space-around;
   align-items: center;
-  font-family: 'Dokdo', sans-serif;
-  width: 1090px;
-  border-radius: 0 0 20px 20px;
   background-color: #800000;
+  border-radius: 0 0 20px 20px;
+  display: flex;
+  font-family: 'Dokdo', sans-serif;
+  justify-content: space-around;
+  width: 1090px;
 }
 
 .app-name {
@@ -42,8 +41,17 @@
 
 .nav-button {
   height: 50px;
-  width: 250px;
   margin: 0 .5em;
+  width: 250px;
+}
+
+.nav-button :hover {
+  cursor: pointer;
+}
+
+.nav-button :active {
+  background-color: #ac9485;
+  color: #29190e;
 }
 
 /* -----NAVIGATION----- */
@@ -51,112 +59,105 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   padding: .8em 0;
-  /* border: 1px solid green; */
 }
 
 /* -----SEARCH----- */
 .search-field {
-  height: 100%;
   display: flex;
-  margin: 0 2px 0 2px;
-  /* border: 1px solid pink; */
-  width: 100%;
   grid-column: 1;
+  height: 100%;
+  margin: 0 2px 0 2px;
+  width: 100%;
 }
 
 .search-input {
-  width: 100%;
-  padding: 0 0 0 10%;
-  border-radius: 10px 0 0 10px;
-  margin: 0;
   border: 2px solid #ac9485;
+  border-radius: 10px 0 0 10px;
   color: #ac9485;
+  margin: 0;
+  padding: 0 0 0 10%;
+  width: 100%;
+}
+
+.search-input {
+  cursor: text !important;
 }
 
 .search-btn {
-  margin: 0;
-  border: 2px solid #ac9485;
-  color: #ac9485;
-  border-radius: 0 10px 10px 0;
-  border-left: 0;
   background-color: #800000;
-}
-
-.search-btn:hover {
-  cursor: pointer;
+  border: 2px solid #ac9485;
+  border-left: 0;
+  border-radius: 0 10px 10px 0;
+  color: #ac9485;
+  margin: 0;
 }
 
 /* -----SHOW ALL----- */
 .show-all-btn {
-  grid-column: 2;
-  font-family: 'Montserrat', sans-serif;
-  height: 100%;
-  font-weight: 700;
-  border-radius: 10px;
-  border: 2px solid #ac9485;
-  margin: 0 2px 0 2px;
   background-color: #800000;
+  border: 2px solid #ac9485;
+  border-radius: 10px;
   color: #ac9485;
+  font-family: 'Montserrat', sans-serif;
   font-size: x-large;
-  /* border: 1px solid blue; */
+  font-weight: 700;
+  grid-column: 2;
+  height: 100%;
+  margin: 0 2px 0 2px;
   width: 100%;
-}
-
-.show-all-btn:hover {
-  cursor: pointer;
 }
 
 /* -----FILTER----- */
 .filter-form {
+  display: flex;
   grid-column: 3;
   height: 100%;
-  display: flex;
   margin: 0 2px 0 2px;
-  /* border: 1px solid orange; */
 }
 
 .filter-label {
-  width: 100%;
-  color: #ac9485;
-  display: flex;
   align-items: center;
-  border-radius: 10px 0 0 10px;
   background-color: #800000;
   border: 2px solid #ac9485;
+  border-radius: 10px 0 0 10px;
+  color: #ac9485;
+  display: flex;
+  font-size: medium;
+  justify-content: center;
+  width: 100%;
+}
+
+.filter-label {
+  cursor: default!important;
 }
 
 .filter-select{
-  margin: 0;
   border: 2px solid #ac9485;
   border-left: 0;
   border-right: 0;
 }
 
 .filter-button {
-  width: 45px;
-  border-radius: 0 10px 10px 0;
-  border-left: 0;
   background-color: #800000;
   border: 2px solid #ac9485;
-}
-
-.filter-button:hover {
-  cursor: pointer;
+  border-left: 0;
+  border-radius: 0 10px 10px 0;
+  width: 45px;
 }
 
 /* -----ENCOUNTER----- */
 .encounter-button {
+  align-items: center;
+  background-color: #800000;
+  border: 2px solid #ac9485;
+  border-radius: 10px;
+  color: #ac9485;
+  display: flex;
+  font-family: 'Montserrat', sans-serif;
+  font-size: x-large;
   grid-column: 4;
   height: 91%;
-  display: flex;
-  align-items: center;
   justify-content: center;
-  font-family: 'Montserrat', sans-serif;
-  border-radius: 10px;
-  border: 2px solid #ac9485;
   margin: 0 2px 0 2px;
-  background-color: #800000;
-  color: #ac9485;
   width: 98%;
-  font-size: x-large;
 }
