@@ -12,7 +12,6 @@ context('Actions', () => {
     cy.get('.filter-select').should('have.value', 'select')
     cy.get('.filter-button').should('exist')
     cy.get('.encounter-button').should('exist')
-    cy.get('.home-button').should('exist')
   })
 
   it('should display a list of monsters fetched from the API', () => {
