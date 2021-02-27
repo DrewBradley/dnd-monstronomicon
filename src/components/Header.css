@@ -1,3 +1,11 @@
+:root {
+  --lightest: #e4d4c8;
+  /* --light: #ac9485; */
+  /* --medium: #8e7161; */
+  --dark: #29190e;
+  --highlight: #800000;
+}
+
 .header { 
   align-items: center;
   box-sizing: border-box;
@@ -14,7 +22,7 @@
 
 .title {
   align-items: center;
-  background-color: #800000;
+  background-color: var(--highlight);
   border-radius: 0 0 20px 20px;
   display: flex;
   font-family: 'Dokdo', sans-serif;
@@ -23,10 +31,10 @@
 }
 
 .app-name {
-  font-size: 7.5vw;
+  font-size: 38px;
   margin: auto;
-  text-shadow: 5px 5px 2px #29190e;
-  transform: scaleY(1.5);
+  text-shadow: 5px 5px 2px var(--dark);
+  transform: scaleY(1.8);
 }
 
 .dragon {
@@ -50,8 +58,8 @@
 }
 
 .nav-button :active {
-  background-color: #ac9485;
-  color: #29190e;
+  background-color: var(--lightest);
+  color: var(--dark);
 }
 
 /* -----NAVIGATION----- */
@@ -71,33 +79,35 @@
 }
 
 .search-input {
-  border: 2px solid #ac9485;
+  background-color: var(--lightest);
+  border: 2px solid var(--lightest);
   border-radius: 10px 0 0 10px;
-  color: #ac9485;
+  cursor: text !important;
   margin: 0;
   padding: 0 0 0 10%;
   width: 100%;
 }
 
-.search-input {
-  cursor: text !important;
+::placeholder {
+  color: var(--dark);
+  font-size: medium;
 }
 
 .search-btn {
-  background-color: #800000;
-  border: 2px solid #ac9485;
+  background-color: var(--highlight);
+  border: 2px solid var(--lightest);
   border-left: 0;
   border-radius: 0 10px 10px 0;
-  color: #ac9485;
+  color: var(--lightest);
   margin: 0;
 }
 
 /* -----SHOW ALL----- */
 .show-all-btn {
-  background-color: #800000;
-  border: 2px solid #ac9485;
+  background-color: var(--highlight);
+  border: 2px solid var(--lightest);
   border-radius: 10px;
-  color: #ac9485;
+  color: var(--lightest);
   font-family: 'Montserrat', sans-serif;
   font-size: x-large;
   font-weight: 700;
@@ -117,29 +127,28 @@
 
 .filter-label {
   align-items: center;
-  background-color: #800000;
-  border: 2px solid #ac9485;
+  background-color: var(--highlight);
+  border: 2px solid var(--lightest);
   border-radius: 10px 0 0 10px;
-  color: #ac9485;
+  color: var(--lightest);
   display: flex;
   font-size: medium;
   justify-content: center;
   width: 100%;
-}
-
-.filter-label {
   cursor: default!important;
 }
 
 .filter-select{
-  border: 2px solid #ac9485;
+  background-color: var(--lightest);
+  border: 2px solid var(--lightest);
   border-left: 0;
   border-right: 0;
+  color: var(--dark);
 }
 
 .filter-button {
-  background-color: #800000;
-  border: 2px solid #ac9485;
+  background-color: var(--highlight);
+  border: 2px solid var(--lightest);
   border-left: 0;
   border-radius: 0 10px 10px 0;
   width: 45px;
@@ -148,10 +157,10 @@
 /* -----ENCOUNTER----- */
 .encounter-button {
   align-items: center;
-  background-color: #800000;
-  border: 2px solid #ac9485;
+  background-color: var(--highlight);
+  border: 2px solid var(--lightest);
   border-radius: 10px;
-  color: #ac9485;
+  color: var(--lightest);
   display: flex;
   font-family: 'Montserrat', sans-serif;
   font-size: x-large;
