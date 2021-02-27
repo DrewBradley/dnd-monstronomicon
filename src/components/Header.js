@@ -9,11 +9,11 @@ import Rdragon from '../dragonR.svg'
 
 const Header = () => {
     return (
-        <header>
+        <header className="header">
             <div className="title">
               <img className="dragon" src={ Ldragon }/>
               <Link to="/" className="home-button">
-                <h1>MONSTRONOMICON</h1>
+                <h1 className="app-name">MONSTRONOMICON</h1>
               </Link>
               <img className="dragon" src={ Rdragon }/>
             </div>

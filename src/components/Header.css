@@ -1,11 +1,12 @@
-header { 
+.header { 
   font-family: 'Montserrat', sans-serif;
   align-items: center;
-  max-width: 900px;
-  height: 20%;
+  width: 80vw;
+  height: 20vw;
   margin: auto;
   font-weight: 600;
-  font-size: x-large;
+  font-size: x-large;  
+  border: 1px solid yellow;
 }
 
 .title {
@@ -13,38 +14,42 @@ header {
   background-color: #800000;
   justify-content: space-around;
   font-family: 'Dokdo', sans-serif;
-  font-size: 2.5rem;
   border-radius: 0 0 10px 10px;
 }
 
+.app-name {
+  font-size: 7.5vw;
+  margin: auto;
+}
+
 .dragon {
-  height: 200px;
+  height: 15vw;
 }
 
 .nav {
-  display: flex;
-  padding: 10px;
-  justify-content: space-around;
-  height: 50px;
-}
-
-.search-field {
-  width: 25%;
-  height: 89%;
-  display: flex;
-  margin: 0 2px 0 2px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  padding: 5px;
+  height: 55px;
+  border: 1px solid green;
 }
 
 .dice {
-  height: 100%;
+  height: 25%;
+}
+
+.search-field {
+  box-sizing: content-box;
+  display: flex;
+  margin: 0 2px 0 2px;
+  height: 50px;
+  grid-area: 1 / 1 / 2 / 2;
 }
 
 .search-input,
 .search-btn {
   margin: 0;
-  box-sizing: content-box;
-  height: 100%;
-  border-radius: 10px 0 0 10px;
+  height: 50px;
   border: 2px solid #ac9485;
   color: #ac9485;
 }
@@ -54,8 +59,10 @@ header {
 }
 
 .search-input {
+  height: 50px;
   width: 100%;
-  padding-left: 10%;
+  padding: 0 0 0 10%;
+  border-radius: 10px 0 0 10px;
 }
 
 .search-btn {
@@ -65,48 +72,41 @@ header {
 }
 
 .show-all-btn {
+  grid-area: 1 / 2 / 2 / 3;
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
-  width: 25%;
   border-radius: 10px;
   border: 2px solid #ac9485;
-  box-sizing: content-box;
   margin: 0 2px 0 2px;
   background-color: #800000;
   color: #ac9485;
   font-size: x-large;
+  height: 50px;
 }
 
 .show-all-btn:hover {
   cursor: pointer;
 }
 
-.show-all-btn:disabled {
-  cursor: not-allowed;
-}
-
 .filter-form {
-  width: 25%;
+  grid-area: 1 / 3 / 2 / 4;
   display: flex;
   margin: 0 2px 0 2px;
-  align-items: center;
+  height: 50px;
 }
 
 .filter-label {
+  width: 100%;
   color: #ac9485;
   display: flex;
   align-items: center;
   border-radius: 10px 0 0 10px;
-  height: 100%;
-  box-sizing: border-box;
-  border-right: 0;
   background-color: #800000;
   border: 2px solid #ac9485;
 }
 
 .filter-select{
   margin: 0;
-  height: 100%;
   border: 2px solid #ac9485;
   border-left: 0;
   border-right: 0;
@@ -125,14 +125,15 @@ header {
 }
 
 .encounter-button {
+  height: 50px;
+  grid-area: 1 / 4 / 2 / 5;
   display: flex;
   align-items: center;
   justify-content: center;
   font-family: 'Montserrat', sans-serif;
-  width: 25%;
   border-radius: 10px;
   border: 2px solid #ac9485;
-  box-sizing: content-box;
+  /* box-sizing: content-box; */
   margin: 0 2px 0 2px;
   background-color: #800000;
   color: #ac9485;
