@@ -10,6 +10,7 @@ class Search extends Component {
       monsterName: ""
     }
     this.handleChange = this.handleChange.bind(this)
+    this.handleClick = this.handleClick.bind(this)
   }
 
   handleChange(event) {
@@ -19,9 +20,15 @@ class Search extends Component {
     })
   }
 
-  handleClick(monsterList) {
+  handleClick(monsterList, event) {
     this.props.searchMonster(monsterList, this.state.monsterName)
     this.clearInput()
+  }
+
+  checkEnter(monsterList, event) {
+    if (event.keyCode === 13) {
+      this.handleClick(monsterList)
+    }
   }
 
   clearInput() {
@@ -43,10 +50,12 @@ class Search extends Component {
             className="search-input"
             value={this.state.monsterName}
             onChange={this.handleChange}
+            onKeyDown={(event) => this.checkEnter(monsterList, event)}
             ></input>
           <button 
             className="search-btn"
-            onClick={() => this.handleClick(monsterList)}
+            type="submit"
+            onSubmit={(event) => this.handleClick(monsterList)}
             ><img className="dice" src={ dice } alt="a d20"/></button>
         </div>
       </div>
