@@ -1,12 +1,44 @@
-import React from 'react'
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { Link } from 'react-router-dom'
+import './Encounter.css'
 
-const Encounter = () => {
+class Encounter extends Component {
+  render() {
+    const encounterMonster = this.props.encounter.map((monster, i) => {
+      return (
+        <div key={i}>
+          <Link to={{
+            pathname: `/monster/${monster.monsterIndex}`,
+            state: {url: monster.monsterUrl}
+          }}>
+            <div className="encounter-tag">
+              {monster.monsterName}
+            </div>
+          </Link>
+        </div>
+      )
+    })
     return (
-        <div>Encounter</div>
+      <div className="encounter-list">
+          { encounterMonster }
+      </div>
     )
+  }
+
 }
 
-export default Encounter
+Encounter.propTypes = {
+  // getMonsters: PropTypes.func,
+  // monsters: PropTypes.array,
+}
+
+const mapStateToProps = (state) => ({
+  monsters: state.monsters.monsters,
+  encounter: state.encounter.encounter
+})
+
+export default connect(mapStateToProps, {  })(Encounter);
 
 // on a Monster's page, click a button
 // send that Monster's index and name to the store
