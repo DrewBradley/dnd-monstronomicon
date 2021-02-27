@@ -1,0 +1,38 @@
+.encounter-list {
+  margin: auto;
+  max-width: 900px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(67, 1fr);
+  grid-gap: 10px;
+  grid-auto-flow: column;
+}
+
+.encounter-tag {
+  display: flex;
+  height: 80%;
+  align-items: center;
+  justify-content: center;
+  text-shadow: 1px 1px #29190e;
+  background-color: #800000;
+  color: #e4d4c8;
+  border-radius: 5px;
+  padding: .3em;
+  border-bottom: #ac9485 solid 1px;
+  border-right: #ac9485 solid 1px;
+  transition: 200ms;
+}
+
+.encounter-tag:hover {
+  background-color: #680101;
+  color: #ac9485;
+  transform: scale(1.01);
+  transition: 200ms;
+}
+
+.encounter-tag:active {
+  border-top: #ac9485 solid 1px;
+  border-left: #ac9485 solid 1px;
+  border-bottom: none;
+  border-right: none;
+}

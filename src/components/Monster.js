@@ -19,6 +19,7 @@ class Monster extends Component {
         this.props.addToEncounter(
             this.props.monster.name, 
             this.props.monster.index,
+            this.props.location.state.url,
             this.props.encounter
         )
     }
@@ -94,6 +95,8 @@ class Monster extends Component {
 
             return (
                 <div className="monster-stats">
+                    <button className="add-button" onClick={this.clickHandler}>ADD TO ENCOUNTER</button>
+                    <br></br>
                     <div className="name-box">
                         <p className="one-stat name">NAME: <span>{monster.name}</span></p>
                         <p className="one-stat type">TYPE: <span>{monster.type}</span></p>
@@ -132,8 +135,7 @@ class Monster extends Component {
                     <div className="legendary"> {legendary}
                     </div>
                         {special}                   
-                    <br></br>
-                    <button className="add-button" onClick={this.clickHandler}>ADD TO ENCOUNTER</button>
+                    
                 </div>
             )
         } else {
