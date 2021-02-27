@@ -1,4 +1,3 @@
-/* eslint-disable no-undef */
 context('Actions', () => {
   beforeEach(() => {
     cy.visit('http://localhost:3000/')
@@ -25,9 +24,7 @@ context('Actions', () => {
       body: '../fixtures/monsters.json'
     })
     .get('div[class=monster-list]').find('a').should('have.length', 332)
-    .get('div[class=monster-tag]').parent().should('have.attr', 'href', '/monster/aboleth')
-    .get('div[class=monster-tag]').contains('Aboleth')
-
+    .get('a').contains('Aboleth').should('have.attr', 'href', '/monster/aboleth')
   })
 
   it('should search by monster name', () => {
