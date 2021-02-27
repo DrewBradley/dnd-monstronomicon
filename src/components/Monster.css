@@ -24,7 +24,7 @@
 
 .stat-detail {
     background-color: var(--dark);
-    border-radius: 10px;
+    border-radius: 5px;
     box-shadow: 1px 1px 3px var(--lightest), -3px -3px 5px black;
     color: var(--lightest);
     font-size: small;
@@ -35,7 +35,7 @@
 
 .one-stat {
     background-color: var(--highlight);
-    border-radius: 10px;
+    border-radius: 5px;
     box-shadow: -1px -1px 3px var(--light),
     3px 3px 5px var(--dark);
     color: var(--lightest);
