@@ -27,70 +27,70 @@ class Monster extends Component {
         if (this.props.monster.url === this.props.location.state.url) {
             const monster = this.props.monster
             const subtype = monster.subtype ? 
-                <p className="one-stat subtype">SUBTYPE: <span>{monster.subtype}</span></p> : 
-                <p className="one-stat subtype">SUBTYPE: </p>
-            const actions = monster.actions.map(action => {
+                <div className="one-stat subtype">SUBTYPE: <span>{monster.subtype}</span></div> : 
+                <div className="one-stat subtype">SUBTYPE: </div>
+            const actions = monster.actions.map((action, i) => {
                 return (
-                    <>
-                        <p className="stat-detail">{action.name}: {action.desc}</p>
-                    </>
+                    <div key={i}>
+                        <div className="stat-detail">{action.name}: {action.desc}</div>
+                    </div>
                 )
             })
             if (monster.specialAbilities) {
-                var specialAbilities = monster.special_abilities.map(ability => {
+                var specialAbilities = monster.special_abilities.map((ability, i) => {
                     return (
-                        <div>
+                        <div key={i}>
                             <p className="stat-detail">{ability.name}: {ability.desc}</p>
                         </div>
                     )
                 })
             }
-            const proficiencies = monster.proficiencies.map(proficiency => {
+            const proficiencies = monster.proficiencies.map((proficiency, i) => {
                 return (
-                    <div>
+                    <div key={i}>
                         <p className="stat-detail">{proficiency.proficiency.name}: {proficiency.value}</p>
                     </div>
                 )
             })
 
-            const CI = monster.condition_immunities.map(CI => {
+            const CI = monster.condition_immunities.map((CI, i) => {
                 return monster.condition_immunities ? 
-                <div><p className="stat-detail">{CI.name}</p></div> :
+                <div key={i}><p className="stat-detail">{CI.name}</p></div> :
                 <div><p className="stat-detail">CONDITION IMMUNITIES: </p></div>
             })
-            const DI = monster.damage_immunities.map(DI => {
+            const DI = monster.damage_immunities.map((DI, i) => {
                 return monster.damage_immunities ? 
-                <div><p className="stat-detail">{DI}</p></div> :
+                <div key={i}><p className="stat-detail">{DI}</p></div> :
                 <div><p className="stat-detail">DAMAGE IMMUNITIES: </p></div>
             })
-            const DR = monster.damage_resistances.map(DR => {
+            const DR = monster.damage_resistances.map((DR, i) => {
                 return monster.damage_resistances ? 
-                <div><p className="stat-detail">{DR}</p></div> :
+                <div key={i}><p className="stat-detail">{DR}</p></div> :
                 <div><p className="stat-detail">DAMAGE RESISTANCES: </p></div>
             })    
 
-            const DV = monster.damage_vulnerabilities.map(DV => {
+            const DV = monster.damage_vulnerabilities.map((DV, i) => {
                 return monster.damage_vulnerabilities ? 
-                <div><p className="stat-detail">{DV}</p></div> :
+                <div key={i}><p className="stat-detail">{DV}</p></div> :
                 <div><p className="stat-detail">DAMAGE VULNERABILITIES: </p></div>
             })
 
             if (monster.legendary_actions) {
-                var legendaryActions = monster.legendary_actions.map(action => {
+                var legendaryActions = monster.legendary_actions.map((action, i) => {
                     return (
-                        <div>
-                            <p className="stat-detail">{action.name}: {action.desc}</p>
+                        <div key={i}>
+                            <div className="stat-detail">{action.name}: {action.desc}</div>
                         </div>
                     )
                 })
             }
             const legendary = monster.legendary_actions ? 
-                <p className="one-stat legendary-actions">LEGENDARY ACTIONS: <span>{legendaryActions}</span></p> :
-                <p className="one-stat legendary-actions">LEGENDARY ACTIONS: <span></span></p>
+                <div className="one-stat legendary-actions">LEGENDARY ACTIONS: {legendaryActions}</div> :
+                <div className="one-stat legendary-actions">LEGENDARY ACTIONS: </div>
 
             const special = monster.special_abilities ? 
-                <p className="one-stat special-abilities">SPECIAL ABILITIES: <span>{specialAbilities}</span></p> :
-                <p className="one-stat special-abilities">SPECIAL ABILITIES: </p>
+                <div className="one-stat special-abilities">SPECIAL ABILITIES: {specialAbilities}</div> :
+                <div className="one-stat special-abilities">SPECIAL ABILITIES: </div>
 
             return (
                 <div className="monster-stats">
@@ -109,7 +109,7 @@ class Monster extends Component {
                         <p className="one-stat hit-dice">HIT DICE: <span>{monster.hit_dice}</span></p>
                         <p className="one-stat hit-points">HIT POINTS: <span>{monster.hit_points}</span></p>
                         <p className="one-stat armor-class">ARMOR CLASS: <span>{monster.armor_class}</span></p>
-                        <p className="one-stat proficiencies">PROFICIENCIES: <span>{proficiencies}</span></p>
+                        <div className="one-stat proficiencies">PROFICIENCIES: {proficiencies}</div>
                     </div>
 
                     <div className="modifier-box">
@@ -122,13 +122,13 @@ class Monster extends Component {
                     </div>
 
                     <div className="immunities-box">
-                        <p className="one-stat damage-vulnerabilities">DAMAGE VULNERABILITIES: <span>{DV}</span></p>
-                        <p className="one-stat damage-resistances">DAMAGE RESISTANCES: <span>{DR}</span></p>
-                        <p className="one-stat condition-immunities">CONDITION IMMUNITIES: <span>{CI}</span></p>
-                        <p className="one-stat damage-immunities">DAMAGE IMMUNITIES: <span>{DI}</span></p>
+                        <div className="one-stat damage-vulnerabilities">DAMAGE VULNERABILITIES: {DV}</div>
+                        <div className="one-stat damage-resistances">DAMAGE RESISTANCES: {DR}</div>
+                        <div className="one-stat condition-immunities">CONDITION IMMUNITIES: {CI}</div>
+                        <div className="one-stat damage-immunities">DAMAGE IMMUNITIES: {DI}</div>
                     </div>
                     
-                    <p className="one-stat actions">ACTIONS: <span>{actions}</span></p>
+                    <div className="one-stat actions">ACTIONS: {actions}</div>
                     <div className="legendary"> {legendary}
                     </div>
                         {special}                   
