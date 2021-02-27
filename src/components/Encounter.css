@@ -23,14 +23,14 @@
   transition: 200ms;
 }
 
-.monster-tag:hover {
+.encounter-tag:hover {
   background-color: #680101;
   color: #ac9485;
   transform: scale(1.01);
   transition: 200ms;
 }
 
-.monster-tag:active {
+.encounter-tag:active {
   border-top: #ac9485 solid 1px;
   border-left: #ac9485 solid 1px;
   border-bottom: none;
