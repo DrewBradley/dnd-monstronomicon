@@ -5,9 +5,22 @@ import PropTypes from 'prop-types';
 import './Monster.css'
 
 class Monster extends Component {
+    constructor() {
+        super()
+        this.state = {}
+    this.clickHandler = this.clickHandler.bind(this)
+    }
 
     componentDidMount() {
         this.props.getOneMonster(this.props.location.state.url)
+    }
+
+    clickHandler() {
+        this.props.addToEncounter(
+            this.props.monster.name, 
+            this.props.monster.index,
+            this.props.encounter
+        )
     }
 
     render() {
@@ -18,9 +31,9 @@ class Monster extends Component {
                 <p className="one-stat subtype">SUBTYPE: </p>
             const actions = monster.actions.map(action => {
                 return (
-                    <div>
+                    <>
                         <p className="stat-detail">{action.name}: {action.desc}</p>
-                    </div>
+                    </>
                 )
             })
             if (monster.specialAbilities) {
@@ -39,15 +52,6 @@ class Monster extends Component {
                     </div>
                 )
             })
-
-            // senses is an object ... of course. speed is also an object.
-            // const senses = monster.senses.map(sense => {
-                //     return (
-                    //         <div>
-                    //             <p className="stat-detail">{sense}</p>
-                    //         </div>
-                    //     )
-                    // })
 
             const CI = monster.condition_immunities.map(CI => {
                 return monster.condition_immunities ? 
@@ -81,10 +85,12 @@ class Monster extends Component {
                 })
             }
             const legendary = monster.legendary_actions ? 
-                <p className="one-stat legendary-actions">LEGENDARY ACTIONS: <span>{legendaryActions}</span></p> : <p className="one-stat legendary-actions">LEGENDARY ACTIONS: <span></span></p>
+                <p className="one-stat legendary-actions">LEGENDARY ACTIONS: <span>{legendaryActions}</span></p> :
+                <p className="one-stat legendary-actions">LEGENDARY ACTIONS: <span></span></p>
 
-            const special = monster.special_abilities ? <p className="one-stat special-abilities">SPECIAL ABILITIES: <span>{specialAbilities}</span></p> : <p className="one-stat special-abilities">SPECIAL ABILITIES: </p>
-
+            const special = monster.special_abilities ? 
+                <p className="one-stat special-abilities">SPECIAL ABILITIES: <span>{specialAbilities}</span></p> :
+                <p className="one-stat special-abilities">SPECIAL ABILITIES: </p>
 
             return (
                 <div className="monster-stats">
@@ -123,24 +129,11 @@ class Monster extends Component {
                     </div>
                     
                     <p className="one-stat actions">ACTIONS: <span>{actions}</span></p>
-                    <div className="legendary">
-                        {legendary}
+                    <div className="legendary"> {legendary}
                     </div>
-                        {special}
-                    
-                    {/* <p className="one-stat senses">SENSES: <span>{senses}</span></p> */}
+                        {special}                   
                     <br></br>
-                    <button>click to add to encounter</button>
-
-                    <div className="legendary">
-                        {legendary}
-                    </div>
-
-                    {special}
-                    
-                    {/* <p className="one-stat senses">SENSES: <span>{senses}</span></p> */}
-                    <br></br>
-                    <button className="add-button" onClick={this.props.addToEncounter}>ADD TO ENCOUNTER</button>
+                    <button className="add-button" onClick={this.clickHandler}>ADD TO ENCOUNTER</button>
                 </div>
             )
         } else {
@@ -152,11 +145,13 @@ class Monster extends Component {
 Monster.propTypes = {
   getOneMonster: PropTypes.func.isRequired,
   location: PropTypes.object.isRequired,
-  monster: PropTypes.object.isRequired
+  monster: PropTypes.object.isRequired,
+  encounter: PropTypes.array.isRequired
 }
 
 const mapStateToProps = (state) => ({
-    monster: state.monsters.monster
+    monster: state.monsters.monster,
+    encounter: state.encounter.encounter
 })
 
 export default connect(mapStateToProps, { getOneMonster, addToEncounter })(Monster)

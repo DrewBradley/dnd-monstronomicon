@@ -42,11 +42,13 @@ export const searchMonster = (monsterList, monsterName) => dispatch => {
     })
 }
 
-export const addToEncounter = () => dispatch => {
-  console.log('made it to actions')
-  const encounter = ['Aboleth']
+export const addToEncounter = (monsterName, monsterIndex, encounter) => dispatch => {
+  console.log(monsterName)
+  console.log(monsterIndex)
+  encounter.push({monsterName, monsterIndex})
   dispatch({
-        type: ADD_TO_ENCOUNTER,
-        payload: encounter
-    })
+    type: ADD_TO_ENCOUNTER,
+    payload: encounter
+  })
+  console.log(encounter)
 }
