@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import ReactDOM from 'react-dom'
 import { searchMonster } from '../actions/actions'
 import { connect } from 'react-redux'
 
@@ -8,7 +9,8 @@ class ShowAllMonsters extends Component {
     return(
       <button 
         className="show-all-btn"
-        onClick={() => this.props.searchMonster(monsterList)}>
+        onClick={() => this.props.searchMonster
+        (monsterList)}>
         Show All
       </button>
     )

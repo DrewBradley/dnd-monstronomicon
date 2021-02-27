@@ -10,6 +10,7 @@
 
 .monster-tag {
   display: flex;
+  height: 80%;
   align-items: center;
   justify-content: center;
   text-shadow: 1px 1px #29190e;
@@ -24,7 +25,7 @@
 
 .monster-tag:hover {
   background-color: #680101;
-  color: #29190e;
+  color: #ac9485;
   transform: scale(1.01);
   transition: 200ms;
 }

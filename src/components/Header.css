@@ -81,6 +81,10 @@ header {
   cursor: pointer;
 }
 
+.show-all-btn:disabled {
+  cursor: not-allowed;
+}
+
 .filter-form {
   width: 25%;
   display: flex;
