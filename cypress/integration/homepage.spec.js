@@ -12,7 +12,6 @@ context('Actions', () => {
     cy.get('.filter-select').should('have.value', 'select')
     cy.get('.filter-button').should('exist')
     cy.get('.encounter-button').should('exist')
-    cy.get('.home-button').should('exist')
   })
 
   it('should display a list of monsters fetched from the API', () => {
@@ -25,7 +24,9 @@ context('Actions', () => {
       body: '../fixtures/monsters.json'
     })
     .get('div[class=monster-list]').find('a').should('have.length', 332)
-    .get('a').contains('Aboleth').should('have.attr', 'href', '/monster/aboleth')
+    .get('div[class=monster-tag]').parent().should('have.attr', 'href', '/monster/aboleth')
+    .get('div[class=monster-tag]').contains('Aboleth')
+
   })
 
   it('should search by monster name', () => {
