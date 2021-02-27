@@ -41,13 +41,15 @@ class Filter extends Component {
             })
 
         return (
-            <form className="filter-form" onChange={this.handleChange}>
-            <label className="filter-label">Challenge Rating</label>
-                <select className="filter-select">
-                    {opts}
-                </select>
-                <button className="filter-button" onClick={this.handleClick}><img className="dice" src={ dice } /></button>
-            </form>
+            <div className="nav-button">
+                <form className="filter-form" onChange={this.handleChange}>
+                <label className="filter-label">Challenge Rating</label>
+                    <select className="filter-select">
+                        {opts}
+                    </select>
+                    <button className="filter-button" onClick={this.handleClick}><img className="dice" src={ dice } /></button>
+                </form>
+            </div>
         )
     }
 }
