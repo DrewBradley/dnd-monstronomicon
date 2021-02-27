@@ -47,7 +47,7 @@ class Filter extends Component {
                     <select className="filter-select">
                         {opts}
                     </select>
-                    <button className="filter-button" onClick={this.handleClick}><img className="dice" src={ dice } /></button>
+                    <button className="filter-button" onClick={this.handleClick}><img className="dice" src={ dice } alt="a d20"/></button>
                 </form>
             </div>
         )
