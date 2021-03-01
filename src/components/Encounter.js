@@ -16,7 +16,7 @@ class Encounter extends Component {
               {monster.monsterName} 
             </div>
           </Link>
-          <button class="delete-button" onClick={() => console.log("BYE BYE BYE")}>X</button>
+          <button class="delete-button" onClick={() => console.log("BYE BYE BYE")}>X<span class="delete-tooltip">remove monster?</span></button>
         </div>
       )
     })

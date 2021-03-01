@@ -58,3 +58,28 @@
   border-bottom: none;
   border-right: none;
 }
+
+.delete-button:hover {
+  background-color: #680101;
+  color: #ac9485;
+  transform: scale(1.01);
+  transition: 200ms;
+}
+
+.delete-button .delete-tooltip {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  top: 10px;
+  left: 100%;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+}
+
+.delete-button:hover .delete-tooltip {
+  visibility: visible;
+}
