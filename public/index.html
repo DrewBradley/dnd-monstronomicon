@@ -10,6 +10,7 @@
       content="Web site created using create-react-app"
     />
     <link rel="manifest" href="./manifest/manifest.json">
+    <link rel="apple-touch-icon" href="./manifest/icon-192x192.png">
     <title>Monstronomicon</title>
   </head>
   <body>
@@ -26,11 +27,13 @@
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
     <script>
-      if (!navigator.serviceWorker.controller) {
-          navigator.serviceWorker.register("monstronomicon-sw.js").then(function(reg) {
-              console.log("Service worker has been registered for scope: " + reg.scope);
-          });
+      // Check that service workers are supported
+      if ('serviceWorker' in navigator) {
+        // Use the window load event to keep the page load performant
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/service-worker.js');
+        });
       }
-     </script>
+      </script>
   </body>
 </html>

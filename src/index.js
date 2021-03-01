@@ -5,7 +5,7 @@ import { Provider } from 'react-redux'
 import './index.css';
 import App from './components/App';
 import store from './store'
-import * as serviceWorker from './serviceWorker';
+import * as serviceWorker from './monstronomicon-sw';
 
 ReactDOM.render(
   <Provider store={store}>
