@@ -12,4 +12,5 @@ Users can search by Challenge Rating.<br>
 ![Search by CR](https://media.giphy.com/media/Bm6xDW6LGmF1HkRik7/giphy.gif)<br>
 Users can search by Monster Name.<br>
 ![Search by Name](https://media.giphy.com/media/lchAbHkdmBLned0yin/giphy.gif)<br>
+![Mobile View](https://media.giphy.com/media/92FTSkmqEELeGNumeo/giphy.gif)
 
