@@ -44,9 +44,26 @@
 }
 
 .monster-tag:active {
-  background-color: var(--lightest);
-  box-shadow: -1px -1px 3px var(--dark),
-    3px 3px 5px var(--light) inset;
-  color: var(--dark);
-  outline: none;
+  border-top: #ac9485 solid 1px;
+  border-left: #ac9485 solid 1px;
+  border-bottom: none;
+  border-right: none;
 }
+
+@media only screen and (max-width: 500px) {
+  .monster-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+  }
+
+  .monster-tag {
+    display: flex;
+    font-size: large;
+    font-weight: 500;
+    height: 25px;
+    width: 300px;
+  }
+} 
