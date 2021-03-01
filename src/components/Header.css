@@ -1,7 +1,7 @@
 :root {
   --lightest: #e4d4c8;
-  /* --light: #ac9485; */
-  /* --medium: #8e7161; */
+  --light: #ac9485;
+  --medium: #8e7161;
   --dark: #29190e;
   --highlight: #800000;
 }
@@ -84,8 +84,9 @@ h1 {
 
 .search-input {
   background-color: var(--lightest);
-  border: 2px solid var(--lightest);
+  border: 2px solid var(--light);
   border-radius: 10px 0 0 10px;
+  border-right: 0;
   cursor: text !important;
   margin: 0;
   padding: 0 0 0 10%;
@@ -99,7 +100,7 @@ h1 {
 
 .search-btn {
   background-color: var(--highlight);
-  border: 2px solid var(--lightest);
+  border: 2px solid var(--light);
   border-left: 0;
   border-radius: 0 10px 10px 0;
   color: var(--lightest);
@@ -111,7 +112,7 @@ h1 {
 /* -----SHOW ALL----- */
 .show-all-btn {
   background-color: var(--highlight);
-  border: 2px solid var(--lightest);
+  border: 2px solid var(--light);
   border-radius: 10px;
   color: var(--lightest);
   font-family: 'Montserrat', sans-serif;
@@ -134,8 +135,9 @@ h1 {
 .filter-label {
   align-items: center;
   background-color: var(--highlight);
-  border: 2px solid var(--lightest);
+  border: 2px solid var(--light);
   border-radius: 10px 0 0 10px;
+  border-right: 0;
   color: var(--lightest);
   display: flex;
   font-size: medium;
@@ -145,16 +147,18 @@ h1 {
 }
 
 .filter-select{
+  align-self: center;
   background-color: var(--lightest);
-  border: 2px solid var(--lightest);
+  border-bottom: 2px solid var(--light);
   border-left: 0;
   border-right: 0;
   color: var(--dark);
+  height: 99%;
 }
 
 .filter-button {
   background-color: var(--highlight);
-  border: 2px solid var(--lightest);
+  border: 2px solid var(--light);
   border-left: 0;
   border-radius: 0 10px 10px 0;
   width: 45px;
@@ -164,7 +168,7 @@ h1 {
 .encounter-button {
   align-items: center;
   background-color: var(--highlight);
-  border: 2px solid var(--lightest);
+  border: 2px solid var(--light);
   border-radius: 10px;
   color: var(--lightest);
   display: flex;
@@ -182,7 +186,7 @@ h1 {
     font-size: medium;
     font-weight: 400;
     height: 200px;
-    width: 480px;
+    width: 95%;
   }
   
   .title {
@@ -192,45 +196,57 @@ h1 {
   }
   
   .app-name {
-    font-size: 18px;
+    font-size: 15.5px;
     text-shadow: 2px 2px 1px var(--dark);
-    width: 100%;
     height: 50%;
   }
-
+  
   .dragon {
-    height: 80px;
+    height: 70px;
   }
   
   .nav {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
     gap: .8em;
-    width: 100%;
+    width: 400px;
   }
-
+  
   .nav-button {
     height: 35px;
-    margin: 0 .3em;
-    width: 200px;
+    width: 170px;
     justify-self: center;
     align-self: center;
   }
 
   /* -----SEARCH----- */
+  ::placeholder {
+    font-size: 12.5px;
+  }
+
   .search-btn {
     height: 35px;
   }
 
   /* -----SHOW ALL----- */
   .show-all-btn {
-    font-size: medium;
+    font-size: 16px;
     font-weight: 500;
   }
 
   /* -----FILTER----- */
+  .filter-form {
+    width: 100%;
+  }
+
   .filter-label {
-    font-size: small;
+    font-size: 12.5px;
+    width: 66%;
+  }
+  
+  .filter-select {
+    width: 34%;
+    border: none;
   }
 
    .filter-button {
@@ -239,6 +255,6 @@ h1 {
 
   /* -----ENCOUNTER----- */
   .encounter-button {
-    font-size: large;
+    font-size: 16px;
   }
 }

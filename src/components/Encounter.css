@@ -47,7 +47,7 @@
 .encounter-tag:active {
   background-color: var(--lightest);
   box-shadow: -1px -1px 3px var(--dark),
-  3px 3px 5px var(--light) inset;
+    3px 3px 5px var(--light) inset;
   color: var(--dark);
   outline: none;
 }
@@ -63,7 +63,7 @@
   background-color: var(--highlight);
   border-radius: 5px;
   box-shadow: -1px -1px 3px var(--light),
-  3px 3px 5px var(--dark);
+    3px 3px 5px var(--dark);
   color: var(--lightest);
   display: flex;
   font-size: medium;
@@ -78,10 +78,10 @@
 
 .delete-button:active {
   background-color: var(--lightest);
-  color: var(--dark);
-  outline: none;
   box-shadow: -1px -1px 3px var(--dark),
     3px 3px 5px var(--light) inset;
+  color: var(--dark);
+  outline: none;
 }
 
 .delete-button:hover {
@@ -114,35 +114,34 @@
 
 @media only screen and (max-width: 500px) {
   .encounter-list {
+    align-items: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    width: 400px;
   }
 
   .encounter-element {
-    width: 400px;
+    width: 90%;
   }
 
   .encounter-tag {
-    font-size: large;
-    height: 25px;
-    width: 320px;
     box-shadow: -1px -1px 3px var(--light),
       3px 3px 5px var(--dark);
+    font-size: large;
+    height: 25px;
+    width: 90%;
   }
 
   .delete-button {
-    font-size: medium;
-    height: 35px;
-    margin: .3em;
-    width: 35px;
-    position: relative;
-    left: 25px;
     border: none;
     box-shadow: -1px -1px 3px var(--light),
       3px 3px 5px var(--dark);
+    height: 35px;
+    font-size: medium;
+    left: 25px;
+    margin: .3em;
+    position: relative;
+    width: 50%;
   }
 
   .delete-button:hover .delete-tooltip {

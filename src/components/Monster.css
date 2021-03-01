@@ -121,18 +121,26 @@
 @media only screen and (max-width: 500px) {
     .monster-stats {
         display: grid;
-        grid-template-columns: 1fr;
-        margin: 1em auto 2em auto;
-        width: 380px;
-        padding: 1em 2.5em;
+        gap: .7em;
+        grid-template-columns: 1fr 1fr;
+        height: auto;
+        padding: .5em;
         text-align: left;
-        gap: .5em;
+        width: 80%;
+    }
+
+    .one-stat {
+        align-self: center;
+        justify-self: center;
+        margin: .3em auto;
+        width: 90%;
     }
 
     .stat-detail {
         box-shadow: 1px 1px 3px var(--lightest), -2px -2px 3px black;
         font-size: smaller;
         line-height: 1.5;
+        width: 85%;
     }
 
     .name-box {
@@ -169,6 +177,7 @@
         grid-column: 1 / 3;
         grid-row: 7;
     }
+
     .add-button {
         grid-column: 1 / 3;
         grid-row: 1;

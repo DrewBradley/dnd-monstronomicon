@@ -29,7 +29,7 @@ class Monster extends Component {
             const monster = this.props.monster
             const subtype = monster.subtype ? 
                 <div className="one-stat subtype">SUBTYPE: <span>{monster.subtype}</span></div> : 
-                <div className="one-stat subtype">SUBTYPE: </div>
+                <div className="one-stat subtype">SUBTYPE: n/a</div>
             
             if (monster.specialAbilities) {
                 var specialAbilities = monster.special_abilities.map((ability, i) => {
@@ -51,30 +51,30 @@ class Monster extends Component {
             const CI = monster.condition_immunities.map((CI, i) => {
                 return monster.condition_immunities ? 
                 <div key={i}><p className="stat-detail">{CI.name}</p></div> :
-                <div><p className="stat-detail">CONDITION IMMUNITIES: </p></div>
+                <div><p className="stat-detail">CONDITION IMMUNITIES: n/a</p></div>
             })
             const DI = monster.damage_immunities.map((DI, i) => {
                 return monster.damage_immunities ? 
                 <div key={i}><p className="stat-detail">{DI}</p></div> :
-                <div><p className="stat-detail">DAMAGE IMMUNITIES: </p></div>
+                <div><p className="stat-detail">DAMAGE IMMUNITIES: n/a</p></div>
             })
             const DR = monster.damage_resistances.map((DR, i) => {
                 return monster.damage_resistances ? 
                 <div key={i}><p className="stat-detail">{DR}</p></div> :
-                <div><p className="stat-detail">DAMAGE RESISTANCES: </p></div>
+                <div><p className="stat-detail">DAMAGE RESISTANCES: n/a</p></div>
             })    
             const DV = monster.damage_vulnerabilities.map((DV, i) => {
                 return monster.damage_vulnerabilities ? 
                 <div key={i}><p className="stat-detail">{DV}</p></div> :
-                <div><p className="stat-detail">DAMAGE VULNERABILITIES: </p></div>
+                <div><p className="stat-detail">DAMAGE VULNERABILITIES: n/a</p></div>
             })
 
             if (monster.actions) {
                 var actions = monster.actions.map((action, i) => {
                     return (
                         <div key={i}>
-                        <div className="stat-detail">{action.name}: {action.desc}</div>
-                    </div>
+                            <div className="stat-detail">{action.name}: {action.desc}</div>
+                        </div>
                     )
                 })
             }
@@ -89,11 +89,11 @@ class Monster extends Component {
             }
             const legendary = monster.legendary_actions ? 
                 <div className="one-stat legendary-actions">LEGENDARY ACTIONS: {legendaryActions}</div> :
-                <div className="one-stat legendary-actions">LEGENDARY ACTIONS: </div>
+                <div className="one-stat legendary-actions">LEGENDARY ACTIONS: n/a</div>
 
             const special = monster.special_abilities ? 
-                <div className="one-stat special-abilities">SPECIAL ABILITIES: {specialAbilities}</div> :
-                <div className="one-stat special-abilities">SPECIAL ABILITIES: </div>
+                <div className="one-stat special-abilities">SPECIAL ABILITIES: n/a</div> :
+                <div className="one-stat special-abilities">SPECIAL ABILITIES: {specialAbilities}</div> 
 
             return (
                 <div className="monster-stats">
