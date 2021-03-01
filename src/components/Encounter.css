@@ -111,3 +111,41 @@
 .delete-button:hover .delete-tooltip {
   visibility: visible;
 }
+
+@media only screen and (max-width: 500px) {
+  .encounter-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+  }
+
+  .encounter-element {
+    width: 400px;
+  }
+
+  .encounter-tag {
+    font-size: large;
+    height: 25px;
+    width: 320px;
+    box-shadow: -1px -1px 3px var(--light),
+      3px 3px 5px var(--dark);
+  }
+
+  .delete-button {
+    font-size: medium;
+    height: 35px;
+    margin: .3em;
+    width: 35px;
+    position: relative;
+    left: 25px;
+    border: none;
+    box-shadow: -1px -1px 3px var(--light),
+      3px 3px 5px var(--dark);
+  }
+
+  .delete-button:hover .delete-tooltip {
+    visibility: hidden;
+  } 
+}
