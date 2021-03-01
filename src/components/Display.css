@@ -36,3 +36,11 @@
   border-bottom: none;
   border-right: none;
 }
+
+/* @media only screen and (max-width: 500px) {
+  .monster-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  background-color: lightblue;
+  }
+} */
