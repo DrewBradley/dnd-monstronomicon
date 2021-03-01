@@ -7,9 +7,16 @@ import { removeFromEncounter } from '../actions/actions'
 
 class Encounter extends Component {
   render() {
-    const encounterMonster = this.props.encounter.map((monster, i) => {
+    if(!this.props.encounter.length) {
       return (
-        <div key={i} className="encounter-element">
+        <h2>
+          You have no monsters in your encounter.
+        </h2>
+      )
+    } else {  
+      const encounterMonster = this.props.encounter.map((monster, i) => {
+        return (
+          <div key={i} className="encounter-element">
           <Link to={{
             pathname: `/monster/${monster.monsterIndex}`,
             state: {url: monster.monsterUrl}
@@ -28,6 +35,7 @@ class Encounter extends Component {
       </div>
     )
   }
+}
 
 }
 
