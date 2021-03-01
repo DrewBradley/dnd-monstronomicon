@@ -7,15 +7,16 @@ class Encounter extends Component {
   render() {
     const encounterMonster = this.props.encounter.map((monster, i) => {
       return (
-        <div key={i}>
+        <div key={i} className="encounter-element">
           <Link to={{
             pathname: `/monster/${monster.monsterIndex}`,
             state: {url: monster.monsterUrl}
           }}>
             <div className="encounter-tag">
-              {monster.monsterName}
+              {monster.monsterName} 
             </div>
           </Link>
+          <button class="delete-button" onClick={() => console.log("BYE BYE BYE")}>X</button>
         </div>
       )
     })

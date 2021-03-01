@@ -36,3 +36,25 @@
   border-bottom: none;
   border-right: none;
 }
+
+.encounter-element {
+  display: grid;
+  grid-template-columns: 80% 20%;
+}
+
+.delete-button {
+  text-shadow: 1px 1px #29190e;
+  background-color: #800000;
+  color: #e4d4c8;
+  border-radius: 5px;
+  border-bottom: #ac9485 solid 1px;
+  border-right: #ac9485 solid 1px;
+  transition: 200ms;
+}
+
+.delete-button:active {
+  border-top: #ac9485 solid 1px;
+  border-left: #ac9485 solid 1px;
+  border-bottom: none;
+  border-right: none;
+}
