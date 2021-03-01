@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
+import { connect } from 'react-redux'
 import Search from './Search'
 import Filter from './Filter'
 import ShowAllMonsters from './ShowAllMonsters'
@@ -7,9 +8,18 @@ import './Header.css'
 import Ldragon from '../dragon.svg'
 import Rdragon from '../dragonR.svg'
 
-const Header = () => {
+
+class Header extends Component {
+  constructor() {
+    super()
+    this.state = {}
+  }
+
+  render() {
+    const encounterCounter = this.props.encounter.length
+
     return (
-        <header className="header">
+      <header className="header">
             <div className="title">
               <img className="dragon" src={ Ldragon } alt="a dragon"/>
               <Link to="/home" className="app-name"><h1>MONSTRONOMICON</h1></Link>
@@ -20,11 +30,16 @@ const Header = () => {
               <ShowAllMonsters />
               <Filter />
               <div className="nav-button">
-                <Link to="/encounter" className="encounter-button">Encounter</Link>
+                <Link to="/encounter" className="encounter-button">Encounter ({encounterCounter})</Link>
               </div>
             </div>
         </header>
     )
+  }
 }
 
-export default Header
+const mapStateToProps = (state) => ({
+  encounter: state.encounter.encounter
+})
+
+export default connect(mapStateToProps, {})(Header);

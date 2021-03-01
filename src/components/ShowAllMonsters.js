@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { searchMonster } from '../actions/actions'
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux'
 
 class ShowAllMonsters extends Component {
@@ -26,8 +27,13 @@ constructor() {
   }
 }
 
+ShowAllMonsters.propTypes = {
+  searchMonster: PropTypes.func,
+  monsters: PropTypes.array,
+}
+
 const mapStateToProps = (state) => ({
-  monsters: state.monsters.monsters,
+  monsters: state.monsters.monsters
 })
 
 export default connect(mapStateToProps, { searchMonster })(ShowAllMonsters);
