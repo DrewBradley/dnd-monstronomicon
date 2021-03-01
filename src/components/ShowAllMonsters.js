@@ -3,15 +3,23 @@ import { searchMonster } from '../actions/actions'
 import { connect } from 'react-redux'
 
 class ShowAllMonsters extends Component {
+constructor() {
+        super()
+        this.state = {}
+        this.handleClick = this.handleClick.bind(this)
+    }
+
+    handleClick() {
+      this.props.searchMonster(this.props.monsters, '')
+    }
+
   render(){
-    const monsterList = this.props.monsters
     return(
       <div className="nav-button">
         <button 
           className="show-all-btn"
-          onClick={() => this.props.searchMonster
-          (monsterList)}>
-          Show All
+          onClick={this.handleClick}>
+          Show All Monsters
         </button>
       </div>
     )

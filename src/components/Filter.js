@@ -31,9 +31,7 @@ class Filter extends Component {
     }
     
     render() {
-        const CRList = ['select', 0, .125, .25, .5, 1, 2, 3, 4, 5, 6, 
-            7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 19, 20, 21, 
-            22, 23, 24, 30]
+        const CRList = [0, .125, .25, .5, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 19, 20, 21, 22, 23, 24, 30]
         var opts = CRList.map((item, index) => {
             return (
                 <option value={item} key={item}>{item}</option>

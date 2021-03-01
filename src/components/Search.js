@@ -20,14 +20,16 @@ class Search extends Component {
     })
   }
 
-  handleClick(monsterList, event) {
-    this.props.searchMonster(monsterList, this.state.monsterName)
+  handleClick(event) {
+    event.preventDefault()
+    this.props.searchMonster(this.props.monsters, this.state.monsterName)
     this.clearInput()
   }
 
-  checkEnter(monsterList, event) {
+  checkEnter(event) {
     if (event.keyCode === 13) {
-      this.handleClick(monsterList)
+      event.preventDefault()
+      this.btn.click()
     }
   }
 
@@ -39,24 +41,25 @@ class Search extends Component {
   
   render(){  
     // searches the displayed list of monsters by name
-    const monsterList = this.props.monsters
     return (
       <div className="nav-button">
-        <div className="search-field">
-          <input 
-            type="text"
-            placeholder="Search by name"
-            name="search"
-            className="search-input"
-            value={this.state.monsterName}
-            onChange={this.handleChange}
-            onKeyDown={(event) => this.checkEnter(monsterList, event)}
+        <div className="search-field1">
+          <form className="search-field">
+            <input 
+              type="text"
+              placeholder="Search by name"
+              name="search"
+              className="search-input"
+              value={this.state.monsterName}
+              onChange={this.handleChange}
+              onKeyDown={(event) => this.checkEnter(event)}
             ></input>
-          <button 
-            className="search-btn"
-            type="submit"
-            onSubmit={(event) => this.handleClick(monsterList)}
+            <button 
+              className="search-btn"
+              ref={node => (this.btn = node)}
+              onClick={(event) => this.handleClick(event)}
             ><img className="dice" src={ dice } alt="a d20"/></button>
+          </form>
         </div>
       </div>
     )
