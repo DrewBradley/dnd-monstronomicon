@@ -17,8 +17,7 @@ class App extends Component {
   
   render() {
     // if monsters is in state and there's no search term
-    if (this.props.monsters && !this.props.results.length) {
-      console.log('please work')
+    if (this.props.monsters.length && !this.props.results.length) {
       var monsterLinks = this.props.monsters.map(monster => {
         return  (
           <div key={monster.index}>
@@ -47,8 +46,8 @@ class App extends Component {
               </div>
             </Link>
           </div>
-      )
-    })
+        )
+      })
    
     } else {
       return null
@@ -58,7 +57,7 @@ class App extends Component {
       <div className="App">
         <Header />
         <Switch>
-          <Route exact path="/" render = {() => <Display monsterLinks={monsterLinks}/>}/>
+          <Route exact path="/home" render = {() => <Display monsterLinks={monsterLinks}/>}/>
           <Route path="/encounter" component={Encounter} />
           <Route path="/monster/" component={Monster} />
         </Switch>

@@ -1,3 +1,4 @@
+/* eslint-disable array-callback-return */
 import { FETCH_MONSTERS, FETCH_ONE_MONSTER, SEARCH_MONSTER_NAME, GET_MONSTERS_BY_CR, ADD_TO_ENCOUNTER } from './types'
 
 export const getMonsters = () => dispatch =>{
@@ -8,7 +9,6 @@ export const getMonsters = () => dispatch =>{
       payload: monsters.results
     }))
     .catch(error => console.log(error))
-    console.log('fetchy poo')
 }
 
 export const getOneMonster = (url) => dispatch => {
@@ -32,6 +32,12 @@ export const getMonstersByCR = (CR) => dispatch => {
 }
 
 export const searchMonster = (monsterList, monsterName) => dispatch => {
+  if(!monsterName) {
+      dispatch({
+        type: SEARCH_MONSTER_NAME,
+        payload: monsterList
+    })
+  } else {
   const foundMonster = monsterList.filter(monster => {
     if (monster.name.toLowerCase().includes(monsterName)){
       return monster.name
@@ -41,7 +47,7 @@ export const searchMonster = (monsterList, monsterName) => dispatch => {
         type: SEARCH_MONSTER_NAME,
         payload: foundMonster
     })
-}
+}}
 
 export const addToEncounter = (monsterName, monsterIndex, monsterUrl, encounter) => dispatch => {
   encounter.push({monsterName, monsterIndex, monsterUrl})
