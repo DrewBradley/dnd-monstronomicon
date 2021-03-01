@@ -18,7 +18,7 @@ class Encounter extends Component {
               {monster.monsterName} 
             </div>
           </Link>
-          <button class="delete-button" onClick={() => this.props.removeFromEncounter(i, this.props.encounter)}>X<span class="delete-tooltip">⬅ remove monster</span></button>
+          <button className="delete-button" onClick={() => this.props.removeFromEncounter(i, this.props.encounter)}>X<span className="delete-tooltip">⬅ remove monster</span></button>
         </div>
       )
     })
