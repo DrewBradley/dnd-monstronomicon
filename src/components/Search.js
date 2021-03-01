@@ -20,9 +20,9 @@ class Search extends Component {
     })
   }
 
-  handleClick(monsterList, event) {
+  handleClick(event) {
     event.preventDefault()
-    this.props.searchMonster(monsterList, this.state.monsterName)
+    this.props.searchMonster(this.props.monsters, this.state.monsterName)
     this.clearInput()
   }
 
@@ -41,7 +41,6 @@ class Search extends Component {
   
   render(){  
     // searches the displayed list of monsters by name
-    const monsterList = this.props.monsters
     return (
       <div className="nav-button">
         <div className="search-field1">
@@ -58,7 +57,7 @@ class Search extends Component {
             <button 
               className="search-btn"
               ref={node => (this.btn = node)}
-              onClick={(event) => this.handleClick(monsterList, event)}
+              onClick={(event) => this.handleClick(event)}
             ><img className="dice" src={ dice } alt="a d20"/></button>
           </form>
         </div>

@@ -30,9 +30,14 @@
   width: 1090px;
 }
 
+h1 {
+  position: relative;
+  margin: 0;
+}
+
 .app-name {
   font-size: 38px;
-  margin: auto;
+  margin: 0 auto;
   text-shadow: 5px 5px 2px var(--dark);
   transform: scaleY(1.8);
 }
@@ -100,6 +105,7 @@
   color: var(--lightest);
   height: 50px;
   margin: 0;
+  z-index: 1;
 }
 
 /* -----SHOW ALL----- */
@@ -115,6 +121,7 @@
   height: 100%;
   margin: 0 2px 0 2px;
   width: 100%;
+  z-index: 1;
 }
 
 /* -----FILTER----- */
@@ -135,7 +142,7 @@
   font-size: medium;
   justify-content: center;
   width: 100%;
-  cursor: default!important;
+  cursor: default !important;
 }
 
 .filter-select{

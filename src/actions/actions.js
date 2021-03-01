@@ -8,6 +8,7 @@ export const getMonsters = () => dispatch =>{
       payload: monsters.results
     }))
     .catch(error => console.log(error))
+    console.log('fetchy poo')
 }
 
 export const getOneMonster = (url) => dispatch => {
