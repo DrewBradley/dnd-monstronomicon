@@ -69,6 +69,7 @@ class App extends Component {
 App.propTypes = {
   getMonsters: PropTypes.func,
   monsters: PropTypes.array,
+  results: PropTypes.array,
 }
 
 const mapStateToProps = (state) => ({

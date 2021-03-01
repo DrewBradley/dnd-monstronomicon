@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { searchMonster } from '../actions/actions'
 import { connect } from 'react-redux'
+import PropTypes from 'prop-types';
 import dice from '../light-die.svg'
 
 class Search extends Component {
@@ -64,6 +65,11 @@ class Search extends Component {
       </div>
     )
   }
+}
+
+Search.propTypes = {
+  searchMonster: PropTypes.func,
+  monsters: PropTypes.array
 }
 
 const mapStateToProps = (state) => ({
