@@ -2,9 +2,11 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 import './Encounter.css'
+import { removeFromEncounter } from '../actions/actions'
 
 class Encounter extends Component {
   render() {
+
     const encounterMonster = this.props.encounter.map((monster, i) => {
       return (
         <div key={i} className="encounter-element">
@@ -16,7 +18,7 @@ class Encounter extends Component {
               {monster.monsterName} 
             </div>
           </Link>
-          <button class="delete-button" onClick={() => console.log("BYE BYE BYE")}>X<span class="delete-tooltip">⬅ remove monster</span></button>
+          <button class="delete-button" onClick={() => this.props.removeFromEncounter(i, this.props.encounter)}>X<span class="delete-tooltip">⬅ remove monster</span></button>
         </div>
       )
     })
@@ -39,7 +41,7 @@ const mapStateToProps = (state) => ({
   encounter: state.encounter.encounter
 })
 
-export default connect(mapStateToProps, {  })(Encounter);
+export default connect(mapStateToProps, { removeFromEncounter })(Encounter);
 
 // on a Monster's page, click a button
 // send that Monster's index and name to the store
