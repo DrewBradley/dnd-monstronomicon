@@ -73,7 +73,6 @@
 .search-field {
   display: flex;
   grid-column: 1;
-  height: 100%;
   margin: 0 2px 0 2px;
   width: 100%;
 }
@@ -99,6 +98,7 @@
   border-left: 0;
   border-radius: 0 10px 10px 0;
   color: var(--lightest);
+  height: 50px;
   margin: 0;
 }
 

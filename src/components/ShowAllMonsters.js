@@ -9,9 +9,8 @@ class ShowAllMonsters extends Component {
       <div className="nav-button">
         <button 
           className="show-all-btn"
-          onClick={() => this.props.searchMonster
-          (monsterList)}>
-          Show All
+          onClick={() => this.props.searchMonster(monsterList)}>
+          Back to list
         </button>
       </div>
     )
