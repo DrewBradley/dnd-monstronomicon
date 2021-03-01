@@ -30,13 +30,7 @@ class Monster extends Component {
             const subtype = monster.subtype ? 
                 <div className="one-stat subtype">SUBTYPE: <span>{monster.subtype}</span></div> : 
                 <div className="one-stat subtype">SUBTYPE: </div>
-            const actions = monster.actions.map((action, i) => {
-                return (
-                    <div key={i}>
-                        <div className="stat-detail">{action.name}: {action.desc}</div>
-                    </div>
-                )
-            })
+            
             if (monster.specialAbilities) {
                 var specialAbilities = monster.special_abilities.map((ability, i) => {
                     return (
@@ -69,13 +63,21 @@ class Monster extends Component {
                 <div key={i}><p className="stat-detail">{DR}</p></div> :
                 <div><p className="stat-detail">DAMAGE RESISTANCES: </p></div>
             })    
-
             const DV = monster.damage_vulnerabilities.map((DV, i) => {
                 return monster.damage_vulnerabilities ? 
                 <div key={i}><p className="stat-detail">{DV}</p></div> :
                 <div><p className="stat-detail">DAMAGE VULNERABILITIES: </p></div>
             })
 
+            if (monster.actions) {
+                var actions = monster.actions.map((action, i) => {
+                    return (
+                        <div key={i}>
+                        <div className="stat-detail">{action.name}: {action.desc}</div>
+                    </div>
+                    )
+                })
+            }
             if (monster.legendary_actions) {
                 var legendaryActions = monster.legendary_actions.map((action, i) => {
                     return (
