@@ -144,6 +144,7 @@
   border-left: 0;
   border-right: 0;
   color: var(--dark);
+  z-index: 1;
 }
 
 .filter-button {
@@ -152,6 +153,7 @@
   border-left: 0;
   border-radius: 0 10px 10px 0;
   width: 45px;
+  z-index: 1;
 }
 
 /* -----ENCOUNTER----- */

@@ -31,7 +31,6 @@ export const getMonstersByCR = (CR) => dispatch => {
 }
 
 export const searchMonster = (monsterList, monsterName) => dispatch => {
-  console.log('actions')
   const foundMonster = monsterList.filter(monster => {
     if (monster.name.toLowerCase().includes(monsterName)){
       return monster.name
