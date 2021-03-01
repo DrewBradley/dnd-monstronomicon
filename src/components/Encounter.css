@@ -36,3 +36,51 @@
   border-bottom: none;
   border-right: none;
 }
+
+.encounter-element {
+  display: grid;
+  grid-template-columns: 80% 20%;
+}
+
+.delete-button {
+  text-shadow: 1px 1px #29190e;
+  background-color: #800000;
+  color: #e4d4c8;
+  border-radius: 5px;
+  border-bottom: #ac9485 solid 1px;
+  border-right: #ac9485 solid 1px;
+  transition: 200ms;
+}
+
+.delete-button:active {
+  border-top: #ac9485 solid 1px;
+  border-left: #ac9485 solid 1px;
+  border-bottom: none;
+  border-right: none;
+}
+
+.delete-button:hover {
+  background-color: #680101;
+  color: #ac9485;
+  transform: scale(1.01);
+  transition: 200ms;
+}
+
+.delete-tooltip {
+  visibility: hidden;
+  width: 120px;
+  background-color: #800000;
+  color: #e4d4c8;
+  border: #ac9485 solid 1px;
+  text-align: center;
+  top: 10px;
+  left: 95%;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+}
+
+.delete-button:hover .delete-tooltip {
+  visibility: visible;
+}
