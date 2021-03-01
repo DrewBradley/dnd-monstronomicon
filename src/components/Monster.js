@@ -22,7 +22,6 @@ class Monster extends Component {
             this.props.location.state.url,
             this.props.encounter
         )
-        // make the header re-render
     }
 
     render() {
