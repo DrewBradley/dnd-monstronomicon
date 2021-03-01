@@ -11,7 +11,6 @@ constructor() {
 
     handleClick() {
       this.props.searchMonster(this.props.monsters, '')
-      // also change url to home page
     }
 
   render(){
