@@ -1,38 +1,52 @@
+:root {
+  --lightest: #e4d4c8;
+  --light: #ac9485;
+  --medium: #8e7161;
+  --dark: #29190e;
+  --highlight: #800000;
+}
+
 .monster-list {
-  margin: auto;
-  max-width: 900px;
   display: grid;
+  grid-auto-flow: column;
+  grid-gap: 5px 15px;
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: repeat(67, 1fr);
-  grid-gap: 10px;
-  grid-auto-flow: column;
+  margin: auto;
+  max-width: 900px;
 }
 
 .monster-tag {
-  display: flex;
-  height: 80%;
   align-items: center;
-  justify-content: center;
-  text-shadow: 1px 1px #29190e;
-  background-color: #800000;
-  color: #e4d4c8;
+  background-color: var(--highlight);
   border-radius: 5px;
+  box-shadow: -1px -1px 3px var(--light),
+    3px 3px 5px var(--dark);
+  color: var(--lightest);
+  display: flex;
+  font-size: medium;
+  font-weight: 400;
+  height: 80%;
+  justify-content: center;
+  margin: .3em;
   padding: .3em;
-  border-bottom: #ac9485 solid 1px;
-  border-right: #ac9485 solid 1px;
+  text-shadow: 3px 3px 4px var(--dark);
   transition: 200ms;
 }
 
 .monster-tag:hover {
   background-color: #680101;
-  color: #ac9485;
-  transform: scale(1.01);
+  color: var(--lightest);
+  cursor: pointer;
+  font-weight: 600;
+  transform: scale(1.03);
   transition: 200ms;
 }
 
 .monster-tag:active {
-  border-top: #ac9485 solid 1px;
-  border-left: #ac9485 solid 1px;
-  border-bottom: none;
-  border-right: none;
+  background-color: var(--lightest);
+  box-shadow: -1px -1px 3px var(--dark),
+    3px 3px 5px var(--light) inset;
+  color: var(--dark);
+  outline: none;
 }
