@@ -1,17 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Dokdo&family=Montserrat:wght@100;300;400;600&display=swap');
 
 /* 
-#e4d4c8 
-#ac9485     
-#8e7161     
-#800000     
-#29190e 
+--lightest: #e4d4c8;
+--light: #ac9485;
+--medium: #8e7161;
+--dark: #29190e;
+--highlight: #800000;
 font-family: 'Dokdo', cursive;
 */
 
-
 body {
   margin: 0;
+  padding: 0;
   font-family: 'Montserrat', sans-serif;
   background-color: #29190e;
   color: #e4d4c8;
