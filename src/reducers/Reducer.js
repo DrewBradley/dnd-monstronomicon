@@ -2,7 +2,9 @@ import { FETCH_MONSTERS, FETCH_ONE_MONSTER } from '../actions/types'
 
 const initialState = { 
   monsters: [],
-  monster: {}
+  monster: {},
+  returned: [],
+  encounter: []
 }
 
 // eslint-disable-next-line import/no-anonymous-default-export

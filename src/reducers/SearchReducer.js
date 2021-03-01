@@ -3,7 +3,8 @@ import { SEARCH_MONSTER_NAME, GET_MONSTERS_BY_CR } from '../actions/types'
 const initialState = { 
   monsters: [],
   monster: {},
-  returned: []
+  returned: [],
+  encounter: []
 }
 
 // eslint-disable-next-line import/no-anonymous-default-export
