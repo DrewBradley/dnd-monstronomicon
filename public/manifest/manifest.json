@@ -5,7 +5,7 @@
     "scope": "/",
     "start_url": "https://monstronomicon.herokuapp.com/",
     "name": "Monstronomicon",
-    "short_name": "Monstro",
+    "short_name": "Monstronom",
     "description": "Build a D&D 5E Encounter",
     "icons": [
         {
