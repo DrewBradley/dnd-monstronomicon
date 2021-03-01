@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Route, Switch, Link } from 'react-router-dom'
+import { Route, Switch, Link, Redirect } from 'react-router-dom'
 import Display from './Display'
 import Monster from './Monster'
 import Header from './Header'
@@ -57,6 +57,9 @@ class App extends Component {
       <div className="App">
         <Header />
         <Switch>
+          <Route exact path="/">
+            <Redirect to="/home" />
+          </Route>
           <Route exact path="/home" render = {() => <Display monsterLinks={monsterLinks}/>}/>
           <Route path="/encounter" component={Encounter} />
           <Route path="/monster/" component={Monster} />
