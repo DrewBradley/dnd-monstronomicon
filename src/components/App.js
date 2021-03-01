@@ -17,7 +17,8 @@ class App extends Component {
   
   render() {
     // if monsters is in state and there's no search term
-    if (this.props.monsters && (!this.props.results.length)) {
+    if (this.props.monsters && !this.props.results.length) {
+      console.log('please work')
       var monsterLinks = this.props.monsters.map(monster => {
         return  (
           <div key={monster.index}>

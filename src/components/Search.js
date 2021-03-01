@@ -26,9 +26,10 @@ class Search extends Component {
     this.clearInput()
   }
 
-  checkEnter(monsterList, event) {
+  checkEnter(event) {
     if (event.keyCode === 13) {
-      this.handleClick(monsterList, event)
+      event.preventDefault()
+      this.btn.click()
     }
   }
 
@@ -52,10 +53,11 @@ class Search extends Component {
               className="search-input"
               value={this.state.monsterName}
               onChange={this.handleChange}
-              onKeyDown={(event) => this.checkEnter(monsterList, event)}
+              onKeyDown={(event) => this.checkEnter(event)}
             ></input>
             <button 
               className="search-btn"
+              ref={node => (this.btn = node)}
               onClick={(event) => this.handleClick(monsterList, event)}
             ><img className="dice" src={ dice } alt="a d20"/></button>
           </form>

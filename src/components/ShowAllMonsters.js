@@ -10,7 +10,7 @@ class ShowAllMonsters extends Component {
         <button 
           className="show-all-btn"
           onClick={() => this.props.searchMonster(monsterList)}>
-          Back to list
+          Show All Monsters
         </button>
       </div>
     )
