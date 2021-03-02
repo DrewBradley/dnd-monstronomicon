@@ -148,3 +148,41 @@
     visibility: hidden;
   } 
 }
+
+/* -----TABLET----- */
+@media only screen and (min-width: 501px) and (max-width: 1199px) {
+  .encounter-list {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .encounter-element {
+    width: 90%;
+  }
+
+  .encounter-tag {
+    box-shadow: -1px -1px 3px var(--light),
+      3px 3px 5px var(--dark);
+    font-size: large;
+    height: 25px;
+    width: 90%;
+  }
+
+  .delete-button {
+    border: none;
+    box-shadow: -1px -1px 3px var(--light),
+      3px 3px 5px var(--dark);
+    height: 35px;
+    font-size: medium;
+    left: 25px;
+    margin: .3em;
+    position: relative;
+    width: 50%;
+  }
+
+  .delete-button:hover .delete-tooltip {
+    visibility: hidden;
+  }
+}
