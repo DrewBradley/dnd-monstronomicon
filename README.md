@@ -38,7 +38,7 @@ When you visit the home page, all monsters are listed alphabetically. Scroll thr
 <details>
 <summary>Home page example</summary>
 <br>
- <img width="450" alt="all movies" src=https://user-images.githubusercontent.com/13261139/107981339-1b087180-6f7f-11eb-9c9e-dfed4921059c.png>
+ <img width="450" alt="all movies" src="https://media.giphy.com/media/TfSKZgLfGwFykELk6d/giphy.gif">
 </details>
 
 #### Searching for a Monster
@@ -47,7 +47,7 @@ If you know part or all of a monster's name, enter it into the search field and 
 <details>
 <summary>Example of Searching for a Monster</summary>
 <br>
-<img width="450" alt="searching Mulan and viewing details" src="https://i.imgur.com/lHuYknj.gif">
+<img width="450" alt="searching Mulan and viewing details" src="https://media.giphy.com/media/gbP8fBcCN3jhy9mMyr/giphy.gif">
 </details>
 
 #### Filtering by Challenge Rating
@@ -56,7 +56,7 @@ If you know the challenge rating of the monster you'd like to view, select that 
 <details>
 <summary>Example of Filtering by Challenge Rating</summary>
 <br>
-<img width="450" alt="navigating on mobile" src="https://i.imgur.com/NN9NeeJ.gif">
+<img width="450" alt="navigating on mobile" src="https://media.giphy.com/media/7wdcYhnLkrbD0azKuT/giphy.gif">
 </details>
 
 #### Adding to your Encounter
@@ -65,7 +65,7 @@ When you have found the monster you'd like to add to your encounter, click the A
 <details>
 <summary>Example of Adding to your Encounter</summary>
 <br>
-<img width="450" alt="navigating on mobile" src="https://i.imgur.com/NN9NeeJ.gif">
+<img width="450" alt="navigating on mobile" src="https://media.giphy.com/media/je07mpnWe8hNOk3Glv/giphy.gif">
 </details>
 
 #### View and Delete from your Encounter
@@ -74,7 +74,7 @@ To see which monsters have been added to your encounter, click the Encounter but
 <details>
 <summary>Example of View and Delete from your Encounter</summary>
 <br>
-<img width="450" alt="navigating on mobile" src="https://i.imgur.com/NN9NeeJ.gif">
+<img width="450" alt="navigating on mobile" src="https://media.giphy.com/media/0xxmrHjZmE1aXOfApJ/giphy.gif">
 </details>
 
 ## Technologies
