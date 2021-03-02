@@ -57,10 +57,7 @@ class App extends Component {
       <div className="App">
         <Header />
         <Switch>
-          <Route path="/home" render = {() => <Display monsterLinks={monsterLinks}/>}/>
-          <Route exact path="">
-            <Redirect to="/home" />
-          </Route>
+          <Route exact path="/home" render = {() => <Display monsterLinks={monsterLinks}/>}/>
           <Route exact path="/">
             <Redirect to="/home" />
           </Route>
