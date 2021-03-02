@@ -7,8 +7,10 @@ const Splash = () => {
         <div className="splash">
             <h1>Welcome to</h1>
             <h1 className="splash-title">MONSTRONOMICON</h1>
-            <Link to="/home" className="go-home">
-              Get Started
+            <Link to="/home" >
+              <p className="go-home">
+                Enter
+              </p>
             </Link>
         </div>
     )

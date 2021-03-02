@@ -7,8 +7,9 @@
 }
 
 .splash-title {
-  font-size: 38px;
-  margin: 0 auto;
+  font-family: 'Dokdo', sans-serif;
+  font-size: 69px;
+  margin: 0 auto 50px auto;
   text-shadow: 5px 5px 2px var(--dark);
   transform: scaleY(1.8);
 }
@@ -23,6 +24,7 @@
   font-weight: 700;
   grid-column: 2;
   height: 100%;
-  margin: 0 2px 0 2px;
-  width: 100%;
+  margin: auto;
+  width: 20%;
+  padding: 0 2rem;
 }
