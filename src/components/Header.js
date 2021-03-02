@@ -22,7 +22,7 @@ class Header extends Component {
       <header className="header">
             <div className="title">
               <img className="dragon" src={ Ldragon } alt="a dragon"/>
-              <Link to="/home" className="app-name"><h1>MONSTRONOMICON</h1></Link>
+              <Link to="/" className="app-name"><h1>MONSTRONOMICON</h1></Link>
               <img className="dragon" src={ Rdragon } alt="a dragon"/>
             </div>
             <div className="nav">
