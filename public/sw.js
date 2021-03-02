@@ -1,7 +1,7 @@
 /* eslint-disable */
 const cacheName = 'monstronomicon';
 const urlsToCache = [
-  '/',
+  '/home',
   '/encounter'
 ];
 
