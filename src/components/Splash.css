@@ -1,0 +1,28 @@
+:root {
+  --lightest: #e4d4c8;
+  --light: #ac9485;
+  --medium: #8e7161;
+  --dark: #29190e;
+  --highlight: #800000;
+}
+
+.splash-title {
+  font-size: 38px;
+  margin: 0 auto;
+  text-shadow: 5px 5px 2px var(--dark);
+  transform: scaleY(1.8);
+}
+
+.go-home {
+  background-color: var(--highlight);
+  border: 2px solid var(--light);
+  border-radius: 10px;
+  color: var(--lightest);
+  font-family: 'Montserrat', sans-serif;
+  font-size: x-large;
+  font-weight: 700;
+  grid-column: 2;
+  height: 100%;
+  margin: 0 2px 0 2px;
+  width: 100%;
+}
