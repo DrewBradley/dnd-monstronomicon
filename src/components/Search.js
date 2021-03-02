@@ -16,8 +16,9 @@ class Search extends Component {
 
   handleChange(event) {
     const {value} = event.target
+    console.log(value)
     this.setState({
-      monsterName: value
+      monsterName: value.toLowerCase()
     })
   }
 
