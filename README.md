@@ -12,6 +12,8 @@ You're a Dungeon Master running a game in 5e and you're planning an encounter. H
 
 In the _Monstronomicon_ you can search for your favorite monsters by name, or you can filter all 332 SRD monsters by challenge rating. Choose a monster and read its stats - if you like what you see, add that monster to your ongoing Encounter. When you're done adding monsters to your Encounter, view the list of everything you've added. Take a screenshot and send it to your players to make them sweat. Then remove a few of the monsters; you're not evil.
 
+![Screen Shot 2021-03-02 at 3 47 12 PM](https://user-images.githubusercontent.com/13261139/109725625-a46a9700-7b6e-11eb-9a31-f85de3f457ce.png)
+
 This app was built in one week during mod3 at Turing to [this spec](https://frontend.turing.io/projects/module-3/stretch.html). We chose to learn Redux and continue building on our knowledge of [React](https://reactjs.org/), [Cypress](https://www.cypress.io/), and [React Router](https://reactrouter.com/). We chose the [dnd5e API](http://www.dnd5eapi.co/docs/#base) and focused on [the monsters endpoint](https://www.dnd5eapi.co/api/monsters). 
 
 ## Features
