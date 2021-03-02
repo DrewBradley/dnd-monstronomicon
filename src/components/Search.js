@@ -17,7 +17,7 @@ class Search extends Component {
   handleChange(event) {
     const {value} = event.target
     this.setState({
-      monsterName: value
+      monsterName: value.toLowerCase()
     })
   }
 
@@ -27,13 +27,6 @@ class Search extends Component {
     this.clearInput()
   }
 
-  checkEnter(event) {
-    if (event.keyCode === 13) {
-      event.preventDefault()
-      this.btn.click()
-    }
-  }
-
   clearInput() {
     this.setState({
       monsterName: ""
@@ -41,7 +34,6 @@ class Search extends Component {
   }
   
   render(){  
-    // searches the displayed list of monsters by name
     return (
       <div className="nav-button">
         <div className="search-field1">
@@ -53,11 +45,9 @@ class Search extends Component {
               className="search-input"
               value={this.state.monsterName}
               onChange={this.handleChange}
-              onKeyDown={(event) => this.checkEnter(event)}
             ></input>
             <button 
               className="search-btn"
-              ref={node => (this.btn = node)}
               onClick={(event) => this.handleClick(event)}
             ><img className="dice" src={ dice } alt="a d20"/></button>
           </form>
