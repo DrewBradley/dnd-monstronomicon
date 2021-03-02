@@ -16,7 +16,6 @@ class Search extends Component {
 
   handleChange(event) {
     const {value} = event.target
-    console.log(value)
     this.setState({
       monsterName: value.toLowerCase()
     })
@@ -35,7 +34,6 @@ class Search extends Component {
   }
   
   render(){  
-    // searches the displayed list of monsters by name
     return (
       <div className="nav-button">
         <div className="search-field1">
@@ -50,7 +48,6 @@ class Search extends Component {
             ></input>
             <button 
               className="search-btn"
-              ref={node => (this.btn = node)}
               onClick={(event) => this.handleClick(event)}
             ><img className="dice" src={ dice } alt="a d20"/></button>
           </form>
