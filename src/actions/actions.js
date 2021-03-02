@@ -1,3 +1,4 @@
+/* eslint-disable array-callback-return */
 import { FETCH_MONSTERS, FETCH_ONE_MONSTER, SEARCH_MONSTER_NAME, GET_MONSTERS_BY_CR, ADD_TO_ENCOUNTER, REMOVE_FROM_ENCOUNTER } from './types'
 
 

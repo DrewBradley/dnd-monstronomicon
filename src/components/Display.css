@@ -67,3 +67,24 @@
     width: 300px;
   }
 } 
+
+/* -----TABLET----- */
+@media only screen and (min-width: 501px) and (max-width: 1199px) {
+  .monster-list {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    height: 8600px;
+  }
+
+  .monster-tag {
+    display: flex;
+    font-size: large;
+    font-weight: 500;
+    height: 25px;
+    width: 200px;
+  }
+}
