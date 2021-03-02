@@ -9,7 +9,7 @@ context('Actions', () => {
     cy.get('.show-all-btn').should('exist')
     cy.get('.filter-form').should('exist').should('have.value', '')
     cy.get('.filter-label').should('exist')
-    cy.get('.filter-select').should('have.value', 'select')
+    cy.get('.filter-select').should('have.value', '0')
     cy.get('.filter-button').should('exist')
     cy.get('.encounter-button').should('exist')
   })
