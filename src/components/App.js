@@ -61,7 +61,7 @@ class App extends Component {
           <Route exact path="/" render = {() => <Display monsterLinks={monsterLinks}/>}/>
           <Route path="/encounter" component={Encounter} />
           <Route path="/monster/" component={Monster} />
-          <Route path="/" component={Splash}/>
+          <Route path="/*" component={Splash}/>
         </Switch>
       </div>
     );
