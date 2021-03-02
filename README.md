@@ -17,6 +17,8 @@ In the _Monstronomicon_ you can search for your favorite monsters by name, or yo
 
 This app was built in one week during mod3 at Turing to [this spec](https://frontend.turing.io/projects/module-3/stretch.html). We chose to learn Redux and continue building on our knowledge of [React](https://reactjs.org/), [Cypress](https://www.cypress.io/), and [React Router](https://reactrouter.com/). We chose the [dnd5e API](http://www.dnd5eapi.co/docs/#base) and focused on [the monsters endpoint](https://www.dnd5eapi.co/api/monsters). 
 
+When we started this project, our MVP was "Display and search monsters from the API". As we got more comfortable working in Redux, we realized that there was so much more we could do. We added the filter functionality and then created an Encounter. Creating the encounter didn't feel useful without being able to save it beyond page refresh, so we implemented localStorage. Once that was working, we turned the app into a PWA so that it could be run outside of a browser. As a taste of future enhancements, we added a counter to the Encounter button that updates as soon as monsters are added to or removed from the encounter.
+
 ## Features
 
 To view please:
