@@ -92,6 +92,20 @@ To see which monsters have been added to your encounter, click the Encounter but
 ## Future Iterations
 Redux might seem overpowered for this project. We chose this API because it holds so much data and we have plans for extensions that would take advantage of Redux. See the [most current project board here](https://github.com/DrewBradley/dnd-monstronomicon/projects/1).
 
+## Wins/Challenges
+##### Wins
+- Implementing Redux within the first 48 hours of the project.
+- Meeting and exceeding our stretch goal.
+- Great collaboration and teamwork.
+- Deploying the site.
+- Deploying the site as a PWA.
+
+#### Challenges
+- Implementing the necessary technologies for PWA.
+- Following the Redux cycle.
+- So much to do, so little time.
+- Drew still doesn't know how to play D&D.
+
 #### To Contribute
 If you'd like to contribute to the code, please complete the following steps:
 - clone this repo locally: `git clone git@github.com:DrewBradley/dnd-monstronomicon.git`
