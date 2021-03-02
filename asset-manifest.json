@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/dnd-monstronicon/static/css/main.ee38e101.chunk.css",
-    "main.js": "/dnd-monstronicon/static/js/main.69368264.chunk.js",
-    "main.js.map": "/dnd-monstronicon/static/js/main.69368264.chunk.js.map",
-    "runtime-main.js": "/dnd-monstronicon/static/js/runtime-main.2e42a392.js",
-    "runtime-main.js.map": "/dnd-monstronicon/static/js/runtime-main.2e42a392.js.map",
-    "static/js/2.564d5e78.chunk.js": "/dnd-monstronicon/static/js/2.564d5e78.chunk.js",
-    "static/js/2.564d5e78.chunk.js.map": "/dnd-monstronicon/static/js/2.564d5e78.chunk.js.map",
-    "index.html": "/dnd-monstronicon/index.html",
-    "static/css/main.ee38e101.chunk.css.map": "/dnd-monstronicon/static/css/main.ee38e101.chunk.css.map",
-    "static/js/2.564d5e78.chunk.js.LICENSE.txt": "/dnd-monstronicon/static/js/2.564d5e78.chunk.js.LICENSE.txt",
-    "static/media/dragon.597395b0.svg": "/dnd-monstronicon/static/media/dragon.597395b0.svg",
-    "static/media/dragonR.a9079756.svg": "/dnd-monstronicon/static/media/dragonR.a9079756.svg",
-    "static/media/light-die.7412bdb4.svg": "/dnd-monstronicon/static/media/light-die.7412bdb4.svg"
+    "main.css": "/dnd-monstronomicon/static/css/main.ee38e101.chunk.css",
+    "main.js": "/dnd-monstronomicon/static/js/main.55a91bf0.chunk.js",
+    "main.js.map": "/dnd-monstronomicon/static/js/main.55a91bf0.chunk.js.map",
+    "runtime-main.js": "/dnd-monstronomicon/static/js/runtime-main.e1fb2efe.js",
+    "runtime-main.js.map": "/dnd-monstronomicon/static/js/runtime-main.e1fb2efe.js.map",
+    "static/js/2.8529f9a7.chunk.js": "/dnd-monstronomicon/static/js/2.8529f9a7.chunk.js",
+    "static/js/2.8529f9a7.chunk.js.map": "/dnd-monstronomicon/static/js/2.8529f9a7.chunk.js.map",
+    "index.html": "/dnd-monstronomicon/index.html",
+    "static/css/main.ee38e101.chunk.css.map": "/dnd-monstronomicon/static/css/main.ee38e101.chunk.css.map",
+    "static/js/2.8529f9a7.chunk.js.LICENSE.txt": "/dnd-monstronomicon/static/js/2.8529f9a7.chunk.js.LICENSE.txt",
+    "static/media/dragon.597395b0.svg": "/dnd-monstronomicon/static/media/dragon.597395b0.svg",
+    "static/media/dragonR.a9079756.svg": "/dnd-monstronomicon/static/media/dragonR.a9079756.svg",
+    "static/media/light-die.7412bdb4.svg": "/dnd-monstronomicon/static/media/light-die.7412bdb4.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.2e42a392.js",
-    "static/js/2.564d5e78.chunk.js",
+    "static/js/runtime-main.e1fb2efe.js",
+    "static/js/2.8529f9a7.chunk.js",
     "static/css/main.ee38e101.chunk.css",
-    "static/js/main.69368264.chunk.js"
+    "static/js/main.55a91bf0.chunk.js"
   ]
 }
