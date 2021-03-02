@@ -27,11 +27,6 @@ class Search extends Component {
     this.clearInput()
   }
 
-    handleMobileClick(event) {
-    this.props.searchMonster(this.props.monsters, this.state.monsterName)
-    this.clearInput()
-  }
-
   checkEnter(event) {
     if (event.keyCode === 13) {
       event.preventDefault()
@@ -63,7 +58,7 @@ class Search extends Component {
             <button 
               className="search-btn"
               ref={node => (this.btn = node)}
-              onTouchStart={(event) => this.handleMobileClick(event)}
+              onTouchStart={(event) => this.handleClick(event)}
               onClick={(event) => this.handleClick(event)}
             ><img className="dice" src={ dice } alt="a d20"/></button>
           </form>
