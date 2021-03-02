@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Route, Switch, Link, Redirect } from 'react-router-dom'
+import { Route, Switch, Link } from 'react-router-dom'
 import Display from './Display'
 import Monster from './Monster'
 import Header from './Header'
@@ -8,6 +8,7 @@ import './App.css';
 import PropTypes from 'prop-types';
 import { getMonsters } from '../actions/actions'
 import { connect } from 'react-redux'
+import Splash from './Splash'
 
 class App extends Component {
   
@@ -57,10 +58,8 @@ class App extends Component {
       <div className="App">
         <Header />
         <Switch>
+          <Route exact path="/" component={Splash}/>
           <Route exact path="/home" render = {() => <Display monsterLinks={monsterLinks}/>}/>
-          <Route exact path="/">
-            <Redirect to="/home" />
-          </Route>
           <Route path="/encounter" component={Encounter} />
           <Route path="/monster/" component={Monster} />
         </Switch>
