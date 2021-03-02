@@ -27,6 +27,17 @@ context('Encounter', () => {
     cy.get('div[class=encounter-list]').find('a').should('have.length', 4)
   })
 
-
+  it('should delete monsters when delete is clicked', () => {
+    for(let clicks = 0; clicks < 10; clicks++){
+      cy.get('.add-button')
+        .click()
+    }
+    cy.get('.encounter-button').click()
+    cy.get('.encounter-list').find('a').should('have.length', 10)
+    for(let n = 0; n < 5; n ++){
+      cy.get('.delete-button').eq(0).click()
+    }
+    cy.get('.encounter-list').find('a').should('have.length', 5)
+  })
 
 })
