@@ -92,11 +92,17 @@ To see which monsters have been added to your encounter, click the Encounter but
 
 ## Architecture
 Our file structure supports the Redux workflow that we taught ourselves during this project.
+
 `./public` includes our assets and the PWA files like the service worker and manifest.
+
 `./src/actions` includes our actions file and our types file.
-`./src/components` includes each component file and their `.css` files
-`./src/reducers` includes our reducer files and the root reducer
+
+`./src/components` includes each component file and their `.css` files.
+
+`./src/reducers` includes our reducer files and the root reducer.
+
 `./src` also includes some assets, the `index.js` and `index.css` files, our `localStorage` file, and most importantly the `store`.
+
 
 ## Future Iterations
 Redux might seem overpowered for this project. We chose this API because it holds so much data and we have plans for extensions that would take advantage of Redux. See the [most current project board here](https://github.com/DrewBradley/dnd-monstronomicon/projects/1).
