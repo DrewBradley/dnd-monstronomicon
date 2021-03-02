@@ -2,7 +2,7 @@
   "name": "monstronomicon",
   "version": "0.1.0",
   "private": true,
-  "main": "src/index.js",
+  "homepage": "http://DrewBradley.github.io/dnd-monstronicon",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
@@ -21,7 +21,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -42,6 +44,7 @@
     ]
   },
   "devDependencies": {
-    "cypress": "^6.5.0"
+    "cypress": "^6.5.0",
+    "gh-pages": "^3.1.0"
   }
 }
