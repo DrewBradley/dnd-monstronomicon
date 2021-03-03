@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
-import { searchMonster } from '../actions/actions'
 import { connect } from 'react-redux'
-import PropTypes from 'prop-types';
 import dice from '../light-die.svg'
+import { searchMonster } from '../actions/actions'
+import PropTypes from 'prop-types';
 
 class Search extends Component {
   constructor() {
@@ -16,22 +16,17 @@ class Search extends Component {
 
   handleChange(event) {
     const {value} = event.target
-    this.setState({
-      monsterName: value.toLowerCase()
-    })
+    this.setState({ monsterName: value.toLowerCase() })
   }
 
   handleClick(event) {
     event.preventDefault()
     this.props.searchMonster(this.props.monsters, this.state.monsterName)
-    console.log(this.props)
     this.clearInput()
   }
   
   clearInput() {
-    this.setState({
-      monsterName: ""
-    })
+    this.setState({ monsterName: "" })
   }
   
   render(){  

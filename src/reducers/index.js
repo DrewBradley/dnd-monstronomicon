@@ -1,11 +1,11 @@
 import { combineReducers } from 'redux';
 import EncounterReducer from './EncounterReducer';
-import monsterReducer from './Reducer'
-import searchReducer from './SearchReducer'
+import MonsterReducer from './Reducer'
+import SearchReducer from './SearchReducer'
 
 const rootReducer = combineReducers({
-  monsters: monsterReducer,
-  returned: searchReducer,
+  monsters: MonsterReducer,
+  returned: SearchReducer,
   encounter: EncounterReducer
 })
 

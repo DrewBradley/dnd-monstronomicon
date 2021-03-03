@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
-import { getMonstersByCR } from '../actions/actions'
-import PropTypes from 'prop-types';
 import { connect } from 'react-redux'
 import dice from '../light-die.svg'
+import { getMonstersByCR } from '../actions/actions'
+import PropTypes from 'prop-types';
 
 class Filter extends Component {
     constructor() {
@@ -58,8 +58,6 @@ Filter.propTypes = {
   getMonstersByCR: PropTypes.func
 }
 
-const mapStateToProps = (state) => ({
-
-})
+const mapStateToProps = (state) => ({})
 
 export default connect(mapStateToProps, { getMonstersByCR })(Filter)

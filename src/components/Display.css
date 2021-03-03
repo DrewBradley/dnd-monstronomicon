@@ -44,18 +44,18 @@
 }
 
 .monster-tag:active {
-  border-top: #ac9485 solid 1px;
-  border-left: #ac9485 solid 1px;
   border-bottom: none;
+  border-left: #ac9485 solid 1px;
   border-right: none;
+  border-top: #ac9485 solid 1px;
 }
 
 @media only screen and (max-width: 500px) {
   .monster-list {
+    align-items: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
     width: 90%;
   }
 
@@ -71,13 +71,13 @@
 /* -----TABLET----- */
 @media only screen and (min-width: 501px) and (max-width: 1199px) {
   .monster-list {
+    align-items: center;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: center;
-    align-items: center;
-    width: 90%;
     height: 8600px;
+    width: 90%;
   }
 
   .monster-tag {

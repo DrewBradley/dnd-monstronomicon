@@ -1,14 +1,14 @@
 import React, { Component } from 'react'
-import { Route, Switch, Link, Redirect } from 'react-router-dom'
-import Display from './Display'
-import Monster from './Monster'
-import Header from './Header'
-import Encounter from './Encounter'
-import './App.css';
-import PropTypes from 'prop-types';
-import { getMonsters } from '../actions/actions'
+import { Route, Switch, Link } from 'react-router-dom'
 import { connect } from 'react-redux'
+import Display from './Display'
+import Encounter from './Encounter'
+import Header from './Header'
+import Monster from './Monster'
 import Splash from './Splash'
+import './App.css';
+import { getMonsters } from '../actions/actions'
+import PropTypes from 'prop-types';
 
 class App extends Component {
   
@@ -17,7 +17,7 @@ class App extends Component {
   }
   
   render() {   
-    // if monsters is in state and there's no search term
+
     if (this.props.monsters.length && !this.props.results.length) {
       var monsterLinks = this.props.monsters.map(monster => {
         return  (
@@ -31,13 +31,10 @@ class App extends Component {
               </div>
             </Link>
           </div>
-      )
-    })
-  }
-    // if the result is 'not found'
-    else if (this.props.results[0] === 'not found') {
+        )
+      })
+    } else if (this.props.results[0] === 'not found') {
           monsterLinks = `No results for "${this.props.results[1]}". 'Show All Monsters' to reset.`  
-    // if there is a search term
     } else if (this.props.results.length) {
       monsterLinks = this.props.results.map(monster => {
         return  (
