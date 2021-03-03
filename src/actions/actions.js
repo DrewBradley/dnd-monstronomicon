@@ -1,6 +1,4 @@
-/* eslint-disable array-callback-return */
 import { FETCH_MONSTERS, FETCH_ONE_MONSTER, SEARCH_MONSTER_NAME, GET_MONSTERS_BY_CR, ADD_TO_ENCOUNTER, REMOVE_FROM_ENCOUNTER } from './types'
-
 
 export const getMonsters = () => dispatch =>{
   fetch('https://www.dnd5eapi.co/api/monsters')
@@ -44,10 +42,10 @@ export const searchMonster = (monsterList, monsterName) => dispatch => {
       return monster.name
     }
   })
+  
   if (!foundMonster.length) {
     foundMonster = ['not found', monsterName]
   }
-  console.log(foundMonster)
   dispatch({
         type: SEARCH_MONSTER_NAME,
         payload: foundMonster

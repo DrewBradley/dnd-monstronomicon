@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
-import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
+import { connect } from 'react-redux'
 import './Encounter.css'
-import PropTypes from 'prop-types';
 import { removeFromEncounter } from '../actions/actions'
+import PropTypes from 'prop-types';
 
 class Encounter extends Component {
   render() {
@@ -25,18 +25,22 @@ class Encounter extends Component {
               {monster.monsterName} 
             </div>
           </Link>
-          <button className="delete-button" onClick={() => this.props.removeFromEncounter(i, this.props.encounter)}>X<span className="delete-tooltip">⬅ remove monster</span></button>
+          <button 
+            className="delete-button" 
+            onClick={() => this.props.removeFromEncounter(i, this.props.encounter)}>X
+            <span className="delete-tooltip">⬅ remove monster
+            </span>
+          </button>
         </div>
       )
     })
+
     return (
       <div className="encounter-list">
           { encounterMonster }
       </div>
-    )
+    )}
   }
-}
-
 }
 
 Encounter.propTypes = {

@@ -31,8 +31,8 @@
 }
 
 h1 {
-  position: relative;
   margin: 0;
+  position: relative;
 }
 
 .app-name {
@@ -139,11 +139,11 @@ h1 {
   border-radius: 10px 0 0 10px;
   border-right: 0;
   color: var(--lightest);
+  cursor: default !important;
   display: flex;
   font-size: medium;
   justify-content: center;
   width: 100%;
-  cursor: default !important;
 }
 
 .filter-select{
@@ -197,8 +197,8 @@ h1 {
   
   .app-name {
     font-size: 15.5px;
-    text-shadow: 2px 2px 1px var(--dark);
     height: 50%;
+    text-shadow: 2px 2px 1px var(--dark);
   }
   
   .dragon {
@@ -206,17 +206,17 @@ h1 {
   }
   
   .nav {
+    gap: .8em;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
-    gap: .8em;
     width: 400px;
   }
   
   .nav-button {
-    height: 35px;
-    width: 170px;
-    justify-self: center;
     align-self: center;
+    height: 35px;
+    justify-self: center;
+    width: 170px;
   }
 
   /* -----SEARCH----- */
@@ -245,8 +245,8 @@ h1 {
   }
   
   .filter-select {
-    width: 34%;
     border: none;
+    width: 34%;
   }
 
    .filter-button {
@@ -269,8 +269,8 @@ h1 {
     }
 
     .title {
-      width: 100%;
       height: 100%;
+      width: 100%;
     }
 
     .app-name {
@@ -283,17 +283,17 @@ h1 {
     }
 
     .nav {
+      gap: .8em;
       grid-template-columns: 1fr 1fr;
       grid-template-rows: 1fr 1fr;
-      gap: .8em;
       width: 400px;
     }
 
     .nav-button {
-      height: 35px;
-      width: 170px;
-      justify-self: center;
       align-self: center;
+      height: 35px;
+      justify-self: center;
+      width: 170px;
     }
 
     /* -----SEARCH----- */
@@ -322,8 +322,8 @@ h1 {
     }
 
     .filter-select {
-      width: 34%;
       border: none;
+      width: 34%;
     }
 
     .filter-button {
