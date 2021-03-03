@@ -8,7 +8,7 @@ class Filter extends Component {
     constructor() {
         super()
         this.state = {
-            CR: 0
+            CR: NaN
         }
         this.handleClick = this.handleClick.bind(this)
         this.handleChange = this.handleChange.bind(this)
@@ -20,12 +20,16 @@ class Filter extends Component {
 
     handleClick(event) {
         event.preventDefault()
-        this.props.getMonstersByCR(this.state.CR)
-        this.clearInput()
+        this.state.CR ?
+        this.props.getMonstersByCR(this.state.CR) &&
+        this.resetState() :
+        this.resetState()
     }
     
-    clearInput() {
-        this.setState({ CR: '' })
+    resetState() {
+      this.setState({
+        CR: NaN
+      })
     }
     
     render() {
