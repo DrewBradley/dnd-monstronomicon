@@ -27,7 +27,7 @@ class Header extends Component {
             </div>
             <div className="nav">
               <Search />
-              <ShowAllMonsters />
+              <ShowAllMonsters className="show-all-btn"/>
               <Filter />
               <div className="nav-button">
                 <Link to="/encounter" className="encounter-button">Encounter ({encounterCounter})</Link>

@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import React, { Component } from 'react'
 import { searchMonster } from '../actions/actions'
 import PropTypes from 'prop-types';
@@ -17,11 +18,12 @@ constructor() {
   render(){
     return(
       <div className="nav-button">
-        <button 
-          className="show-all-btn"
-          onClick={this.handleClick}>
-          Show All Monsters
-        </button>
+        <Link 
+          to="/" 
+          type="button"
+          onClick={this.handleClick} 
+          className="show-all-btn">Show All Monsters
+        </Link>
       </div>
     )
   }
