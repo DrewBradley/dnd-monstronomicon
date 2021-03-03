@@ -36,7 +36,7 @@ class App extends Component {
   }
     // if the result is 'not found'
     else if (this.props.results[0] === 'not found') {
-          monsterLinks = `No results for "${this.props.results[1]}". Please try a different search term, or select 'Show All Monsters'.`  
+          monsterLinks = `No results for "${this.props.results[1]}". 'Show All Monsters' to reset.`  
     // if there is a search term
     } else if (this.props.results.length) {
       monsterLinks = this.props.results.map(monster => {
