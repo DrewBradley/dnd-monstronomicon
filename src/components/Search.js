@@ -24,9 +24,10 @@ class Search extends Component {
   handleClick(event) {
     event.preventDefault()
     this.props.searchMonster(this.props.monsters, this.state.monsterName)
+    console.log(this.props)
     this.clearInput()
   }
-
+  
   clearInput() {
     this.setState({
       monsterName: ""
@@ -59,11 +60,15 @@ class Search extends Component {
 
 Search.propTypes = {
   searchMonster: PropTypes.func,
-  monsters: PropTypes.array
+  monsters: PropTypes.array,
+  returned: PropTypes.array,
+  notFound: PropTypes.bool
 }
 
 const mapStateToProps = (state) => ({
-  monsters: state.monsters.monsters
+  monsters: state.monsters.monsters,
+  returned: state.returned.returned,
+  notFound: state.notFound
 })
 
 export default connect(mapStateToProps, { searchMonster })(Search);

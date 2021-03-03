@@ -16,7 +16,7 @@ class App extends Component {
     this.props.getMonsters()
   }
   
-  render() {
+  render() {   
     // if monsters is in state and there's no search term
     if (this.props.monsters.length && !this.props.results.length) {
       var monsterLinks = this.props.monsters.map(monster => {
@@ -33,6 +33,15 @@ class App extends Component {
           </div>
       )
     })
+  }
+    // if the result is 'not found'
+    else if (this.props.results[0] === 'not found') {
+      return  (
+        <div>
+          PUT SOMETHING HERE THAT SAYS YOUR SEARCH WAS NOT FOUND
+        </div>
+        )
+    
     // if there is a search term
     } else if (this.props.results.length) {
       monsterLinks = this.props.results.map(monster => {
@@ -49,10 +58,7 @@ class App extends Component {
           </div>
         )
       })
-   
-    } else {
-      return null
-    }
+    } 
 
     return (
       <div className="App">

@@ -39,11 +39,15 @@ export const searchMonster = (monsterList, monsterName) => dispatch => {
         payload: monsterList
     })
   } else {
-  const foundMonster = monsterList.filter(monster => {
+  let foundMonster = monsterList.filter(monster => {
     if (monster.name.toLowerCase().includes(monsterName)){
       return monster.name
     }
   })
+  if (!foundMonster.length) {
+    foundMonster = ['not found']
+  }
+  console.log(foundMonster)
   dispatch({
         type: SEARCH_MONSTER_NAME,
         payload: foundMonster
