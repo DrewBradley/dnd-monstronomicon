@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 import { searchMonster } from '../actions/actions'
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux'
@@ -16,13 +17,13 @@ constructor() {
 
   render(){
     return(
-      <div className="nav-button">
+      <Link to="/" className="nav-button">
         <button 
           className="show-all-btn"
           onClick={this.handleClick}>
           Show All Monsters
         </button>
-      </div>
+      </Link>
     )
   }
 }

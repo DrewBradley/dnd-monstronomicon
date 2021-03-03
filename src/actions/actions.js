@@ -45,7 +45,7 @@ export const searchMonster = (monsterList, monsterName) => dispatch => {
     }
   })
   if (!foundMonster.length) {
-    foundMonster = ['not found']
+    foundMonster = ['not found', monsterName]
   }
   console.log(foundMonster)
   dispatch({
