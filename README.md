@@ -15,14 +15,14 @@ In the _Monstronomicon_ you can search for your favorite monsters by name, or yo
 
 ![Screen Shot 2021-03-02 at 3 47 12 PM](https://user-images.githubusercontent.com/13261139/109725625-a46a9700-7b6e-11eb-9a31-f85de3f457ce.png)
 
-This app was built in one week during mod3 at Turing to [this spec](https://frontend.turing.io/projects/module-3/stretch.html). We chose to learn Redux and continue building on our knowledge of [React](https://reactjs.org/), [Cypress](https://www.cypress.io/), and [React Router](https://reactrouter.com/). We chose the [dnd5e API](http://www.dnd5eapi.co/docs/#base) and focused on [the monsters endpoint](https://www.dnd5eapi.co/api/monsters). 
+This app was built in one week during mod3 at Turing to [this spec](https://frontend.turing.io/projects/module-3/stretch.html). We chose to learn [Redux](https://redux.js.org/) and continue building on our knowledge of [React](https://reactjs.org/), [Cypress](https://www.cypress.io/), and [React Router](https://reactrouter.com/). We chose the [dnd5e API](http://www.dnd5eapi.co/docs/#base) and focused on [the monsters endpoint](https://www.dnd5eapi.co/api/monsters). 
 
 When we started this project, our MVP was "Display and search monsters from the API". As we got more comfortable working in Redux, we realized that there was so much more we could do. We added the filter functionality and then created an Encounter. Creating the encounter didn't feel useful without being able to save it beyond page refresh, so we implemented localStorage. Once that was working, we turned the app into a PWA so that it could be run outside of a browser. As a taste of future enhancements, we added a counter to the Encounter button that updates as soon as monsters are added to or removed from the encounter.
 
 ## Features
 
-To view please:
-- please visit [here](https://monstronomicon.herokuapp.com/home) to interact and view
+To view the app:
+- Visit [The Monstronomicon](https://monstronomicon.herokuapp.com/home) to interact and view
 - Note: This is hosted on the free version of Heroku so if you get a blank screen please wait 69 seconds and do a hard refresh on the page.
 - PWA: If you'd like to use _Monstronomicon_ outside of the browser, you can also download it as a progressive web app.
 
@@ -83,14 +83,14 @@ To see which monsters have been added to your encounter, click the Encounter but
 </details>
 
 ## Technologies
-- Redux
-- PWA: Progressive Web App
+- Redux (new)
+- PWA (new)
 - React
 - Router
 - Cypress
 - CSS
 - HTML
-- Lighthouse for accessibility auditing
+- Lighthouse for accessibility and PWA auditing
 
 ## Architecture
 Our file structure supports the Redux workflow that we taught ourselves during this project.
@@ -105,9 +105,8 @@ Our file structure supports the Redux workflow that we taught ourselves during t
 
 `./src` also includes some assets, the `index.js` and `index.css` files, our `localStorage` file, and most importantly the `store`.
 
-
 ## Future Iterations
-Redux might seem overpowered for this project. We chose this API because it holds so much data and we have plans for extensions that would take advantage of Redux. See the [most current project board here](https://github.com/DrewBradley/dnd-monstronomicon/projects/1).
+Redux might seem overpowered for this project. It is. We chose this API because it holds so much data and we have plans for extensions that would take advantage of Redux. See the [most current project board here](https://github.com/DrewBradley/dnd-monstronomicon/projects/1). That's also the place to submit a bug report or an enhancement request.
 
 #### To Contribute
 If you'd like to contribute to the code, please complete the following steps:
