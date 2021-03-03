@@ -1,5 +1,4 @@
-import { Link, Route } from 'react-router-dom'
-import Display from './Display'
+import { Link  } from 'react-router-dom'
 import React, { Component } from 'react'
 import { searchMonster } from '../actions/actions'
 import PropTypes from 'prop-types';
