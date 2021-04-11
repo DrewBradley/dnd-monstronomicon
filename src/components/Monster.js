@@ -34,6 +34,7 @@ class Monster extends Component {
 
   render() {
     if (this.props.monster.url === this.props.location.state.url) {
+
       return (
         <div className="monster-stats">
           <div>
@@ -44,7 +45,9 @@ class Monster extends Component {
             <h3>Hit Points: {this.props.monster.hit_points}</h3>
             <h3>Challenge Rating: {this.props.monster.challenge_rating}</h3>
             <h3>Hit Dice: {this.props.monster.hit_dice}</h3>
-            <h3>Languages: {this.props.monster.languages}</h3>
+            {this.props.monster.languages ? (
+              <h3>Languages: {this.props.monster.languages}</h3>
+            ) : null}
           </div>
           <div>
             <h3>XP: {this.props.monster.xp}</h3>
@@ -55,49 +58,89 @@ class Monster extends Component {
             <h3>Intelligence: {this.props.monster.intelligence}</h3>
             <h3>Charisma: {this.props.monster.charisma}</h3>
           </div>
+
           <div>
-            <h3>Special Abilities:</h3>
-            <SpecialAbilities
-              statBlock={this.props.monster.special_abilities}
-            />
+            {this.props.monster.special_abilities ? (
+              <div>
+                <h3>Special Abilities:</h3>
+                <SpecialAbilities
+                  statBlock={this.props.monster.special_abilities}
+                />
+              </div>
+            ) : null}
           </div>
+
           <div>
-            <h3>Proficiencies:</h3>
-            <Proficiencies statBlock={this.props.monster.proficiencies} />
+            {this.props.monster.proficiencies.proficiency ? (
+              <div>
+                <h3>Proficiencies:</h3>
+                <Proficiencies statBlock={this.props.monster.proficiencies} />
+              </div>
+            ) : null}
           </div>
+
           <div>
-            <h3>Condition Immunities:</h3>
-            <ConditionImmunities
-              statBlock={this.props.monster.condition_immunities}
-            />
+            {this.props.monster.condition_immunities.name ? (
+              <div>
+                <h3>Condition Immunities:</h3>
+                <ConditionImmunities
+                  statBlock={this.props.monster.condition_immunities}
+                />
+              </div>
+            ) : null}
           </div>
+
           <div>
-            <h3>Damage Immunities:</h3>
-            <DamageImmunities
-              statBlock={this.props.monster.damage_immunities}
-            />
+            {this.props.monster.damage_immunities.name ? (
+              <div>
+                <h3>Damage Immunities:</h3>
+                <DamageImmunities
+                  statBlock={this.props.monster.damage_immunities}
+                />
+              </div>
+            ) : null}
           </div>
+
           <div>
-            <h3>Damage Resistances:</h3>
-            <DamageResistances
-              statBlock={this.props.monster.damage_resistances}
-            />
+            {this.props.monster.damage_resistances.length !== 0 ? (
+              <div>
+                <h3>Damage Resistances:</h3>
+                <DamageResistances
+                  statBlock={this.props.monster.damage_resistances}
+                />
+              </div>
+            ) : null}
           </div>
+
           <div>
-            <h3>Damage Vulnerabilities:</h3>
-            <DamageVulnerabilities
-              statBlock={this.props.monster.damage_vulnerabilities}
-            />
+            {this.props.monster.damage_vulnerabilities.length !== 0 ? (
+              <div>
+                <h3>Damage Vulnerabilities:</h3>
+                <DamageVulnerabilities
+                  statBlock={this.props.monster.damage_vulnerabilities}
+                />
+              </div>
+            ) : null}
           </div>
+
           <div>
-            <h3>Actions:</h3>
-            <Actions statBlock={this.props.monster.actions} />
+            {this.props.monster.actions ? (
+              <div>
+                <h3>Actions:</h3>
+                <Actions statBlock={this.props.monster.actions} />
+              </div>
+            ) : null}
           </div>
+
           <div>
-            <h3>Legendary Actions:</h3>
-            <LegendaryActions
-              statBlock={this.props.monster.legendary_actions}
-            />
+            {this.props.monster.legendary_actions ? (
+              <div>
+                <h3>Legendary Actions:</h3>
+                <LegendaryActions
+                  statBlock={this.props.monster.legendary_actions}
+                />
+              </div>
+            ) : null}
           </div>
         </div>
       )
