@@ -5,7 +5,12 @@ import { getOneMonster, addToEncounter } from "../actions/actions"
 import PropTypes from "prop-types"
 import SpecialAbilities from "./MonsterStats/SpecialAbilities"
 import Proficiencies from "./MonsterStats/Proficiencies"
-import Immunities from "./MonsterStats/ConditionImmunities"
+import ConditionImmunities from "./MonsterStats/ConditionImmunities"
+import DamageImmunities from "./MonsterStats/DamageImmunities"
+import DamageResistances from "./MonsterStats/DamageResistances"
+import DamageVulnerabilities from "./MonsterStats/DamageVulnerabilities"
+import Actions from "./MonsterStats/Actions"
+import LegendaryActions from "./MonsterStats/LegendaryActions"
 
 class Monster extends Component {
   constructor() {
@@ -27,67 +32,60 @@ class Monster extends Component {
     )
   }
 
-  // const DI = monster.damage_immunities.map((DI, i) => {
-  //     return monster.damage_immunities ?
-  //     <div key={i}><p className="stat-detail">{DI}</p></div> :
-  //     <div><p className="stat-detail">DAMAGE IMMUNITIES: n/a</p></div>
-  // })
-  // const DR = monster.damage_resistances.map((DR, i) => {
-  //     return monster.damage_resistances ?
-  //     <div key={i}><p className="stat-detail">{DR}</p></div> :
-  //     <div><p className="stat-detail">DAMAGE RESISTANCES: n/a</p></div>
-  // })
-  // const DV = monster.damage_vulnerabilities.map((DV, i) => {
-  //     return monster.damage_vulnerabilities ?
-  //     <div key={i}><p className="stat-detail">{DV}</p></div> :
-  //     <div><p className="stat-detail">DAMAGE VULNERABILITIES: n/a</p></div>
-  // })
-  // if (monster.actions) {
-  //     var actions = monster.actions.map((action, i) => {
-  //         return (
-  //             <div key={i}>
-  //                 <div className="stat-detail">{action.name}: {action.desc}</div>
-  //             </div>
-  //         )
-  //     })
-  // }
-  // if (monster.legendary_actions) {
-  //     var legendaryActions = monster.legendary_actions.map((action, i) => {
-  //         return (
-  //             <div key={i}>
-  //                 <div className="stat-detail">{action.name}: {action.desc}</div>
-  //             </div>
-  //         )
-  //     })
-  // }
-  // const legendary = monster.legendary_actions ?
-  //     <div className="one-stat legendary-actions">LEGENDARY ACTIONS: {legendaryActions}</div> :
-  //     <div className="one-stat legendary-actions">LEGENDARY ACTIONS: n/a</div>
-  // const special = monster.special_abilities ?
-  //     <div className="one-stat special-abilities">SPECIAL ABILITIES: n/a</div> :
-  //     <div className="one-stat special-abilities">SPECIAL ABILITIES: {specialAbilities}</div>
-
   render() {
     if (this.props.monster.url === this.props.location.state.url) {
-
+        console.log(this.props.monster);
       return (
         <div className="monster-stats">
-          <h3>Special Abilities</h3>
+          <h2>Name: {this.props.monster.name}</h2>
+          <h2>Size: {this.props.monster.size}</h2>
+          <h3>Alignment: {this.props.monster.alignment}</h3>
+          <h3>Armor Class: {this.props.monster.armor_class}</h3>
+          <h3>Challenge Rating: {this.props.monster.challenge_rating}</h3>
+          <h3>Hit Dice: {this.props.monster.hit_dice}</h3>
+          <h3>Hit Points: {this.props.monster.hit_points}</h3>
+          <h3>Languages: {this.props.monster.languages}</h3>
+          <h3>XP: {this.props.monster.xp}</h3>
+          <h3>Charisma: {this.props.monster.charisma}</h3>
+          <h3>Strength: {this.props.monster.strength}</h3>
+          <h3>Dexterity: {this.props.monster.dexterity}</h3>
+          <h3>Wisdom: {this.props.monster.wisdom}</h3>
+          <h3>Intelligence: {this.props.monster.intelligence}</h3>
+          <h3>Constitution: {this.props.monster.constitution}</h3>
+        <br></br>
+          <h3>Special Abilities:</h3>
           <SpecialAbilities statBlock={this.props.monster.special_abilities} />
 
-          <h3>Proficiencies</h3>
+          <h3>Proficiencies:</h3>
           <Proficiencies statBlock={this.props.monster.proficiencies} />
 
-          <h3>Condition Immunities</h3>
-          <Immunities statBlock={this.props.monster.condition_immunities} />
+          <h3>Condition Immunities:</h3>
+          <ConditionImmunities
+            statBlock={this.props.monster.condition_immunities}
+          />
 
-          {/* <h3>Damage Immunities</h3>
-          <Immunities statBlock={this.props.monster.damage_immunities} /> */}
+          <h3>Damage Immunities:</h3>
+          <DamageImmunities statBlock={this.props.monster.damage_immunities} />
+
+          <h3>Damage Resistances:</h3>
+          <DamageResistances
+            statBlock={this.props.monster.damage_resistances}
+          />
+
+          <h3>Damage Vulnerabilities:</h3>
+          <DamageVulnerabilities
+            statBlock={this.props.monster.damage_vulnerabilities}
+          />
+
+          <h3>Actions:</h3>
+          <Actions statBlock={this.props.monster.actions} />
+
+          <h3>Legendary Actions:</h3>
+          <LegendaryActions statBlock={this.props.monster.legendary_actions} />
         </div>
-      )}
-
-    else {
-        return null
+      )
+    } else {
+      return null
     }
   }
 }
