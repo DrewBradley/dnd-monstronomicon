@@ -10,10 +10,10 @@ import Rdragon from '../dragonR.svg'
 
 
 class Header extends Component {
-  constructor() {
-    super()
-    this.state = {}
-  }
+  // constructor() {
+  //   super()
+  //   this.state = {}
+  // }
 
   render() {
     const encounterCounter = this.props.encounter.length

@@ -1,3 +1,4 @@
+/* eslint-disable import/no-anonymous-default-export */
 import { SEARCH_MONSTER_NAME, GET_MONSTERS_BY_CR } from '../actions/types'
 
 const initialState = { 

@@ -1,3 +1,4 @@
+/* eslint-disable import/no-anonymous-default-export */
 import { FETCH_MONSTERS, FETCH_ONE_MONSTER } from '../actions/types'
 
 const initialState = { 

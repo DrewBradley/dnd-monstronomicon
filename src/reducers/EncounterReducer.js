@@ -1,3 +1,4 @@
+/* eslint-disable import/no-anonymous-default-export */
 import { ADD_TO_ENCOUNTER, REMOVE_FROM_ENCOUNTER } from '../actions/types'
 
 const initialState = { 
