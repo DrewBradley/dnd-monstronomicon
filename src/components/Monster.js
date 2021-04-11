@@ -1,99 +1,97 @@
-import React, { Component } from 'react'
-import { connect } from 'react-redux'
-import './Monster.css'
-import { getOneMonster, addToEncounter } from '../actions/actions'
-import PropTypes from 'prop-types';
+import React, { Component } from "react"
+import { connect } from "react-redux"
+import "./Monster.css"
+import { getOneMonster, addToEncounter } from "../actions/actions"
+import PropTypes from "prop-types"
+import SpecialAbilities from "./MonsterStats/SpecialAbilities"
+import Proficiencies from "./MonsterStats/Proficiencies"
+import Immunities from "./MonsterStats/ConditionImmunities"
 
 class Monster extends Component {
-    constructor() {
-        super()
-        this.state = {}
+  constructor() {
+    super()
+    this.state = {}
     this.clickHandler = this.clickHandler.bind(this)
+  }
+
+  componentDidMount() {
+    this.props.getOneMonster(this.props.location.state.url)
+  }
+
+  clickHandler() {
+    this.props.addToEncounter(
+      this.props.monster.name,
+      this.props.monster.index,
+      this.props.location.state.url,
+      this.props.encounter
+    )
+  }
+
+  // const DI = monster.damage_immunities.map((DI, i) => {
+  //     return monster.damage_immunities ?
+  //     <div key={i}><p className="stat-detail">{DI}</p></div> :
+  //     <div><p className="stat-detail">DAMAGE IMMUNITIES: n/a</p></div>
+  // })
+  // const DR = monster.damage_resistances.map((DR, i) => {
+  //     return monster.damage_resistances ?
+  //     <div key={i}><p className="stat-detail">{DR}</p></div> :
+  //     <div><p className="stat-detail">DAMAGE RESISTANCES: n/a</p></div>
+  // })
+  // const DV = monster.damage_vulnerabilities.map((DV, i) => {
+  //     return monster.damage_vulnerabilities ?
+  //     <div key={i}><p className="stat-detail">{DV}</p></div> :
+  //     <div><p className="stat-detail">DAMAGE VULNERABILITIES: n/a</p></div>
+  // })
+  // if (monster.actions) {
+  //     var actions = monster.actions.map((action, i) => {
+  //         return (
+  //             <div key={i}>
+  //                 <div className="stat-detail">{action.name}: {action.desc}</div>
+  //             </div>
+  //         )
+  //     })
+  // }
+  // if (monster.legendary_actions) {
+  //     var legendaryActions = monster.legendary_actions.map((action, i) => {
+  //         return (
+  //             <div key={i}>
+  //                 <div className="stat-detail">{action.name}: {action.desc}</div>
+  //             </div>
+  //         )
+  //     })
+  // }
+  // const legendary = monster.legendary_actions ?
+  //     <div className="one-stat legendary-actions">LEGENDARY ACTIONS: {legendaryActions}</div> :
+  //     <div className="one-stat legendary-actions">LEGENDARY ACTIONS: n/a</div>
+  // const special = monster.special_abilities ?
+  //     <div className="one-stat special-abilities">SPECIAL ABILITIES: n/a</div> :
+  //     <div className="one-stat special-abilities">SPECIAL ABILITIES: {specialAbilities}</div>
+
+  render() {
+    if (this.props.monster.url === this.props.location.state.url) {
+
+      return (
+        <div className="monster-stats">
+          <h3>Special Abilities</h3>
+          <SpecialAbilities statBlock={this.props.monster.special_abilities} />
+
+          <h3>Proficiencies</h3>
+          <Proficiencies statBlock={this.props.monster.proficiencies} />
+
+          <h3>Condition Immunities</h3>
+          <Immunities statBlock={this.props.monster.condition_immunities} />
+
+          {/* <h3>Damage Immunities</h3>
+          <Immunities statBlock={this.props.monster.damage_immunities} /> */}
+        </div>
+      )}
+
+    else {
+        return null
     }
-
-    componentDidMount() {
-        this.props.getOneMonster(this.props.location.state.url)
-    }
-
-    clickHandler() {
-        this.props.addToEncounter(
-            this.props.monster.name, 
-            this.props.monster.index,
-            this.props.location.state.url,
-            this.props.encounter
-        )
-    }
-
-    render() {
-        if (this.props.monster.url === this.props.location.state.url) {
-            const monster = this.props.monster
-            const subtype = monster.subtype ? 
-                <div className="one-stat subtype">SUBTYPE: <span>{monster.subtype}</span></div> : 
-                <div className="one-stat subtype">SUBTYPE: n/a</div>
-        if (monster.specialAbilities) {
-            var specialAbilities = monster.special_abilities.map((ability, i) => {
-                return (
-                    <div key={i}>
-                        <p className="stat-detail">{ability.name}: {ability.desc}</p>
-                    </div>
-                )
-            })
-        }
-        const proficiencies = monster.proficiencies.map((proficiency, i) => {
-            return (
-                <div key={i}>
-                    <p className="stat-detail">{proficiency.proficiency.name}: {proficiency.value}</p>
-                </div>
-            )
-        })
-        const CI = monster.condition_immunities.map((CI, i) => {
-            return monster.condition_immunities ? 
-            <div key={i}><p className="stat-detail">{CI.name}</p></div> :
-            <div><p className="stat-detail">CONDITION IMMUNITIES: n/a</p></div>
-        })
-        const DI = monster.damage_immunities.map((DI, i) => {
-            return monster.damage_immunities ? 
-            <div key={i}><p className="stat-detail">{DI}</p></div> :
-            <div><p className="stat-detail">DAMAGE IMMUNITIES: n/a</p></div>
-        })
-        const DR = monster.damage_resistances.map((DR, i) => {
-            return monster.damage_resistances ? 
-            <div key={i}><p className="stat-detail">{DR}</p></div> :
-            <div><p className="stat-detail">DAMAGE RESISTANCES: n/a</p></div>
-        })    
-        const DV = monster.damage_vulnerabilities.map((DV, i) => {
-            return monster.damage_vulnerabilities ? 
-            <div key={i}><p className="stat-detail">{DV}</p></div> :
-            <div><p className="stat-detail">DAMAGE VULNERABILITIES: n/a</p></div>
-        })
-        if (monster.actions) {
-            var actions = monster.actions.map((action, i) => {
-                return (
-                    <div key={i}>
-                        <div className="stat-detail">{action.name}: {action.desc}</div>
-                    </div>
-                )
-            })
-        }
-        if (monster.legendary_actions) {
-            var legendaryActions = monster.legendary_actions.map((action, i) => {
-                return (
-                    <div key={i}>
-                        <div className="stat-detail">{action.name}: {action.desc}</div>
-                    </div>
-                )
-            })
-        }
-        const legendary = monster.legendary_actions ? 
-            <div className="one-stat legendary-actions">LEGENDARY ACTIONS: {legendaryActions}</div> :
-            <div className="one-stat legendary-actions">LEGENDARY ACTIONS: n/a</div>
-        const special = monster.special_abilities ? 
-            <div className="one-stat special-abilities">SPECIAL ABILITIES: n/a</div> :
-            <div className="one-stat special-abilities">SPECIAL ABILITIES: {specialAbilities}</div> 
-
-        return (
-            <div className="monster-stats">
-                <button className="add-button" onClick={this.clickHandler}>ADD TO ENCOUNTER</button>
+  }
+}
+/* <button className="add-button" onClick={this.clickHandler}>ADD TO ENCOUNTER</button>
                 <br></br>
                 <div className="name-box">
                     <p className="one-stat name">NAME: <span>{monster.name}</span></p>
@@ -132,24 +130,20 @@ class Monster extends Component {
                 <div className="one-stat actions">ACTIONS: {actions}</div>
                 <div className="legendary"> {legendary}
                 </div>
-                {special}                   
-            </div>
-        )} else {
-            return null
-        }
-    }
-}
+                {special}                    */
 
 Monster.propTypes = {
   getOneMonster: PropTypes.func.isRequired,
   location: PropTypes.object.isRequired,
   monster: PropTypes.object.isRequired,
-  encounter: PropTypes.array.isRequired
+  encounter: PropTypes.array.isRequired,
 }
 
 const mapStateToProps = (state) => ({
-    monster: state.monsters.monster,
-    encounter: state.encounter.encounter
+  monster: state.monsters.monster,
+  encounter: state.encounter.encounter,
 })
 
-export default connect(mapStateToProps, { getOneMonster, addToEncounter })(Monster)
+export default connect(mapStateToProps, { getOneMonster, addToEncounter })(
+  Monster
+)
